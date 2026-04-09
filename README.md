@@ -1,2 +1,0 @@
-# honorelevate.com
-HonorElevate.com
