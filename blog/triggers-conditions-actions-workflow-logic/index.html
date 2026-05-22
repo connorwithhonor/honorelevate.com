@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Triggers, Conditions, Actions: How Workflow Logic Actually Works</title>
+<meta name="description" content="The architecture beneath every HonorElevate workflow. Trigger types, condition operators, action types, branching logic, time delays, and the patterns that turn business processes into automation.">
+<meta name="keywords" content="workflow triggers conditions actions, marketing automation logic, GoHighLevel workflow architecture, HonorElevate workflow builder, no-code automation">
+<meta name="author" content="Connor MacIvor">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://honorelevate.com/blog/triggers-conditions-actions-workflow-logic/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Triggers, Conditions, Actions: How Workflow Logic Actually Works">
+<meta property="og:description" content="The architecture. Trigger types, condition operators, action types, branching logic, time delays.">
+<meta property="og:url" content="https://honorelevate.com/blog/triggers-conditions-actions-workflow-logic/">
+<meta property="og:image" content="https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png">
+<meta property="article:author" content="Connor MacIvor">
+<meta property="article:section" content="Automation & Workflows">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/styles.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","@id":"https://honorelevate.com/blog/triggers-conditions-actions-workflow-logic/#article",
+"headline":"Triggers, Conditions, Actions: How Workflow Logic Actually Works",
+"description":"The architecture beneath every workflow. Trigger types, condition operators, action types, branching logic.",
+"image":"https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png",
+"datePublished":"2026-05-16","dateModified":"2026-05-16",
+"author":{"@type":"Person","name":"Connor MacIvor","url":"https://connorwithhonor.com/","jobTitle":"AI Growth Architect"},
+"publisher":{"@type":"Organization","name":"HonorElevate","logo":{"@type":"ImageObject","url":"https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png"}},
+"mainEntityOfPage":{"@type":"WebPage","@id":"https://honorelevate.com/blog/triggers-conditions-actions-workflow-logic/"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://honorelevate.com/"},
+  {"@type":"ListItem","position":2,"name":"Blog","item":"https://honorelevate.com/blog/"},
+  {"@type":"ListItem","position":3,"name":"Workflow Logic","item":"https://honorelevate.com/blog/triggers-conditions-actions-workflow-logic/"}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"What are the three components of every workflow?","acceptedAnswer":{"@type":"Answer","text":"Trigger (the event that starts the workflow), condition (the optional filter that decides whether to fire), and action (the thing that happens when both align). Every HonorElevate workflow follows this structure: when something happens, if certain things are true, then do something."}},
+  {"@type":"Question","name":"What kinds of triggers are available?","acceptedAnswer":{"@type":"Answer","text":"Event triggers (missed call, form fill, pipeline change), time-based triggers (day-of, anniversary, plan renewal), field-change triggers (custom field updates, lead score crosses threshold), and external triggers (ServiceTitan job complete, Stripe payment webhook). Most workflows use 1-2 trigger types."}},
+  {"@type":"Question","name":"Can workflows have branching logic?","acceptedAnswer":{"@type":"Answer","text":"Yes. Conditional branches let one workflow handle multiple paths. Example: if lead score over 80, route to owner direct. Else route to standard nurture. The same workflow handles both paths based on the condition evaluation."}}
+]}
+</script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><span class="face"></span> Honor<span>Elevate</span></a>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Menu">&#9776;</button>
+    <div class="nav-links">
+      <a href="/#problems">The Problem</a><a href="/#solutions">What I Build</a><a href="/#proof">Proof</a>
+      <a href="/blog/" class="current">Blog</a><a href="tel:661-400-1720">&#9742; (661) 400-1720</a>
+      <a href="/#book" class="btn-gold">Free AI Audit</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container-narrow">
+  <div class="breadcrumb">
+    <a href="/">Home</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span class="current">Workflow Logic</span>
+  </div>
+
+  <header class="post-header">
+    <span class="post-cluster">› Series 6 · Architecture</span>
+    <h1 class="post-title">Triggers, Conditions, Actions: <em>How Workflow Logic Actually Works</em></h1>
+    <div class="post-meta">
+      <span class="author"><span class="av"></span> By <b>Connor MacIvor</b></span>
+      <span class="dot">·</span><span>Published May 16, 2026</span><span class="dot">·</span><span class="read-time">10 min read</span>
+    </div>
+  </header>
+
+  <div class="post-hero">
+    <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
+      <rect width="800" height="360" fill="#1a1f2b"/>
+      <text x="400" y="44" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#e8a838" letter-spacing="3">WHEN · IF · THEN</text>
+
+      <g transform="translate(60,90)">
+        <rect width="200" height="80" rx="14" fill="#0f1219" stroke="#e8a838" stroke-width="2"/>
+        <text x="20" y="32" font-family="DM Sans" font-size="10" fill="#e8a838" letter-spacing="2">TRIGGER</text>
+        <text x="20" y="56" font-family="DM Serif Display" font-size="14" fill="#f5f1eb">WHEN something</text>
+        <text x="20" y="72" font-family="DM Serif Display" font-size="14" fill="#f5f1eb">happens</text>
+      </g>
+
+      <g stroke="#e8a838" stroke-width="2" fill="none">
+        <path d="M260,130 L300,130" marker-end="url(#arrTCA)"/>
+      </g>
+      <defs>
+        <marker id="arrTCA" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 Z" fill="#e8a838"/>
+        </marker>
+      </defs>
+
+      <g transform="translate(300,90)">
+        <rect width="200" height="80" rx="14" fill="#0f1219" stroke="#e8a838" stroke-width="2"/>
+        <text x="20" y="32" font-family="DM Sans" font-size="10" fill="#e8a838" letter-spacing="2">CONDITION</text>
+        <text x="20" y="56" font-family="DM Serif Display" font-size="14" fill="#f5f1eb">IF criteria are</text>
+        <text x="20" y="72" font-family="DM Serif Display" font-size="14" fill="#f5f1eb">met</text>
+      </g>
+
+      <g stroke="#e8a838" stroke-width="2" fill="none">
+        <path d="M500,130 L540,130" marker-end="url(#arrTCA)"/>
+      </g>
+
+      <g transform="translate(540,90)">
+        <rect width="200" height="80" rx="14" fill="#0f1219" stroke="#e8a838" stroke-width="2"/>
+        <text x="20" y="32" font-family="DM Sans" font-size="10" fill="#e8a838" letter-spacing="2">ACTION</text>
+        <text x="20" y="56" font-family="DM Serif Display" font-size="14" fill="#f5f1eb">THEN do</text>
+        <text x="20" y="72" font-family="DM Serif Display" font-size="14" fill="#f5f1eb">something</text>
+      </g>
+
+      <g font-family="DM Sans" font-size="11" fill="#5c5850" text-anchor="middle">
+        <text x="160" y="216">Missed call detected</text>
+        <text x="400" y="216">Not on DNC list</text>
+        <text x="640" y="216">Send SMS in 11s</text>
+      </g>
+
+      <text x="400" y="296" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#8a857b">Every workflow. Same structure. Different specifics.</text>
+    </svg>
+  </div>
+
+  <div class="quick-answer">
+    <div class="label">› Quick Answer</div>
+    <p><strong>Every HonorElevate workflow has the same three components: trigger (the event that starts the workflow), condition (the optional filter that decides whether to fire), and action (the thing that happens).</strong> Triggers come in four types: event, time-based, field-change, external. Conditions filter on contact properties, time, pipeline state, or history. Actions include sending SMS/email, updating CRM, creating tasks, firing API calls, and handing off to other workflows. The combinations let one platform handle 25+ default workflows plus unlimited custom logic.</p>
+  </div>
+
+  <div class="tldr">
+    <h3>TL;DR</h3>
+    <ul>
+      <li><strong>Trigger types:</strong> event, time-based, field-change, external. Most workflows use 1-2.</li>
+      <li><strong>Condition operators:</strong> equals, contains, greater than, less than, before/after date, has tag, missing tag.</li>
+      <li><strong>Action types:</strong> communication, CRM update, task creation, external API, workflow handoff.</li>
+      <li><strong>Branching:</strong> if/else logic lets one workflow handle multiple paths.</li>
+      <li><strong>Time delays:</strong> wait X minutes/hours/days between steps. Critical for nurture sequences.</li>
+      <li><strong>Goal completion:</strong> workflows can be set to exit early when a goal is reached.</li>
+    </ul>
+  </div>
+
+  <article class="post-body">
+
+    <p>The pillar (<a href="/blog/automation-workflows-guide/">The Complete Guide to Automation and Workflows</a>) covers the what and why. This post covers the how. The architecture beneath every HonorElevate workflow. For owners who want to understand or customize, this is the level of detail that matters.</p>
+
+    <h2>Triggers: <em>the four types</em></h2>
+
+    <h3>Type 1: Event triggers</h3>
+    <p>Something happened in the system. Most common type. Examples:</p>
+    <ul>
+      <li>New contact created (from any source)</li>
+      <li>Form submitted</li>
+      <li>Web chat session ended</li>
+      <li>Inbound call answered</li>
+      <li>Inbound call missed</li>
+      <li>SMS reply received</li>
+      <li>Pipeline stage changed</li>
+      <li>Tag added or removed</li>
+      <li>Appointment booked</li>
+      <li>Appointment canceled</li>
+      <li>Payment received</li>
+      <li>Review posted</li>
+      <li>Job completed (via ServiceTitan/Jobber API)</li>
+    </ul>
+
+    <h3>Type 2: Time-based triggers</h3>
+    <p>A specific time or date arrived. Examples:</p>
+    <ul>
+      <li>X minutes/hours/days after another event (most common: 30 min after Closed Won fires review request)</li>
+      <li>X days/weeks before a scheduled event (24 hr before appointment = day-before reminder)</li>
+      <li>Recurring schedule (monthly maintenance, quarterly check-in)</li>
+      <li>Specific date (customer birthday, plan renewal anniversary)</li>
+      <li>Inactivity threshold (no engagement in 30/60/90/180 days)</li>
+    </ul>
+
+    <h3>Type 3: Field-change triggers</h3>
+    <p>A specific data point changed. Examples:</p>
+    <ul>
+      <li>Lead score crossed 80 threshold</li>
+      <li>Custom field value updated</li>
+      <li>Pipeline stage moved to specific state</li>
+      <li>Tag combination achieved (Returning + Maintenance Plan Active)</li>
+    </ul>
+
+    <h3>Type 4: External triggers</h3>
+    <p>An external system signaled. Examples:</p>
+    <ul>
+      <li>ServiceTitan job complete event</li>
+      <li>Stripe payment webhook</li>
+      <li>Calendly booking webhook</li>
+      <li>Zapier-mediated event from any external service</li>
+      <li>Custom API endpoint hit</li>
+    </ul>
+
+    <div class="callout">
+      <span class="ico">›</span>
+      <div><strong>The discipline:</strong> a workflow can have multiple triggers (any one fires the workflow) or compound triggers (all must fire to start). Most defaults use single triggers for simplicity. Compound triggers are useful for edge cases.</div>
+    </div>
+
+    <h2>Conditions: <em>the filter layer</em></h2>
+
+    <p>Conditions are optional. Some simple workflows have none ("when missed call → send SMS, always"). Most workflows benefit from at least one condition to prevent unwanted firing.</p>
+
+    <h3>Common condition operators</h3>
+    <ul>
+      <li><strong>Equals / Does not equal:</strong> field is exactly value X</li>
+      <li><strong>Contains / Does not contain:</strong> field includes substring X</li>
+      <li><strong>Greater than / Less than:</strong> numeric comparison (lead score, ticket value, days in stage)</li>
+      <li><strong>Before / After:</strong> date comparison (Last Service Date older than 12 months ago)</li>
+      <li><strong>Has tag / Missing tag:</strong> contact has or does not have specified tag</li>
+      <li><strong>In list / Not in list:</strong> field value matches one of a set</li>
+      <li><strong>Is empty / Is not empty:</strong> field has any value or no value</li>
+    </ul>
+
+    <h3>Common condition patterns</h3>
+
+    <table>
+      <thead><tr><th>Condition</th><th>Use case</th></tr></thead>
+      <tbody>
+        <tr><td>Service Area = Saugus OR Valencia OR Newhall</td><td>Only fire for core-area customers</td></tr>
+        <tr><td>Lead Score &gt; 80</td><td>Priority queue routing</td></tr>
+        <tr><td>Last Service Date &gt; 12 months ago</td><td>Annual reminder eligibility</td></tr>
+        <tr><td>Has tag "Returning Customer"</td><td>Personalized messaging for repeat customers</td></tr>
+        <tr><td>Missing tag "DNC"</td><td>Respect Do-Not-Contact opt-outs</td></tr>
+        <tr><td>Current time between 8 AM and 9 PM local</td><td>Quiet-hours compliance</td></tr>
+        <tr><td>Pipeline Stage = Quote Sent AND days in stage &gt; 1</td><td>Stale quote follow-up trigger</td></tr>
+      </tbody>
+    </table>
+
+    <h3>AND vs OR logic</h3>
+
+    <p>Multiple conditions can be combined with AND (all must be true) or OR (any must be true). Most production workflows mix both. Example: "Send maintenance plan offer IF (current stage = Closed Won) AND (14 days since Closed Won) AND (NOT tagged Maintenance Plan Active) AND (NOT tagged DNC) AND (NOT tagged Plan Offer Declined Recently)."</p>
+
+    <h2>Actions: <em>the things that fire</em></h2>
+
+    <h3>Communication actions</h3>
+    <ul>
+      <li><strong>Send SMS</strong> (single or multi-part, templated or dynamic)</li>
+      <li><strong>Send email</strong> (templated with personalization tokens)</li>
+      <li><strong>Ringless voicemail drop</strong> (high-volume reactivation campaigns)</li>
+      <li><strong>Internal notification</strong> (Slack-style alert to owner or team)</li>
+      <li><strong>Push notification</strong> (to staff mobile devices)</li>
+    </ul>
+
+    <h3>CRM update actions</h3>
+    <ul>
+      <li><strong>Update pipeline stage</strong> (move contact to specific stage)</li>
+      <li><strong>Add tag</strong> (apply behavioral/status marker)</li>
+      <li><strong>Remove tag</strong> (clear marker)</li>
+      <li><strong>Update custom field</strong> (set specific data point)</li>
+      <li><strong>Adjust lead score</strong> (increment, decrement, or set absolute)</li>
+      <li><strong>Update contact details</strong> (name, email, phone, address corrections)</li>
+    </ul>
+
+    <h3>Task and calendar actions</h3>
+    <ul>
+      <li><strong>Create task</strong> (assigned to specific user with due date)</li>
+      <li><strong>Schedule appointment</strong> (book on the calendar)</li>
+      <li><strong>Reschedule appointment</strong> (move existing booking)</li>
+      <li><strong>Cancel appointment</strong> (release calendar slot)</li>
+    </ul>
+
+    <h3>External actions</h3>
+    <ul>
+      <li><strong>Push to ServiceTitan/Jobber/Housecall Pro</strong> (create job in dispatch system)</li>
+      <li><strong>Call Stripe</strong> (charge card, refund, subscription change)</li>
+      <li><strong>Trigger Zapier/Make webhook</strong> (route to external service)</li>
+      <li><strong>Custom HTTP request</strong> (any API endpoint)</li>
+    </ul>
+
+    <h3>Workflow control actions</h3>
+    <ul>
+      <li><strong>Wait X time</strong> (delay before next step)</li>
+      <li><strong>Trigger another workflow</strong> (hand off to a different workflow)</li>
+      <li><strong>End workflow</strong> (exit early when goal is met)</li>
+      <li><strong>Conditional branch</strong> (if/else path within the workflow)</li>
+    </ul>
+
+    <h2>Branching logic: <em>if/else inside a workflow</em></h2>
+
+    <p>Most non-trivial workflows have branches. Example pattern: post-job review request.</p>
+
+    <ol>
+      <li><strong>Trigger:</strong> Pipeline = Closed Won</li>
+      <li><strong>Wait 30 minutes</strong></li>
+      <li><strong>Send SMS:</strong> "Hi Maria, how did Mike do today?"</li>
+      <li><strong>Wait 4 hours</strong></li>
+      <li><strong>BRANCH:</strong>
+        <ul>
+          <li><strong>IF</strong> customer replied → end workflow (human or AI handles thread)</li>
+          <li><strong>ELSE</strong> → continue</li>
+        </ul>
+      </li>
+      <li><strong>Send email:</strong> Review request email</li>
+      <li><strong>Wait 48 hours</strong></li>
+      <li><strong>BRANCH:</strong>
+        <ul>
+          <li><strong>IF</strong> review posted OR customer replied → end workflow</li>
+          <li><strong>ELSE</strong> → continue</li>
+        </ul>
+      </li>
+      <li><strong>Send SMS:</strong> Final follow-up</li>
+      <li><strong>End workflow</strong></li>
+    </ol>
+
+    <p>The branches prevent the workflow from spamming customers who already engaged. Each step has a clear continuation criteria.</p>
+
+    <h2>Time delays: <em>the underrated lever</em></h2>
+
+    <p>The right time delay between steps is often more important than the copy. Examples that work:</p>
+
+    <ul>
+      <li>Review request first touch: 30 minutes after job (NOT immediately, NOT next day)</li>
+      <li>Maintenance plan offer: 14 days after job (NOT 1 day, NOT 90 days)</li>
+      <li>30-day winback: exactly 30 days after Closed Lost (NOT 7, NOT 60)</li>
+      <li>Day-before reminder: 24 hours before appointment (NOT 1 hour, NOT 1 week)</li>
+      <li>On-the-way SMS: when tech checks in en-route (NOT before, NOT after arrival)</li>
+    </ul>
+
+    <p>HonorElevate's defaults are tuned based on industry-specific testing. Owners can adjust, but the defaults are evidence-based.</p>
+
+    <h2>Goal completion: <em>knowing when to stop</em></h2>
+
+    <p>Most workflows are not infinite loops. Each has a goal. When the goal is achieved, the workflow exits.</p>
+
+    <ul>
+      <li><strong>Review request workflow goal:</strong> Customer posts a review OR opts out.</li>
+      <li><strong>Stale quote follow-up goal:</strong> Customer books OR declines OR enters DNC.</li>
+      <li><strong>30-day winback goal:</strong> Customer re-engages OR explicitly opts out.</li>
+      <li><strong>Maintenance plan offer goal:</strong> Customer signs up OR declines OR opts out of marketing.</li>
+    </ul>
+
+    <p>Goal completion exits the workflow gracefully. The contact is not stuck in a perpetual loop sending SMS forever.</p>
+
+    <div class="inline-cta">
+      <h3>Want custom workflows <em>for your specific business?</em></h3>
+      <p>Free 30-minute AI audit. We map your operational patterns, identify what would benefit from custom workflows, and build them during onboarding.</p>
+      <a href="/#book" class="btn-gold">Book My Free AI Audit</a>
+    </div>
+
+    <h2>Personalization tokens: <em>dynamic data in messages</em></h2>
+
+    <p>Every SMS, email, and message in a workflow can include dynamic personalization tokens. The system resolves these at send time based on the specific contact and context.</p>
+
+    <p>Common tokens:</p>
+
+    <ul>
+      <li><strong>{{contact.first_name}}</strong> – Maria</li>
+      <li><strong>{{contact.last_name}}</strong> – Hernandez</li>
+      <li><strong>{{contact.service_area}}</strong> – Saugus</li>
+      <li><strong>{{contact.last_service_date}}</strong> – 2026-05-16</li>
+      <li><strong>{{contact.last_tech_name}}</strong> – Mike Sanchez</li>
+      <li><strong>{{appointment.date}}</strong> – tomorrow at 7 AM</li>
+      <li><strong>{{appointment.tech}}</strong> – Mike</li>
+      <li><strong>{{business.name}}</strong> – Smith Heating and Air</li>
+    </ul>
+
+    <p>The discipline: only use tokens for verified data. If a token can resolve to garbage (because the field is empty), use conditional copy: "Hi {{contact.first_name|there}}" falls back to "there" if the first name is missing.</p>
+
+    <h2>Common workflow patterns</h2>
+
+    <h3>Pattern 1: Linear sequence</h3>
+    <p>Trigger → Action → Wait → Action → End. Used for nurture sequences and follow-up cadences.</p>
+
+    <h3>Pattern 2: Wait-and-branch</h3>
+    <p>Trigger → Wait → Branch on response → Different paths. Used when customer behavior determines the next step.</p>
+
+    <h3>Pattern 3: Goal-completion loop</h3>
+    <p>Trigger → Send → Wait → Check goal → Loop or end. Used when escalating until the customer responds.</p>
+
+    <h3>Pattern 4: Conditional fork at start</h3>
+    <p>Trigger → Evaluate conditions → Route to specific sub-workflow. Used for handling different customer segments with the same starting event.</p>
+
+    <h3>Pattern 5: Multi-workflow chain</h3>
+    <p>One workflow ends by triggering another. Used for complex multi-stage customer journeys (e.g., new customer onboarding → first-job follow-up → maintenance plan enrollment).</p>
+
+    <h2>The honest disclosure <em>on what powers this</em></h2>
+
+    <p>The HonorElevate workflow engine sits on a white-labeled deployment of an enterprise-grade automation platform. The trigger types, condition operators, and action types described above are the platform's native capabilities. The 25+ pre-built workflows that ship with HonorElevate are my configurations using these primitives. Same as the pillar (<a href="/blog/automation-workflows-guide/">guide here</a>) notes for the rest of the platform.</p>
+
+    <h2>The bottom line</h2>
+
+    <p>Workflow architecture is the same across HonorElevate's 25+ defaults: trigger + condition + action. The combinations let one platform handle missed call recovery, review requests, stale-quote follow-up, maintenance plan offers, winback sequences, and any other process a service business can describe.</p>
+
+    <p>Most owners do not need to build their own workflows. Understanding the architecture matters mainly for two cases: customizing a default workflow for your specific needs, or designing a new workflow for an operational pattern unique to your business. Either way, the language is the same.</p>
+
+    <p>For the pillar, read <a href="/blog/automation-workflows-guide/">The Complete Guide to Automation and Workflows</a>. For the top 10 workflows ready to run, read <a href="/blog/10-highest-roi-workflows-service-business/">The 10 Highest-ROI Workflows</a>. For a real workflow firing in production, read <a href="/blog/workflow-books-jobs-while-you-sleep/">Inside a HonorElevate Workflow That Books Jobs While You Sleep</a>.</p>
+
+  </article>
+
+  <section class="faq-section">
+    <h2>FAQ <em>·</em> Workflow Logic</h2>
+    <details open>
+      <summary>Do I need to know how to code to build workflows?</summary>
+      <div class="a">No. The no-code builder uses drag-and-drop and dropdown menus. Most owners do not need to touch the builder because the defaults cover the common cases.</div>
+    </details>
+    <details>
+      <summary>Can workflows run in parallel for the same contact?</summary>
+      <div class="a">Yes. Multiple workflows can run for the same contact simultaneously. Review request workflow can fire while maintenance plan offer workflow is scheduled. They do not interfere with each other.</div>
+    </details>
+    <details>
+      <summary>How do I prevent a customer from being spammed across multiple workflows?</summary>
+      <div class="a">Global conditions on every workflow check for DNC tag, recent message frequency, and opt-out status. A customer who has received 2 SMS in the last 24 hours gets paused on the third. Owner can override for genuine emergencies.</div>
+    </details>
+    <details>
+      <summary>What if I want a custom trigger that does not exist?</summary>
+      <div class="a">Custom HTTP webhook triggers cover most edge cases. Send any signal via API. The workflow receives the payload and fires accordingly. For complex needs, we build custom integration during onboarding.</div>
+    </details>
+  </section>
+
+  <section class="read-next">
+    <div class="label">› Read Next</div>
+    <div class="read-next-grid">
+      <a href="/blog/automation-workflows-guide/" class="read-next-card">
+        <div class="arrow">› Series 6 · Pillar</div>
+        <h3>The Complete Guide to Automation and Workflows for Service Businesses</h3>
+        <p>The operator's manual. Triggers, conditions, actions, and the brain of the platform.</p>
+      </a>
+      <a href="/blog/workflow-books-jobs-while-you-sleep/" class="read-next-card">
+        <div class="arrow">› Series 6 · Spoke</div>
+        <h3>Inside a HonorElevate Workflow That Books Jobs While You Sleep</h3>
+        <p>A real-time walkthrough of what fires when no human is involved.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="author-block">
+    <div class="av"></div>
+    <div>
+      <h4>Connor MacIvor</h4>
+      <div class="title">AI Growth Architect · Santa Clarita, CA</div>
+      <p>27+ years running businesses. Self-taught programmer since 1983. Direct line: <a href="tel:661-400-1720">661-400-1720</a>. More at <a href="https://connorwithhonor.com/">connorwithhonor.com</a>.</p>
+    </div>
+  </section>
+
+  <section class="post-final-cta">
+    <h3>Trigger + condition + action = <em>your automation.</em></h3>
+    <p>Free 30-minute AI audit. We design the workflow architecture for your business and have it firing inside 5-7 days.</p>
+    <a href="/#book" class="btn-gold">Book Free AI Audit</a>
+    <span class="or">or call Connor: <a href="tel:661-400-1720">(661) 400-1720</a></span>
+  </section>
+
+</div>
+
+<div class="sticky-bar" id="stickyBar">
+  <p>Same architecture. 25+ defaults. Unlimited custom.</p>
+  <a href="/#book" class="btn-gold">Book Free Audit</a>
+  <a href="tel:661-400-1720" class="btn-call">&#9742; Call Now</a>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo"><span class="face"></span> Honor<span>Elevate</span></a>
+      <p>AI business automation built by Connor MacIvor. 27+ years of business discipline powering systems that work while you sleep.</p>
+    </div>
+    <div class="footer-col"><h4>Solutions</h4><a href="/#solutions">AI Voice Agents</a><a href="/#solutions">Lead Automation</a><a href="/#solutions">CRM + Pipeline</a><a href="/#solutions">Review Engine</a></div>
+    <div class="footer-col"><h4>Resources</h4><a href="/blog/">Blog</a><a href="/#book">Free AI Audit</a><a href="tel:661-299-7299">Call Betty (Demo)</a><a href="mailto:connor@honorelevate.com">Email Connor</a></div>
+    <div class="footer-col"><h4>Ecosystem</h4><a href="https://connorwithhonor.com">Connor with Honor</a><a href="https://hireaivoice.com">HireAIVoice</a><a href="https://sellersonlyagent.com">Sellers Only Agent</a><a href="https://scv123.com">SCV123</a></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 HonorElevate. All Rights Reserved.</p>
+    <p>Coded by Connor with Honor | <a href="/">AI Growth Architect</a></p>
+    <p><a href="/terms-of-service">Terms</a> &nbsp;|&nbsp; <a href="/privacy-policy">Privacy</a></p>
+  </div>
+</footer>
+
+<script>
+const stickyBar=document.getElementById('stickyBar');
+const article=document.querySelector('.post-body');
+if (article) {const obs=new IntersectionObserver(e=>{e.forEach(entry=>entry.isIntersecting?stickyBar.classList.add('visible'):stickyBar.classList.remove('visible'))},{threshold:0.1});obs.observe(article);}
+</script>
+</body>
+</html>

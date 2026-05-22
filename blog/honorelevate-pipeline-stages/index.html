@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The HonorElevate Pipeline Stages Built for Service Businesses</title>
+<meta name="description" content="Every stage in the HonorElevate 8-stage service-business pipeline. Triggers, SLA timers, downstream workflows, exit criteria, and the stuck-lead alerting that catches leaks before they cost money.">
+<meta name="keywords" content="service business pipeline, HVAC pipeline stages, lead pipeline service business, CRM pipeline configuration, HonorElevate pipeline">
+<meta name="author" content="Connor MacIvor">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://honorelevate.com/blog/honorelevate-pipeline-stages/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="The HonorElevate Pipeline Stages Built for Service Businesses">
+<meta property="og:description" content="Every stage broken down with triggers, SLA timers, and downstream workflows.">
+<meta property="og:url" content="https://honorelevate.com/blog/honorelevate-pipeline-stages/">
+<meta property="og:image" content="https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png">
+<meta property="article:author" content="Connor MacIvor">
+<meta property="article:section" content="CRM & Pipeline">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/styles.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","@id":"https://honorelevate.com/blog/honorelevate-pipeline-stages/#article",
+"headline":"The HonorElevate Pipeline Stages Built for Service Businesses",
+"description":"Every stage broken down with triggers, SLA timers, and downstream workflows.",
+"image":"https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png",
+"datePublished":"2026-05-16","dateModified":"2026-05-16",
+"author":{"@type":"Person","name":"Connor MacIvor","url":"https://connorwithhonor.com/","jobTitle":"AI Growth Architect"},
+"publisher":{"@type":"Organization","name":"HonorElevate","logo":{"@type":"ImageObject","url":"https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png"}},
+"mainEntityOfPage":{"@type":"WebPage","@id":"https://honorelevate.com/blog/honorelevate-pipeline-stages/"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://honorelevate.com/"},
+  {"@type":"ListItem","position":2,"name":"Blog","item":"https://honorelevate.com/blog/"},
+  {"@type":"ListItem","position":3,"name":"Pipeline Stages","item":"https://honorelevate.com/blog/honorelevate-pipeline-stages/"}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"What are the standard pipeline stages for a service business?","acceptedAnswer":{"@type":"Answer","text":"The HonorElevate 8-stage default: New Lead, Qualified, Quote Sent, Booked, In Progress, Closed Won, Closed Lost, Recurring/Loyalty. Each stage has automatic entry triggers, time-based SLA alerts, downstream workflow fires, and clear exit criteria."}},
+  {"@type":"Question","name":"What is the SLA on each pipeline stage?","acceptedAnswer":{"@type":"Answer","text":"New Lead to Qualified: 5 minutes (AI or human first touch). Qualified to Quote Sent: 30 minutes. Quote Sent to Booked: 24 hours. Booked to In Progress: at scheduled time. In Progress to Closed Won: by end of job day. Stuck leads beyond SLA fire owner alerts."}},
+  {"@type":"Question","name":"What happens when a lead gets stuck in a stage?","acceptedAnswer":{"@type":"Answer","text":"The platform monitors each lead's time in stage. Beyond the SLA threshold, the system fires an alert to the owner and triggers a recovery workflow. Common stuck-stage causes: customer ghosted after quote, awaiting decision-maker, parts ordered. Each cause has a specific recovery path."}}
+]}
+</script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><span class="face"></span> Honor<span>Elevate</span></a>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Menu">&#9776;</button>
+    <div class="nav-links">
+      <a href="/#problems">The Problem</a><a href="/#solutions">What I Build</a><a href="/#proof">Proof</a>
+      <a href="/blog/" class="current">Blog</a><a href="tel:661-400-1720">&#9742; (661) 400-1720</a>
+      <a href="/#book" class="btn-gold">Free AI Audit</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container-narrow">
+  <div class="breadcrumb">
+    <a href="/">Home</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span class="current">Pipeline Stages</span>
+  </div>
+
+  <header class="post-header">
+    <span class="post-cluster">› Series 5 · The Architecture</span>
+    <h1 class="post-title">The HonorElevate Pipeline Stages <em>Built for Service Businesses</em></h1>
+    <div class="post-meta">
+      <span class="author"><span class="av"></span> By <b>Connor MacIvor</b></span>
+      <span class="dot">·</span><span>Published May 16, 2026</span><span class="dot">·</span><span class="read-time">10 min read</span>
+    </div>
+  </header>
+
+  <div class="post-hero">
+    <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
+      <rect width="800" height="360" fill="#1a1f2b"/>
+      <text x="400" y="44" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#8a857b" letter-spacing="3">8 STAGES · SLA TIMERS · AUTO-WORKFLOWS</text>
+
+      <g stroke="#e8a838" stroke-opacity=".25" stroke-width="2" fill="none">
+        <line x1="60" y1="180" x2="740" y2="180"/>
+      </g>
+
+      <g>
+        <circle cx="60" cy="180" r="16" fill="#1a1f2b" stroke="#e8a838" stroke-width="2"/>
+        <circle cx="155" cy="180" r="16" fill="#1a1f2b" stroke="#e8a838" stroke-width="2"/>
+        <circle cx="250" cy="180" r="16" fill="#1a1f2b" stroke="#e8a838" stroke-width="2"/>
+        <circle cx="345" cy="180" r="16" fill="#1a1f2b" stroke="#e8a838" stroke-width="2"/>
+        <circle cx="440" cy="180" r="16" fill="#1a1f2b" stroke="#e8a838" stroke-width="2"/>
+        <circle cx="535" cy="180" r="16" fill="#e8a838"/>
+        <circle cx="630" cy="180" r="16" fill="#1a1f2b" stroke="#8a857b" stroke-width="2"/>
+        <circle cx="725" cy="180" r="16" fill="#e8a838"/>
+      </g>
+
+      <g font-family="DM Serif Display" font-size="14" font-weight="700" text-anchor="middle">
+        <text x="60" y="184" fill="#e8a838">1</text>
+        <text x="155" y="184" fill="#e8a838">2</text>
+        <text x="250" y="184" fill="#e8a838">3</text>
+        <text x="345" y="184" fill="#e8a838">4</text>
+        <text x="440" y="184" fill="#e8a838">5</text>
+        <text x="535" y="184" fill="#0f1219">6</text>
+        <text x="630" y="184" fill="#8a857b">7</text>
+        <text x="725" y="184" fill="#0f1219">8</text>
+      </g>
+
+      <g font-family="DM Sans" font-size="10" fill="#d4cfc5" text-anchor="middle">
+        <text x="60" y="142">New Lead</text>
+        <text x="155" y="142">Qualified</text>
+        <text x="250" y="142">Quoted</text>
+        <text x="345" y="142">Booked</text>
+        <text x="440" y="142">Working</text>
+        <text x="535" y="142">Won</text>
+        <text x="630" y="142">Lost</text>
+        <text x="725" y="142">Loyal</text>
+      </g>
+
+      <g font-family="DM Sans" font-size="9" fill="#e8a838" text-anchor="middle">
+        <text x="60" y="226">5 min</text>
+        <text x="155" y="226">30 min</text>
+        <text x="250" y="226">24 hr</text>
+        <text x="345" y="226">scheduled</text>
+        <text x="440" y="226">job day</text>
+        <text x="535" y="226">→ review</text>
+        <text x="630" y="226">30d winback</text>
+        <text x="725" y="226">recurring</text>
+      </g>
+
+      <text x="400" y="298" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#5c5850">Every stage = trigger + SLA + workflow + exit criteria.</text>
+    </svg>
+  </div>
+
+  <div class="quick-answer">
+    <div class="label">› Quick Answer</div>
+    <p><strong>The HonorElevate 8-stage pipeline (New Lead → Qualified → Quote Sent → Booked → In Progress → Closed Won → Closed Lost → Recurring) is the default architecture for service businesses.</strong> Each stage has automatic entry triggers, time-based SLA alerts, downstream automation workflows, and clear exit criteria. The pipeline is the operational backbone that makes calls, SMS, jobs, and reviews flow into one timeline instead of seven disconnected tools.</p>
+  </div>
+
+  <div class="tldr">
+    <h3>TL;DR</h3>
+    <ul>
+      <li><strong>Stage 1: New Lead.</strong> Trigger: any inbound contact. SLA: 5 min to first touch.</li>
+      <li><strong>Stage 2: Qualified.</strong> Trigger: confirmed real prospect in service area. SLA: 30 min to quote or book.</li>
+      <li><strong>Stage 3: Quote Sent.</strong> Trigger: estimate offered. SLA: 24 hr follow-up.</li>
+      <li><strong>Stage 4: Booked.</strong> Trigger: appointment on calendar. Auto-fires confirmation + reminders.</li>
+      <li><strong>Stage 5: In Progress.</strong> Trigger: tech dispatched. Live status SMS to customer.</li>
+      <li><strong>Stage 6: Closed Won.</strong> Trigger: job complete + paid. Auto-fires review request.</li>
+      <li><strong>Stage 7: Closed Lost.</strong> Trigger: no-book or cancel. Auto-fires 30-day winback.</li>
+      <li><strong>Stage 8: Recurring / Loyalty.</strong> Trigger: maintenance plan signed or 3+ jobs. Long-cycle nurture.</li>
+    </ul>
+  </div>
+
+  <article class="post-body">
+
+    <p>Pipeline stages are the spine of any CRM. Service businesses get them wrong in two predictable ways: either too few stages (just "New" and "Closed", which tells you nothing about where deals stall) or too many stages copied from a B2B template (16 stages including "MQL" and "SQL Demoed" that nobody understands or updates).</p>
+
+    <p>The HonorElevate 8-stage default lives in the middle. Each stage is a meaningful state transition with operational consequences. Each transition fires the right automation. Each stuck stage gets surfaced before it costs money. This is the full architecture.</p>
+
+    <h2>Stage 1: <em>New Lead</em></h2>
+
+    <h3>Entry trigger</h3>
+    <p>Any inbound contact creates the lead automatically. Sources: phone call (answered or missed), SMS reply, web chat session, web form submission, AI voice agent booking, manual entry, CSV import.</p>
+
+    <h3>What fires on entry</h3>
+    <ul>
+      <li>Contact record created with name, phone, email, source channel, timestamp.</li>
+      <li>Auto-tags applied based on source ("Phone", "Web Chat", "After Hours", etc.).</li>
+      <li>CRM lookup runs. If returning customer, history is pulled and the lead is auto-tagged "Returning."</li>
+      <li>Initial workflow fires (typically AI engagement or owner notification, depending on tier and hours).</li>
+    </ul>
+
+    <h3>SLA timer</h3>
+    <p>5 minutes to first human or AI touch. After 5 min, owner gets an SMS alert.</p>
+
+    <h3>Exit criteria</h3>
+    <p>Lead is confirmed as real, in service area, with a service intent → moves to Qualified. Or determined to be junk (spam, wrong number, out of area, not a service we offer) → moves to Closed Lost with reason tag.</p>
+
+    <h2>Stage 2: <em>Qualified</em></h2>
+
+    <h3>Entry trigger</h3>
+    <p>The AI voice agent or your team has confirmed the basics: real person, real intent, in service area, for a service you offer. Either a quote is on the way or an appointment is being scheduled.</p>
+
+    <h3>What fires on entry</h3>
+    <ul>
+      <li>Qualification fields captured (service type, urgency, location, predicted ticket size).</li>
+      <li>Lead score calculated. Score &gt;80 routes to priority queue.</li>
+      <li>Service-type tags applied ("HVAC Service", "HVAC Replacement", "Plumbing Emergency", etc.).</li>
+    </ul>
+
+    <h3>SLA timer</h3>
+    <p>30 minutes to move to Quote Sent or Booked. Stuck-lead alert fires after the SLA.</p>
+
+    <h3>Exit criteria</h3>
+    <p>Quote sent or appointment booked → next stage. Lead ghosted or declined → Closed Lost.</p>
+
+    <h2>Stage 3: <em>Quote Sent</em></h2>
+
+    <h3>Entry trigger</h3>
+    <p>Estimate or service-call appointment has been offered to the customer. May be a tentative quote ("$300-$500 for diagnostic + repair") or a firm number ("Replacement $11,500 fully installed").</p>
+
+    <h3>What fires on entry</h3>
+    <ul>
+      <li>Quote details captured in the contact record (amount, scope, valid-until date).</li>
+      <li>SMS confirmation fires to customer with the quote summary.</li>
+      <li>24-hour follow-up workflow scheduled.</li>
+      <li>48-hour and 72-hour follow-ups scheduled (if no booking).</li>
+    </ul>
+
+    <h3>SLA timer</h3>
+    <p>24 hours to first follow-up. Stuck for 72+ hours = owner alert.</p>
+
+    <h3>Exit criteria</h3>
+    <p>Customer accepts and books → Booked. Customer declines → Closed Lost with reason.</p>
+
+    <div class="callout">
+      <span class="ico">›</span>
+      <div><strong>The pattern most owners miss:</strong> Stage 3 (Quote Sent) is the single highest-leak stage in service-business pipelines. Customers go silent. The follow-up sequence at 24/48/72 hours is what re-engages roughly 30% of stalled quotes. Skipping the follow-ups is the most common revenue leak I see during audits.</div>
+    </div>
+
+    <h2>Stage 4: <em>Booked</em></h2>
+
+    <h3>Entry trigger</h3>
+    <p>Appointment is confirmed and on the calendar. The customer has committed to a specific time slot.</p>
+
+    <h3>What fires on entry</h3>
+    <ul>
+      <li>Calendar event created. Tech assignment made (manually or via round-robin).</li>
+      <li>Booking confirmation SMS fires immediately.</li>
+      <li>Day-before reminder SMS scheduled (typically 24h before appointment).</li>
+      <li>Same-day "tech on the way" SMS scheduled (typically 30 min before arrival window).</li>
+      <li>If using ServiceTitan/Jobber/Housecall Pro: job pushed via API for dispatch.</li>
+    </ul>
+
+    <h3>SLA timer</h3>
+    <p>The appointment time itself. If tech is not dispatched 15 minutes before arrival window, owner alert fires.</p>
+
+    <h3>Exit criteria</h3>
+    <p>Tech arrives on-site → In Progress. Customer cancels → Closed Lost with cancellation reason. Customer reschedules → stays in Booked with updated date.</p>
+
+    <h2>Stage 5: <em>In Progress</em></h2>
+
+    <h3>Entry trigger</h3>
+    <p>Tech is on-site. Job has started. Tech checked in via dispatch software or HonorElevate field-update.</p>
+
+    <h3>What fires on entry</h3>
+    <ul>
+      <li>"Tech arrived" SMS fires to customer.</li>
+      <li>Live job status visible in the dashboard.</li>
+      <li>Customer SMS thread open for any in-progress questions.</li>
+      <li>If parts or change orders are needed, captured against the contact record.</li>
+    </ul>
+
+    <h3>SLA timer</h3>
+    <p>Job-day completion. If job is open past 8 PM, owner alert (something is unusual).</p>
+
+    <h3>Exit criteria</h3>
+    <p>Job complete and paid → Closed Won. Job abandoned or customer refused → escalation workflow and Closed Lost.</p>
+
+    <h2>Stage 6: <em>Closed Won</em></h2>
+
+    <h3>Entry trigger</h3>
+    <p>Tech marked job complete in dispatch software (or manually if no integration). Payment processed. Work order signed.</p>
+
+    <h3>What fires on entry</h3>
+    <ul>
+      <li>Final ticket amount captured in CRM.</li>
+      <li>Customer's lifetime-value (LTV) recalculated.</li>
+      <li>Review request workflow fires (3-channel sequence at 30 min / 4 hr / 48 hr).</li>
+      <li>Maintenance plan offer scheduled (typically 14 days post-job).</li>
+      <li>Owner brief updated with revenue for the day.</li>
+    </ul>
+
+    <h3>SLA timer</h3>
+    <p>Review request at 30 min post-job. If skipped or failed to fire, owner alert.</p>
+
+    <h3>Exit criteria</h3>
+    <p>Customer either reaches Loyalty threshold (3+ jobs or maintenance plan signed) → Recurring. Otherwise stays in Closed Won.</p>
+
+    <h2>Stage 7: <em>Closed Lost</em></h2>
+
+    <h3>Entry trigger</h3>
+    <p>Lead did not book, or customer canceled. Reason captured in the dropdown: "Chose competitor", "Price too high", "Decided to wait", "DIY", "Ghosted", "Out of service area", "Spam".</p>
+
+    <h3>What fires on entry</h3>
+    <ul>
+      <li>30-day winback SMS scheduled (only for warm losses: "Chose competitor", "Decided to wait", "Price too high").</li>
+      <li>Cold losses (spam, out of area) get archived with no follow-up.</li>
+      <li>Lost-reason analytics roll up to the dashboard (so owner can see if too many losses are pricing-driven).</li>
+    </ul>
+
+    <h3>SLA timer</h3>
+    <p>30-day winback automatically fires. Owner can review and pause winback for specific contacts.</p>
+
+    <h3>Exit criteria</h3>
+    <p>Customer responds to winback → back to New Lead with prior context. Otherwise stays in Closed Lost archive.</p>
+
+    <h2>Stage 8: <em>Recurring / Loyalty</em></h2>
+
+    <h3>Entry trigger</h3>
+    <p>Customer either signed a maintenance plan, has 3+ completed jobs, or has crossed an LTV threshold (default $5,000).</p>
+
+    <h3>What fires on entry</h3>
+    <ul>
+      <li>"Loyalty Customer" tag applied.</li>
+      <li>Different nurture workflow activates: seasonal check-ins, birthday touch, equipment-anniversary reminders.</li>
+      <li>Referral ask workflow scheduled.</li>
+      <li>If maintenance plan: scheduled maintenance reminders auto-fire on the plan cadence.</li>
+    </ul>
+
+    <h3>SLA timer</h3>
+    <p>Plan-cadence dependent. Annual maintenance check fires 30 days before due. Recurring service auto-books on schedule.</p>
+
+    <h3>Exit criteria</h3>
+    <p>Customer churns (maintenance plan canceled, no engagement for 18+ months) → moves back to a cold-Closed-Won state. Customer adds another job → stays in Loyalty with refreshed timeline.</p>
+
+    <h2>The stuck-lead <em>alert system</em></h2>
+
+    <p>Every stage has an SLA. When a lead exceeds the SLA, the platform alerts. The alerts are surgical, not noisy.</p>
+
+    <table>
+      <thead><tr><th>Stage stuck</th><th>Alert timing</th><th>Recommended action</th></tr></thead>
+      <tbody>
+        <tr><td>New Lead &gt; 5 min</td><td>Owner SMS</td><td>Take the call or escalate to AI agent</td></tr>
+        <tr><td>Qualified &gt; 30 min</td><td>Owner SMS</td><td>Send the quote or book the appointment</td></tr>
+        <tr><td>Quote Sent &gt; 72 hr</td><td>Owner alert + auto follow-up</td><td>Personal call from owner</td></tr>
+        <tr><td>Booked but no day-before confirm</td><td>24 hr before appointment</td><td>Verify tech assignment</td></tr>
+        <tr><td>In Progress &gt; 8 PM</td><td>Owner alert</td><td>Check on tech and customer</td></tr>
+        <tr><td>Closed Won but no review request fired</td><td>2 hr after close</td><td>Manual review request</td></tr>
+      </tbody>
+    </table>
+
+    <p>The stuck-lead system is what turns the pipeline from a passive list into an active operational tool. Most service businesses lose 15-25% of qualified leads to stage-stuck deals that nobody noticed. The alerts surface these in real time so they get acted on while the deal is still warm.</p>
+
+    <div class="inline-cta">
+      <h3>Want the pipeline <em>tuned for your industry?</em></h3>
+      <p>Free 30-minute AI audit. We map your current lead flow, configure the 8-stage pipeline for your specifics, and set the SLA timers and workflows.</p>
+      <a href="/#book" class="btn-gold">Book My Free AI Audit</a>
+    </div>
+
+    <h2>Industry-specific <em>customizations</em></h2>
+
+    <p>The 8-stage default works as a starting point for most service businesses. Industry adaptations are common.</p>
+
+    <h3>HVAC and plumbing</h3>
+    <p>Standard 8-stage. Stage 3 (Quote Sent) often skipped for emergency service calls that go straight to Booked. Stage 8 (Loyalty) heavily used for maintenance plans (annual tune-up, biannual filter change).</p>
+
+    <h3>Roofing</h3>
+    <p>Stage 3 (Quote Sent) typically extended to 7-14 day SLA because roofing decisions take longer. Stage 4 (Booked) often split into "Contract Signed" and "Scheduled" because roofing usually has a multi-week gap between commitment and work start.</p>
+
+    <h3>Dental and medical</h3>
+    <p>Stage 8 (Recurring) is the primary stage because most patient business is recurring. Recall workflows (6-month cleaning, annual exam) heavily automated.</p>
+
+    <h3>Real estate (seller-only model like Connor's)</h3>
+    <p>Customized pipeline: New Lead → Listing Appointment → Listing Signed → Active Listing → Pending → Closed → Repeat/Referral. Custom fields for property type, expected listing price, motivation.</p>
+
+    <h3>Recurring service (cleaning, lawn, pest)</h3>
+    <p>Stage 8 (Recurring) is the bulk of the business. Pipeline often runs different stages for "First Job" (acquisition) vs "Recurring" (retention).</p>
+
+    <h2>The reporting <em>each stage feeds</em></h2>
+
+    <p>The pipeline is also the reporting backbone. Standard reports the dashboard surfaces:</p>
+
+    <ul>
+      <li><strong>Lead source velocity:</strong> New Leads by source channel over the last 7/30/90 days.</li>
+      <li><strong>Conversion rate by stage:</strong> How many New Leads become Qualified, Qualified become Quoted, Quoted become Booked, Booked become Closed Won.</li>
+      <li><strong>Average time in stage:</strong> Where deals are stalling.</li>
+      <li><strong>Win rate by source:</strong> Which marketing channels produce closed jobs vs which produce only inquiries.</li>
+      <li><strong>Average ticket by source:</strong> Which channels send high-value vs low-value leads.</li>
+      <li><strong>Lost reasons aggregate:</strong> What is killing your deals (price, competitor, timing).</li>
+      <li><strong>Loyalty customer count and revenue:</strong> The recurring revenue base.</li>
+    </ul>
+
+    <p>The dashboard breakdown is in <a href="/blog/honorelevate-dashboard-monday-morning/">The HonorElevate Dashboard Every Monday Morning</a>.</p>
+
+    <h2>The bottom line</h2>
+
+    <p>The 8-stage pipeline is the operational backbone of service-business CRM. Every stage represents a meaningful state transition with automation hooks, SLA timing, and clear exit criteria. The stuck-lead alerts catch the leaks before they cost money. The reporting surfaces where deals are stalling so you can fix process problems instead of guessing.</p>
+
+    <p>Generic CRMs ship with empty pipelines and expect you to figure it out. HonorElevate ships with the 8-stage default already configured, the workflows already firing, the alerts already wired, and the reports already populated. Most of the value happens in week one, not week twelve.</p>
+
+    <p>For the pillar context, read <a href="/blog/service-business-crm-guide/">The Complete Guide to CRM and Pipeline for Local Service Businesses</a>. For tag and custom field discipline, read <a href="/blog/tags-custom-fields-crm/">Tags and Custom Fields: How Smart Segmentation Beats Generic CRM</a>.</p>
+
+  </article>
+
+  <section class="faq-section">
+    <h2>FAQ <em>·</em> Pipeline Stages</h2>
+    <details open>
+      <summary>Can I add or remove stages?</summary>
+      <div class="a">Yes. The 8-stage default is industry-tuned but every stage is configurable. Some businesses split stages (Booked into "Scheduled" and "Confirmed"). Some collapse stages (skip Quote Sent for service-call businesses). Configuration is part of onboarding.</div>
+    </details>
+    <details>
+      <summary>Can I have multiple pipelines for different service types?</summary>
+      <div class="a">Yes. Common configurations: one pipeline for residential service, one for commercial. One for new acquisition, one for recurring service. The default starts with one consolidated pipeline; you can split based on operational needs.</div>
+    </details>
+    <details>
+      <summary>How do I move leads between stages manually?</summary>
+      <div class="a">Drag and drop in the dashboard. Or use the contact-record stage selector. Most stage changes are automatic (booking moves to Booked, payment moves to Closed Won) but manual overrides are always available.</div>
+    </details>
+    <details>
+      <summary>What if a lead does not fit any stage?</summary>
+      <div class="a">Catch-all "Other" stage available with custom tags. Rare in practice because the 8 stages cover the operational reality of nearly every service-business interaction. Edge cases get reviewed in monthly process check-ins.</div>
+    </details>
+  </section>
+
+  <section class="read-next">
+    <div class="label">› Read Next</div>
+    <div class="read-next-grid">
+      <a href="/blog/service-business-crm-guide/" class="read-next-card">
+        <div class="arrow">› Series 5 · Pillar</div>
+        <h3>The Complete Guide to CRM and Pipeline for Local Service Businesses</h3>
+        <p>The operator's manual. Why generic CRMs fail, what HonorElevate replaces, integration architecture.</p>
+      </a>
+      <a href="/blog/8-stage-pipeline-books-jobs/" class="read-next-card">
+        <div class="arrow">› Series 5 · Spoke</div>
+        <h3>From New Lead to Closed Won: The 8-Stage Pipeline That Books Jobs</h3>
+        <p>A real-shape walk through every stage with a single deal.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="author-block">
+    <div class="av"></div>
+    <div>
+      <h4>Connor MacIvor</h4>
+      <div class="title">AI Growth Architect · Santa Clarita, CA</div>
+      <p>27+ years running businesses. Self-taught programmer since 1983. Direct line: <a href="tel:661-400-1720">661-400-1720</a>. More at <a href="https://connorwithhonor.com/">connorwithhonor.com</a>.</p>
+    </div>
+  </section>
+
+  <section class="post-final-cta">
+    <h3>Stop guessing where leads stall. <em>Watch the pipeline.</em></h3>
+    <p>Free 30-minute AI audit. We map your current flow, configure the 8-stage pipeline, and have the SLA alerts firing within 5-7 days.</p>
+    <a href="/#book" class="btn-gold">Book Free AI Audit</a>
+    <span class="or">or call Connor: <a href="tel:661-400-1720">(661) 400-1720</a></span>
+  </section>
+
+</div>
+
+<div class="sticky-bar" id="stickyBar">
+  <p>Every stage has an SLA. Stuck leads get surfaced.</p>
+  <a href="/#book" class="btn-gold">Book Free Audit</a>
+  <a href="tel:661-400-1720" class="btn-call">&#9742; Call Now</a>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo"><span class="face"></span> Honor<span>Elevate</span></a>
+      <p>AI business automation built by Connor MacIvor. 27+ years of business discipline powering systems that work while you sleep.</p>
+    </div>
+    <div class="footer-col"><h4>Solutions</h4><a href="/#solutions">AI Voice Agents</a><a href="/#solutions">Lead Automation</a><a href="/#solutions">CRM + Pipeline</a><a href="/#solutions">Review Engine</a></div>
+    <div class="footer-col"><h4>Resources</h4><a href="/blog/">Blog</a><a href="/#book">Free AI Audit</a><a href="tel:661-299-7299">Call Betty (Demo)</a><a href="mailto:connor@honorelevate.com">Email Connor</a></div>
+    <div class="footer-col"><h4>Ecosystem</h4><a href="https://connorwithhonor.com">Connor with Honor</a><a href="https://hireaivoice.com">HireAIVoice</a><a href="https://sellersonlyagent.com">Sellers Only Agent</a><a href="https://scv123.com">SCV123</a></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 HonorElevate. All Rights Reserved.</p>
+    <p>Coded by Connor with Honor | <a href="/">AI Growth Architect</a></p>
+    <p><a href="/terms-of-service">Terms</a> &nbsp;|&nbsp; <a href="/privacy-policy">Privacy</a></p>
+  </div>
+</footer>
+
+<script>
+const stickyBar=document.getElementById('stickyBar');
+const article=document.querySelector('.post-body');
+if (article) {const obs=new IntersectionObserver(e=>{e.forEach(entry=>entry.isIntersecting?stickyBar.classList.add('visible'):stickyBar.classList.remove('visible'))},{threshold:0.1});obs.observe(article);}
+</script>
+</body>
+</html>

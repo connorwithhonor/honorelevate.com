@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Recurring Billing for Maintenance Plans (And How to Not Lose Customers to Failed Payments)</title><meta name="description" content="How HonorElevate handles recurring billing for service business maintenance plans. Automated monthly charges, failed-payment recovery workflow that saves 50-65% of churn, dunning sequences that protect MRR."><meta name="author" content="Connor MacIvor"><meta name="robots" content="index, follow"><link rel="canonical" href="https://honorelevate.com/blog/recurring-billing-maintenance-plans/"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"><link rel="stylesheet" href="/blog/styles.css"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","@id":"https://honorelevate.com/blog/recurring-billing-maintenance-plans/#article","headline":"Recurring Billing for Maintenance Plans","description":"Failed payment recovery that saves 50-65% of churn.","image":"https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png","datePublished":"2026-05-16","dateModified":"2026-05-16","author":{"@type":"Person","name":"Connor MacIvor","url":"https://connorwithhonor.com/","jobTitle":"AI Growth Architect"},"publisher":{"@type":"Organization","name":"HonorElevate","logo":{"@type":"ImageObject","url":"https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://honorelevate.com/blog/recurring-billing-maintenance-plans/"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://honorelevate.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://honorelevate.com/blog/"},{"@type":"ListItem","position":3,"name":"Recurring Billing","item":"https://honorelevate.com/blog/recurring-billing-maintenance-plans/"}]}</script></head><body>
+<nav class="site-nav"><div class="nav-inner"><a href="/" class="nav-logo"><span class="face"></span> Honor<span>Elevate</span></a><button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Menu">&#9776;</button><div class="nav-links"><a href="/#problems">The Problem</a><a href="/#solutions">What I Build</a><a href="/#proof">Proof</a><a href="/blog/" class="current">Blog</a><a href="tel:661-400-1720">&#9742; (661) 400-1720</a><a href="/#book" class="btn-gold">Free AI Audit</a></div></div></nav>
+<div class="container-narrow">
+<div class="breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span class="current">Recurring Billing</span></div>
+<header class="post-header"><span class="post-cluster">› Series 11 · Recurring</span><h1 class="post-title">Recurring Billing for Maintenance Plans <em>(And How to Not Lose Customers to Failed Payments)</em></h1><div class="post-meta"><span class="author"><span class="av"></span> By <b>Connor MacIvor</b></span><span class="dot">·</span><span>Published May 16, 2026</span><span class="dot">·</span><span class="read-time">8 min read</span></div></header>
+
+<div class="quick-answer"><div class="label">› Quick Answer</div><p><strong>Recurring billing for maintenance plans is the foundation of service-business MRR. The key challenge is not setting it up - it is recovering failed payments before they cause churn. HonorElevate's dunning sequence recovers 50-65% of failed charges through automated retry + customer-friendly card update flow.</strong> Without proper recovery, 25-40% of plan members silently churn every year just from expired or replaced cards. With recovery, churn drops to 8-15%.</p></div>
+
+<div class="tldr"><h3>TL;DR</h3><ul><li><strong>Recurring charges:</strong> Stripe handles monthly card or ACH charges automatically.</li><li><strong>Failed payment trigger:</strong> card declines, expires, or is replaced.</li><li><strong>Dunning sequence:</strong> 5-touch automated recovery (SMS + email + retry).</li><li><strong>Recovery rate:</strong> 50-65% of failed charges saved.</li><li><strong>Churn impact:</strong> drops from 25-40% annual to 8-15% with proper recovery.</li><li><strong>Customer experience:</strong> friendly "update your card" prompts vs harsh cancellation.</li></ul></div>
+
+<article class="post-body">
+
+<p>Setting up recurring billing is easy. Stripe does it. Square does it. The real challenge is recovery when payments fail, which they will. Cards expire. Customers replace them. Some get re-issued after fraud. Without a recovery sequence, 25-40% of plan members silently churn every year purely from payment failures. With one, churn drops to single digits. This post is the sequence.</p>
+
+<h2>How recurring billing <em>actually fires</em></h2>
+
+<p>Customer signs up for the $24/month maintenance plan. Card or bank account stored via Stripe (encrypted, PCI-compliant). System charges automatically on the same day each month. Successful charges produce a receipt SMS and CRM update. Failed charges trigger the recovery sequence.</p>
+
+<h2>Common reasons charges fail</h2>
+
+<ul>
+<li><strong>Card expired</strong> (most common, ~40% of failures)</li>
+<li><strong>Card replaced</strong> (lost, stolen, or upgraded; ~25%)</li>
+<li><strong>Insufficient funds</strong> (~15%)</li>
+<li><strong>Bank fraud-flag</strong> (~10%)</li>
+<li><strong>Bank account closed</strong> (~5%)</li>
+<li><strong>Other</strong> (~5%)</li>
+</ul>
+
+<p>Most are recoverable. The customer wants to keep the plan. They just need a friendly nudge to update payment.</p>
+
+<h2>The 5-touch dunning sequence</h2>
+
+<h3>Touch 1: Day 1 of failure</h3>
+<p>SMS: <em>"Hi Maria, heads up: the card on file for your maintenance plan declined today. Quick update here: [link]. Plan stays active while you update."</em></p>
+
+<h3>Touch 2: Day 3</h3>
+<p>Email with same message + link. Slightly more detail. Some customers respond to email rather than SMS.</p>
+
+<h3>Touch 3: Day 7</h3>
+<p>SMS reminder: <em>"Hi Maria, friendly reminder to update the card for your maintenance plan. We can keep it active a few more days while you sort it out."</em></p>
+
+<h3>Touch 4: Day 14</h3>
+<p>Owner SMS alert. Owner makes personal call to discuss. High-value customer retention conversation.</p>
+
+<h3>Touch 5: Day 21</h3>
+<p>If still unresolved, plan suspended (not canceled). Service visits paused. Customer can resume by updating card. SMS notifies them of suspension.</p>
+
+<h3>Day 60</h3>
+<p>If still no update, plan canceled. Customer added to winback queue.</p>
+
+<h2>The recovery math</h2>
+
+<p>For a typical mid-volume HVAC business with 240 active plan members at $24/month ($69K annual MRR):</p>
+
+<table>
+<thead><tr><th>Scenario</th><th>Annual churn rate</th><th>Lost MRR</th></tr></thead>
+<tbody>
+<tr><td>No recovery sequence</td><td>32%</td><td>$22,080</td></tr>
+<tr><td>With 5-touch recovery</td><td>11%</td><td>$7,590</td></tr>
+<tr><td>Recovered MRR</td><td>—</td><td><strong>$14,490</strong></td></tr>
+</tbody>
+</table>
+
+<p>$14,490 in recovered annual recurring revenue from a workflow that fires automatically. The discipline of running the recovery sequence is what makes maintenance plans actually sustainable.</p>
+
+<div class="callout"><span class="ico">›</span><div><strong>The behavioral truth:</strong> most failed-payment customers want to stay subscribed. They are not trying to cancel. They just need a friendly reminder to update payment. Harsh cancellation language ("Your service is being discontinued") loses them. Friendly update prompts keep them.</div></div>
+
+<h2>The card update flow</h2>
+
+<p>The SMS link opens a mobile page with a single field: update your payment method. Apple Pay, Google Pay, or new card. 10-15 seconds for the customer. Plan continues without interruption.</p>
+
+<p>For ACH-based plans, the link opens a bank-account update flow via Plaid integration. Similarly friction-free.</p>
+
+<div class="inline-cta"><h3>Want <em>recurring billing protected?</em></h3><p>Free 30-minute AI audit. We configure plan billing and the recovery sequence inside 5-7 days.</p><a href="/#book" class="btn-gold">Book My Free AI Audit</a></div>
+
+<h2>The bottom line</h2>
+
+<p>Recurring billing without a recovery sequence is a leaky bucket. The 5-touch dunning sequence cuts churn from 32% to 11% annually. For a business with $69K in plan MRR, that recovers $14,490/year of revenue that would silently disappear.</p>
+
+<p>For the pillar, read <a href="/blog/payments-documents-guide/">The Complete Guide to Payments, Invoicing and Documents</a>. For the broader plan workflow, read <a href="/blog/maintenance-plan-reminder-workflows/">Maintenance Plan Reminder Workflows</a>.</p>
+
+</article>
+
+<section class="faq-section"><h2>FAQ <em>·</em> Recurring Billing</h2><details open><summary>Should I require ACH instead of cards?</summary><div class="a">ACH has fewer failures (cards expire, ACH does not). But customer adoption of ACH is lower. Offer both. Slight ACH discount can incentivize adoption.</div></details><details><summary>What if a customer disputes a recurring charge?</summary><div class="a">Signed plan agreement (digital signature at signup) is strong evidence. Most disputes resolve in business favor. The audit log helps.</div></details></section>
+
+<section class="read-next"><div class="label">› Read Next</div><div class="read-next-grid"><a href="/blog/payments-documents-guide/" class="read-next-card"><div class="arrow">› Series 11 · Pillar</div><h3>The Complete Guide to Payments, Invoicing and Documents for Service Businesses</h3><p>The operator's manual.</p></a><a href="/blog/maintenance-plan-reminder-workflows/" class="read-next-card"><div class="arrow">› Series 6 · Spoke</div><h3>Maintenance Plan Reminder Workflows That Keep Customers For Years</h3><p>The broader plan lifecycle.</p></a></div></section>
+
+<section class="author-block"><div class="av"></div><div><h4>Connor MacIvor</h4><div class="title">AI Growth Architect · Santa Clarita, CA</div><p>27+ years running businesses. Self-taught programmer since 1983. Direct line: <a href="tel:661-400-1720">661-400-1720</a>. More at <a href="https://connorwithhonor.com/">connorwithhonor.com</a>.</p></div></section>
+
+<section class="post-final-cta"><h3>Protect your MRR. <em>Recover failed payments.</em></h3><p>Free 30-minute AI audit. We configure the dunning sequence in 5-7 days.</p><a href="/#book" class="btn-gold">Book Free AI Audit</a><span class="or">or call Connor: <a href="tel:661-400-1720">(661) 400-1720</a></span></section>
+</div>
+<div class="sticky-bar" id="stickyBar"><p>32% churn → 11%. Math.</p><a href="/#book" class="btn-gold">Book Free Audit</a><a href="tel:661-400-1720" class="btn-call">&#9742; Call Now</a></div>
+<footer><div class="footer-grid"><div class="footer-brand"><a href="/" class="nav-logo"><span class="face"></span> Honor<span>Elevate</span></a><p>AI business automation built by Connor MacIvor. 27+ years of business discipline powering systems that work while you sleep.</p></div><div class="footer-col"><h4>Solutions</h4><a href="/#solutions">AI Voice Agents</a><a href="/#solutions">Lead Automation</a><a href="/#solutions">CRM + Pipeline</a><a href="/#solutions">Review Engine</a></div><div class="footer-col"><h4>Resources</h4><a href="/blog/">Blog</a><a href="/#book">Free AI Audit</a><a href="tel:661-299-7299">Call Betty (Demo)</a><a href="mailto:connor@honorelevate.com">Email Connor</a></div><div class="footer-col"><h4>Ecosystem</h4><a href="https://connorwithhonor.com">Connor with Honor</a><a href="https://hireaivoice.com">HireAIVoice</a><a href="https://sellersonlyagent.com">Sellers Only Agent</a><a href="https://scv123.com">SCV123</a></div></div><div class="footer-bottom"><p>&copy; 2026 HonorElevate. All Rights Reserved.</p><p>Coded by Connor with Honor | <a href="/">AI Growth Architect</a></p><p><a href="/terms-of-service">Terms</a> &nbsp;|&nbsp; <a href="/privacy-policy">Privacy</a></p></div></footer>
+<script>const stickyBar=document.getElementById('stickyBar');const article=document.querySelector('.post-body');if(article){const obs=new IntersectionObserver(e=>{e.forEach(entry=>entry.isIntersecting?stickyBar.classList.add('visible'):stickyBar.classList.remove('visible'))},{threshold:0.1});obs.observe(article);}</script>
+</body></html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bulk SMS Compliance: TCPA, 10DLC, A2P Registration (Honest Version)</title>
+<meta name="description" content="The honest plain-English breakdown of SMS compliance for service businesses. TCPA prior express consent, 10DLC registration, A2P brand verification, carrier filtering, and what you actually have to do.">
+<meta name="keywords" content="TCPA SMS compliance, 10DLC registration, A2P SMS, business SMS rules, missed call text back compliance, service business SMS legal">
+<meta name="author" content="Connor MacIvor">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://honorelevate.com/blog/sms-compliance-tcpa-10dlc-a2p/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bulk SMS Compliance: TCPA, 10DLC, A2P Registration (Honest Version)">
+<meta property="og:description" content="Plain-English breakdown. TCPA, 10DLC, A2P, carrier filtering, and what you actually have to do.">
+<meta property="og:url" content="https://honorelevate.com/blog/sms-compliance-tcpa-10dlc-a2p/">
+<meta property="og:image" content="https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png">
+<meta property="article:author" content="Connor MacIvor">
+<meta property="article:section" content="Missed Call Text Back">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/styles.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","@id":"https://honorelevate.com/blog/sms-compliance-tcpa-10dlc-a2p/#article",
+"headline":"Bulk SMS Compliance: TCPA, 10DLC, A2P Registration (Honest Version)",
+"description":"The plain-English compliance breakdown for service businesses using SMS automation.",
+"image":"https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png",
+"datePublished":"2026-05-16","dateModified":"2026-05-16",
+"author":{"@type":"Person","name":"Connor MacIvor","url":"https://connorwithhonor.com/","jobTitle":"AI Growth Architect"},
+"publisher":{"@type":"Organization","name":"HonorElevate","logo":{"@type":"ImageObject","url":"https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png"}},
+"mainEntityOfPage":{"@type":"WebPage","@id":"https://honorelevate.com/blog/sms-compliance-tcpa-10dlc-a2p/"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://honorelevate.com/"},
+  {"@type":"ListItem","position":2,"name":"Blog","item":"https://honorelevate.com/blog/"},
+  {"@type":"ListItem","position":3,"name":"SMS Compliance","item":"https://honorelevate.com/blog/sms-compliance-tcpa-10dlc-a2p/"}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"What is TCPA and does it apply to missed call text back?","acceptedAnswer":{"@type":"Answer","text":"TCPA is the federal Telephone Consumer Protection Act. It requires prior express consent before sending marketing SMS. Missed call text back is generally transactional because the caller initiated contact, which satisfies the prior-express-consent standard. You still need 10DLC and A2P registration for the sending number."}},
+  {"@type":"Question","name":"What is 10DLC?","acceptedAnswer":{"@type":"Answer","text":"10DLC stands for 10-Digit Long Code. It is the modern framework that lets businesses send SMS from local 10-digit phone numbers at scale. All A2P (application-to-person) traffic in the US must run through registered 10DLC campaigns or face heavy filtering and message deliverability issues."}},
+  {"@type":"Question","name":"How long does A2P registration take?","acceptedAnswer":{"@type":"Answer","text":"Brand registration with The Campaign Registry: 1-3 business days. Campaign registration: 2-7 days depending on use case category. HonorElevate handles all registration during platform setup so the business is fully compliant before any SMS fires."}}
+]}
+</script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><span class="face"></span> Honor<span>Elevate</span></a>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Menu">&#9776;</button>
+    <div class="nav-links">
+      <a href="/#problems">The Problem</a><a href="/#solutions">What I Build</a><a href="/#proof">Proof</a>
+      <a href="/blog/" class="current">Blog</a><a href="tel:661-400-1720">&#9742; (661) 400-1720</a>
+      <a href="/#book" class="btn-gold">Free AI Audit</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container-narrow">
+  <div class="breadcrumb">
+    <a href="/">Home</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span class="current">SMS Compliance</span>
+  </div>
+
+  <header class="post-header">
+    <span class="post-cluster">› Series 3 · Compliance</span>
+    <h1 class="post-title">Bulk SMS Compliance: <em>TCPA, 10DLC, A2P</em> (Honest Version)</h1>
+    <div class="post-meta">
+      <span class="author"><span class="av"></span> By <b>Connor MacIvor</b></span>
+      <span class="dot">·</span><span>Published May 16, 2026</span><span class="dot">·</span><span class="read-time">10 min read</span>
+    </div>
+  </header>
+
+  <div class="post-hero">
+    <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
+      <rect width="800" height="360" fill="#1a1f2b"/>
+      <text x="400" y="48" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#8a857b" letter-spacing="3">THE THREE LAYERS</text>
+      <g fill="#1a1f2b" stroke="#e8a838" stroke-width="2">
+        <rect x="120" y="80" width="180" height="200" rx="14"/>
+        <rect x="310" y="80" width="180" height="200" rx="14"/>
+        <rect x="500" y="80" width="180" height="200" rx="14"/>
+      </g>
+      <g font-family="DM Serif Display" font-size="22" fill="#e8a838" text-anchor="middle">
+        <text x="210" y="130">TCPA</text>
+        <text x="400" y="130">10DLC</text>
+        <text x="590" y="130">A2P</text>
+      </g>
+      <g font-family="DM Sans" font-size="11" fill="#d4cfc5" text-anchor="middle">
+        <text x="210" y="160">Federal law</text>
+        <text x="400" y="160">Carrier framework</text>
+        <text x="590" y="160">Registration system</text>
+      </g>
+      <g font-family="DM Sans" font-size="10" fill="#8a857b" text-anchor="middle">
+        <text x="210" y="200">Consent rules</text>
+        <text x="210" y="216">Quiet hours</text>
+        <text x="210" y="232">STOP / HELP</text>
+        <text x="210" y="248">Caller TCPA</text>
+
+        <text x="400" y="200">Local 10-digit</text>
+        <text x="400" y="216">Phone numbers</text>
+        <text x="400" y="232">at scale</text>
+        <text x="400" y="248">Carrier-approved</text>
+
+        <text x="590" y="200">Brand registry</text>
+        <text x="590" y="216">Campaign category</text>
+        <text x="590" y="232">TCR vetting</text>
+        <text x="590" y="248">Trust score</text>
+      </g>
+      <text x="400" y="320" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#5c5850">Three layers. All required. HonorElevate handles the registration mechanics.</text>
+    </svg>
+  </div>
+
+  <div class="quick-answer">
+    <div class="label">› Quick Answer</div>
+    <p><strong>SMS automation is regulated by three converging frameworks: TCPA (federal law), 10DLC (carrier framework for business SMS), and A2P (brand and campaign registration with The Campaign Registry).</strong> Missed call text back is transactional and TCPA-cleaner than cold marketing SMS, but 10DLC and A2P registration are still required for any business sending automated SMS in the US. HonorElevate handles registration during platform setup so the business is compliant before the first SMS fires. This is the plain-English breakdown.</p>
+  </div>
+
+  <div class="tldr">
+    <h3>TL;DR</h3>
+    <ul>
+      <li><strong>TCPA = federal law.</strong> Requires consent before marketing SMS. Inbound call counts as consent for the responsive MCTB SMS.</li>
+      <li><strong>10DLC = carrier framework.</strong> Lets businesses send SMS from local 10-digit phone numbers at scale. Required for all A2P traffic.</li>
+      <li><strong>A2P = registration system.</strong> Brand registration plus campaign registration with The Campaign Registry. 1-7 business days.</li>
+      <li><strong>STOP / HELP keywords:</strong> must be handled. Reply STOP must instantly stop messages.</li>
+      <li><strong>Quiet hours:</strong> federal TCPA generally restricts texts before 8 AM and after 9 PM local. Responsive MCTB inherits caller's time.</li>
+      <li><strong>HonorElevate handles registration during setup.</strong> Owner provides EIN, business address, sample messages. We file. ~3-5 business days.</li>
+      <li><strong>This is not legal advice.</strong> For high-stakes industries (healthcare, financial, debt collection) consult a TCPA attorney.</li>
+    </ul>
+  </div>
+
+  <article class="post-body">
+
+    <p>SMS compliance has a reputation for being terrifying. The TCPA fines run into the hundreds of millions. 10DLC sounds like a hacker forum. A2P sounds like a robot. The reality is simpler than the acronyms suggest. This post walks through each layer in plain English, what actually applies to a service business running missed call text back, and what HonorElevate handles for you vs what you have to provide.</p>
+
+    <p><strong>One important framing:</strong> I am not a lawyer. This is operator-grade compliance education, not legal advice. For high-risk industries (healthcare, debt collection, financial services, multi-state campaigns at scale) get an actual TCPA attorney. For a standard service business running MCTB and routine SMS follow-up, the framework below covers 95% of what matters.</p>
+
+    <h2>Layer 1: <em>TCPA</em></h2>
+
+    <p>The Telephone Consumer Protection Act is the 1991 federal law that governs telephone (and now SMS) consumer protection. It is the law you have heard about because of the lawsuits.</p>
+
+    <h3>What TCPA actually requires</h3>
+
+    <p>For SMS, the core requirements are:</p>
+
+    <ul>
+      <li><strong>Prior express written consent</strong> for marketing SMS sent to a wireless number.</li>
+      <li><strong>Prior express consent</strong> (not necessarily written) for transactional or informational SMS.</li>
+      <li><strong>Honor opt-out</strong> within 10 business days of a STOP request (in practice, immediately).</li>
+      <li><strong>Identify yourself</strong> in the message.</li>
+      <li><strong>Quiet hours:</strong> generally 8 AM to 9 PM local time for outbound messaging (this is from related FCC rules and state laws, not TCPA proper, but enforced together).</li>
+    </ul>
+
+    <h3>How TCPA applies to MCTB specifically</h3>
+
+    <p>The key question: is the MCTB SMS marketing or transactional?</p>
+
+    <p>TCPA case law and FCC guidance treats a response to an inbound consumer-initiated contact as transactional. The caller dialed your business with the intent to engage. Your responsive SMS continues that engagement. The inbound call serves as the consent record. The MCTB SMS is therefore transactional, which means:</p>
+
+    <ul>
+      <li>Prior express written consent is not required (the inbound call satisfies the lower consent standard).</li>
+      <li>Quiet hours technically apply, but if the caller dialed you at 11 PM, the responsive SMS at 11 PM is generally permissible because they initiated.</li>
+      <li>You still must honor STOP requests and identify yourself in the message.</li>
+    </ul>
+
+    <p>Where it gets fuzzy:</p>
+
+    <ul>
+      <li><strong>Follow-up SMS at 4 hours.</strong> If the caller did not reply to the first SMS, the follow-up is still arguably transactional but skirts the marketing edge. The cleanest position: include STOP keyword and keep the content service-focused, not promotional.</li>
+      <li><strong>Promotional SMS to that contact later.</strong> Different category entirely. Requires actual marketing consent (form opt-in, checkbox, written agreement), not just the original inbound call.</li>
+    </ul>
+
+    <div class="callout">
+      <span class="ico">›</span>
+      <div><strong>The compliance principle:</strong> the inbound call lets you respond. It does not give you a permanent license to market. Treat MCTB as the response to a specific call, not a permission slip for general marketing campaigns.</div>
+    </div>
+
+    <h2>Layer 2: <em>10DLC</em></h2>
+
+    <p>10DLC stands for "10-Digit Long Code." It is the modern framework, established by US wireless carriers in 2021, that lets businesses send SMS from regular 10-digit phone numbers (the kind your customers call) at scale. Before 10DLC, business SMS at any meaningful volume had to go through "short codes" (5-6 digit numbers) which were expensive and slow to provision.</p>
+
+    <h3>Why 10DLC exists</h3>
+
+    <p>Carriers got tired of business SMS being indistinguishable from consumer texting, which led to spam, scams, and degraded user trust. 10DLC adds a registration and trust layer to business SMS without forcing every small business onto expensive short codes.</p>
+
+    <h3>What 10DLC requires</h3>
+
+    <p>To send automated SMS from a 10-digit number in the US:</p>
+
+    <ul>
+      <li><strong>Register the phone number</strong> as a business number (not consumer).</li>
+      <li><strong>Register the brand</strong> sending the SMS with The Campaign Registry (TCR).</li>
+      <li><strong>Register the campaign</strong> describing what the SMS is used for (customer support, missed call response, appointment confirmations, marketing, etc.).</li>
+      <li><strong>Pass carrier vetting</strong> which checks brand legitimacy, EIN match, and content category.</li>
+    </ul>
+
+    <h3>Throughput limits</h3>
+
+    <p>Carrier throughput on 10DLC depends on your assigned trust score. Standard small-business trust scores allow 1-10 messages per second per number. For MCTB volumes (sub-100 SMS per hour even at scale) this is plenty. For SMS marketing blasts you may hit throttling. The platform handles queue management automatically.</p>
+
+    <h2>Layer 3: <em>A2P</em></h2>
+
+    <p>A2P stands for "Application-to-Person" messaging, vs P2P (Person-to-Person, regular texting between two phones). Any SMS sent by software, not a human typing on a phone, is A2P. That includes MCTB, appointment confirmations, review request texts, follow-up sequences, and SMS marketing.</p>
+
+    <h3>A2P registration mechanics</h3>
+
+    <ol>
+      <li><strong>Brand registration</strong> with The Campaign Registry. You provide: legal business name, EIN, business address, business website, business email, primary contact name, contact phone, contact email, vertical, country. TCR vets the brand. Approval: 1-3 business days.</li>
+      <li><strong>Campaign registration</strong> for each SMS use case. You provide: campaign name, description, sample messages (5-10), use case category, opt-in flow description, opt-out flow description. Carrier vetting: 2-7 business days.</li>
+      <li><strong>Phone number assignment.</strong> Once brand and campaign are approved, your 10DLC phone numbers can send SMS under that campaign.</li>
+    </ol>
+
+    <h3>Use case categories that matter</h3>
+
+    <ul>
+      <li><strong>Customer Care</strong> (low-risk, easy approval): includes MCTB, appointment confirmations, service updates, basic customer service.</li>
+      <li><strong>Higher Education</strong> (medium-risk).</li>
+      <li><strong>Marketing</strong> (medium-risk, more scrutiny): promotional content, sales, offers.</li>
+      <li><strong>2FA / Account Notifications</strong> (medium-risk, specific use case).</li>
+      <li><strong>Polling / Voting / Charity / Public Safety Alerts</strong> (special categories).</li>
+      <li><strong>High-Risk Financial Services / Debt Collection / Cannabis / etc.</strong> (significant scrutiny, often need T-Mobile-specific approval).</li>
+    </ul>
+
+    <p>For most HonorElevate service-business deploys, the primary campaign is Customer Care covering MCTB, appointment confirmations, and review requests. A separate Marketing campaign covers promotional sends. Both run on the same phone numbers but with different content categorizations.</p>
+
+    <h2>What HonorElevate <em>handles for you</em></h2>
+
+    <p>During setup, the registration mechanics are on us. Specifically:</p>
+
+    <ul>
+      <li>10DLC phone number provisioning (or porting your existing number).</li>
+      <li>Brand registration with The Campaign Registry.</li>
+      <li>Campaign registration for each SMS use case (Customer Care, Marketing, etc.).</li>
+      <li>Carrier vetting and trust score management.</li>
+      <li>STOP / HELP keyword infrastructure (the platform handles these natively).</li>
+      <li>Quiet-hours enforcement for outbound non-response SMS.</li>
+      <li>Audit log of consent records (inbound call timestamps, opt-in form submissions, etc.).</li>
+    </ul>
+
+    <p>What you provide:</p>
+
+    <ul>
+      <li>Your EIN (employer identification number).</li>
+      <li>Your legal business name, address, website, and primary contact.</li>
+      <li>Sample messages for each use case (we draft, you approve).</li>
+      <li>Description of how you obtained or will obtain consent.</li>
+    </ul>
+
+    <p>Total time from "let's start" to "first SMS fires": 5-7 business days, with registration running in parallel to the rest of the build.</p>
+
+    <h2>The five things that <em>actually get you in trouble</em></h2>
+
+    <p>TCPA litigation is real and expensive. Plaintiff's lawyers actively look for non-compliant SMS programs. The five most common violations:</p>
+
+    <h3>1. Sending marketing SMS to non-consenting recipients</h3>
+    <p>Buying a list and texting it. Pulling phone numbers from public records and texting them. Adding existing email contacts to your SMS list without explicit SMS consent. Any of these is a TCPA jackpot for plaintiff lawyers. Statutory damages: $500-$1,500 per text.</p>
+
+    <h3>2. Ignoring STOP requests</h3>
+    <p>If a recipient replies STOP and you send another message to that number, you have created a per-text TCPA violation. HonorElevate's STOP handling is automatic at the platform level. You cannot accidentally text a STOP-list person.</p>
+
+    <h3>3. Texting during prohibited hours</h3>
+    <p>Outbound SMS before 8 AM or after 9 PM local time without specific consent. Quiet-hours enforcement is automatic for HonorElevate non-responsive sends. The platform respects recipient time zone.</p>
+
+    <h3>4. Misrepresenting your identity</h3>
+    <p>SMS that does not identify the sending business, or that uses someone else's brand name, creates fraud and TCPA exposure. The HonorElevate first-message template requires business name. Most of the templates in <a href="/blog/missed-call-text-back-message-templates/">What to Actually Say in Your Missed Call Text Back Sequence</a> already comply.</p>
+
+    <h3>5. Treating MCTB consent as permanent marketing consent</h3>
+    <p>The inbound call gives you license to respond. It does not give you license to text that contact six months later with a promotional offer. Different consent class. The cleanest practice: keep MCTB conversations transactional, and use a separate explicit opt-in for marketing.</p>
+
+    <div class="inline-cta">
+      <h3>Want compliance <em>handled by setup?</em></h3>
+      <p>Free 30-minute audit. We map your campaign categories, file the registrations, and have your numbers approved before the first SMS fires. You provide EIN and business basics. We do the rest.</p>
+      <a href="/#book" class="btn-gold">Book My Free AI Audit</a>
+    </div>
+
+    <h2>State-level rules <em>that compound on TCPA</em></h2>
+
+    <p>Some states layer additional restrictions on top of federal TCPA:</p>
+
+    <ul>
+      <li><strong>Florida (mini-TCPA / FTSA):</strong> 2021 law that lowered the bar for plaintiff suits. Particular caution required for FL-based campaigns. Quiet-hours strictly enforced.</li>
+      <li><strong>California (CCPA / CPRA):</strong> data privacy rules around how phone numbers are stored and used. Affects retention and consent management.</li>
+      <li><strong>Washington, Oklahoma, Maryland, others:</strong> emerging mini-TCPA frameworks. Most are aligned with federal TCPA but with local twists.</li>
+    </ul>
+
+    <p>For service businesses operating in one state with local customers, the federal framework is the primary concern. For multi-state operators, talk to a TCPA attorney about state-specific exposure.</p>
+
+    <h2>What you should <em>document</em></h2>
+
+    <p>If you ever face a TCPA complaint, the question is "show me the consent record." Documentation that holds up:</p>
+
+    <ul>
+      <li><strong>Inbound call log with timestamp</strong> (for MCTB responsive SMS).</li>
+      <li><strong>Form opt-in records</strong> with timestamp, form URL, IP, and explicit checkbox text (for marketing SMS).</li>
+      <li><strong>Conversation transcripts</strong> showing the recipient engaged with subsequent messages.</li>
+      <li><strong>STOP-list logs</strong> showing the recipient was honored when they opted out.</li>
+    </ul>
+
+    <p>HonorElevate retains all of this automatically. The platform has an audit-trail export for any contact you need to defend.</p>
+
+    <h2>The bottom line</h2>
+
+    <p>SMS compliance for service businesses running MCTB is straightforward when the platform handles the mechanics. The inbound call is your consent record for the responsive SMS. 10DLC and A2P registration is one-time setup. STOP, HELP, and quiet hours are platform-enforced. The five common violations are easy to avoid with disciplined defaults.</p>
+
+    <p>Where compliance gets real is when service-business SMS spills over into general marketing. That requires actual marketing consent, real opt-in records, and content discipline. Build the discipline early. The plaintiff bar is patient.</p>
+
+    <p>For the pillar context, read <a href="/blog/missed-call-text-back-guide/">The Complete Guide to Missed Call Text Back for Service Businesses</a>. For the message templates that comply by default, read <a href="/blog/missed-call-text-back-message-templates/">What to Actually Say in Your Missed Call Text Back Sequence</a>.</p>
+
+  </article>
+
+  <section class="faq-section">
+    <h2>FAQ <em>·</em> SMS Compliance</h2>
+    <details open>
+      <summary>Do I need to register with 10DLC even for missed call text back?</summary>
+      <div class="a">Yes. Any A2P (application-sent) SMS in the US requires 10DLC registration. The category is Customer Care (low-risk, fast approval). HonorElevate files during setup.</div>
+    </details>
+    <details>
+      <summary>What happens if I do not register and just send SMS anyway?</summary>
+      <div class="a">Carriers filter and throttle unregistered traffic aggressively. Deliverability drops to 30-50%. The messages that do land risk TCPA exposure. The platform will not send without proper registration because the deliverability and legal risk are unacceptable.</div>
+    </details>
+    <details>
+      <summary>Can I send marketing SMS to my MCTB contacts later?</summary>
+      <div class="a">Not without separate marketing consent. The inbound call consents to the responsive SMS, not to ongoing marketing. Get explicit marketing opt-in (form, checkbox, written agreement) before adding contacts to promotional campaigns.</div>
+    </details>
+    <details>
+      <summary>What if a contact replies "stop" lowercase or "STOP IT" or "unsubscribe"?</summary>
+      <div class="a">The platform handles dozens of opt-out variations including STOP, STOP IT, UNSUBSCRIBE, OPT OUT, CANCEL, END, QUIT, and lowercase versions. The system errs on the side of honoring intent.</div>
+    </details>
+    <details>
+      <summary>Is this legal advice?</summary>
+      <div class="a">No. This is operator-grade compliance education from someone running these systems daily, not legal advice. For high-stakes industries (healthcare, debt collection, financial services, cannabis) or multi-state campaigns at scale, consult a TCPA attorney.</div>
+    </details>
+  </section>
+
+  <section class="read-next">
+    <div class="label">› Read Next</div>
+    <div class="read-next-grid">
+      <a href="/blog/missed-call-text-back-guide/" class="read-next-card">
+        <div class="arrow">› Series 3 · Pillar</div>
+        <h3>The Complete Guide to Missed Call Text Back for Service Businesses</h3>
+        <p>The operator's manual. Why it works, what it costs, how to deploy it.</p>
+      </a>
+      <a href="/blog/missed-call-text-back-message-templates/" class="read-next-card">
+        <div class="arrow">› Series 3 · Spoke</div>
+        <h3>What to Actually Say in Your Missed Call Text Back Sequence</h3>
+        <p>Field-tested templates that comply by default and convert at 35-45%.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="author-block">
+    <div class="av"></div>
+    <div>
+      <h4>Connor MacIvor</h4>
+      <div class="title">AI Growth Architect · Santa Clarita, CA</div>
+      <p>27+ years running businesses. Self-taught programmer since 1983. Builds HonorElevate himself. Direct line: <a href="tel:661-400-1720">661-400-1720</a>. More at <a href="https://connorwithhonor.com/">connorwithhonor.com</a>.</p>
+    </div>
+  </section>
+
+  <section class="post-final-cta">
+    <h3>Compliance is <em>part of the build.</em></h3>
+    <p>Free 30-minute audit. We file the registrations, set the defaults, and have you sending compliant SMS in 5-7 business days. No legal homework on you.</p>
+    <a href="/#book" class="btn-gold">Book Free AI Audit</a>
+    <span class="or">or test the live MCTB: <a href="tel:661-299-7299">(661) 299-7299</a></span>
+  </section>
+
+</div>
+
+<div class="sticky-bar" id="stickyBar">
+  <p>Three frameworks. One platform handles all of them.</p>
+  <a href="/#book" class="btn-gold">Book Free Audit</a>
+  <a href="tel:661-299-7299" class="btn-call">&#9742; Test the SMS</a>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo"><span class="face"></span> Honor<span>Elevate</span></a>
+      <p>AI business automation built by Connor MacIvor. 27+ years of business discipline powering systems that work while you sleep.</p>
+    </div>
+    <div class="footer-col"><h4>Solutions</h4><a href="/#solutions">AI Voice Agents</a><a href="/#solutions">Lead Automation</a><a href="/#solutions">CRM + Pipeline</a><a href="/#solutions">Review Engine</a></div>
+    <div class="footer-col"><h4>Resources</h4><a href="/blog/">Blog</a><a href="/#book">Free AI Audit</a><a href="tel:661-299-7299">Call Betty (Demo)</a><a href="mailto:connor@honorelevate.com">Email Connor</a></div>
+    <div class="footer-col"><h4>Ecosystem</h4><a href="https://connorwithhonor.com">Connor with Honor</a><a href="https://hireaivoice.com">HireAIVoice</a><a href="https://sellersonlyagent.com">Sellers Only Agent</a><a href="https://scv123.com">SCV123</a></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 HonorElevate. All Rights Reserved.</p>
+    <p>Coded by Connor with Honor | <a href="/">AI Growth Architect</a></p>
+    <p><a href="/terms-of-service">Terms</a> &nbsp;|&nbsp; <a href="/privacy-policy">Privacy</a></p>
+  </div>
+</footer>
+
+<script>
+const stickyBar=document.getElementById('stickyBar');
+const article=document.querySelector('.post-body');
+if (article) {const obs=new IntersectionObserver(e=>{e.forEach(entry=>entry.isIntersecting?stickyBar.classList.add('visible'):stickyBar.classList.remove('visible'))},{threshold:0.1});obs.observe(article);}
+</script>
+</body>
+</html>

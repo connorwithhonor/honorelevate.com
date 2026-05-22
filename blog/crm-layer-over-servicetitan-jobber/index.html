@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why ServiceTitan / Jobber / Housecall Pro Users Still Need a CRM Layer</title>
+<meta name="description" content="The integration architecture between HonorElevate (customer engagement layer) and ServiceTitan, Jobber, Housecall Pro (job management). What each platform owns, how the handoff works, and the math behind running both.">
+<meta name="keywords" content="ServiceTitan CRM, Jobber CRM integration, Housecall Pro CRM, service business CRM layer, customer engagement vs job management, HonorElevate ServiceTitan">
+<meta name="author" content="Connor MacIvor">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://honorelevate.com/blog/crm-layer-over-servicetitan-jobber/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Why ServiceTitan / Jobber / Housecall Pro Users Still Need a CRM Layer">
+<meta property="og:description" content="The integration architecture. What each platform owns. How the handoff actually works.">
+<meta property="og:url" content="https://honorelevate.com/blog/crm-layer-over-servicetitan-jobber/">
+<meta property="og:image" content="https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png">
+<meta property="article:author" content="Connor MacIvor">
+<meta property="article:section" content="CRM & Pipeline">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/styles.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","@id":"https://honorelevate.com/blog/crm-layer-over-servicetitan-jobber/#article",
+"headline":"Why ServiceTitan / Jobber / Housecall Pro Users Still Need a CRM Layer",
+"description":"The integration architecture. What each platform owns. How the handoff actually works.",
+"image":"https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png",
+"datePublished":"2026-05-16","dateModified":"2026-05-16",
+"author":{"@type":"Person","name":"Connor MacIvor","url":"https://connorwithhonor.com/","jobTitle":"AI Growth Architect"},
+"publisher":{"@type":"Organization","name":"HonorElevate","logo":{"@type":"ImageObject","url":"https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png"}},
+"mainEntityOfPage":{"@type":"WebPage","@id":"https://honorelevate.com/blog/crm-layer-over-servicetitan-jobber/"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://honorelevate.com/"},
+  {"@type":"ListItem","position":2,"name":"Blog","item":"https://honorelevate.com/blog/"},
+  {"@type":"ListItem","position":3,"name":"CRM Layer Over Job Management","item":"https://honorelevate.com/blog/crm-layer-over-servicetitan-jobber/"}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Does HonorElevate replace ServiceTitan, Jobber, or Housecall Pro?","acceptedAnswer":{"@type":"Answer","text":"No. HonorElevate is the customer engagement layer (calls, SMS, web chat, leads, pipeline, reviews, automation). ServiceTitan, Jobber, and Housecall Pro are job management platforms (dispatch, technician mobile app, parts, invoicing). They are complementary. HonorElevate hands clean qualified leads to your job management software via direct API integration."}},
+  {"@type":"Question","name":"What does HonorElevate add on top of ServiceTitan?","acceptedAnswer":{"@type":"Answer","text":"AI voice agent for inbound calls, missed call text back automation, web chat with reply handling, review request engine, lead nurture sequences, abandoned-quote follow-up workflows, and one unified inbox for all customer communication. ServiceTitan handles what happens after the job is booked. HonorElevate handles everything that gets the job booked."}},
+  {"@type":"Question","name":"How does the integration handoff work?","acceptedAnswer":{"@type":"Answer","text":"Bidirectional API integration. HonorElevate pushes booked appointments to ServiceTitan/Jobber/Housecall Pro for dispatch. The job-management platform pushes job-completion events back to HonorElevate to trigger review requests and pipeline updates. Customer data syncs in both directions. Most integrations are live within 24-48 hours of platform deploy."}}
+]}
+</script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><span class="face"></span> Honor<span>Elevate</span></a>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Menu">&#9776;</button>
+    <div class="nav-links">
+      <a href="/#problems">The Problem</a><a href="/#solutions">What I Build</a><a href="/#proof">Proof</a>
+      <a href="/blog/" class="current">Blog</a><a href="tel:661-400-1720">&#9742; (661) 400-1720</a>
+      <a href="/#book" class="btn-gold">Free AI Audit</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container-narrow">
+  <div class="breadcrumb">
+    <a href="/">Home</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span class="current">CRM Layer Over Job Management</span>
+  </div>
+
+  <header class="post-header">
+    <span class="post-cluster">› Series 5 · The Stack</span>
+    <h1 class="post-title">Why ServiceTitan / Jobber / Housecall Pro Users <em>Still Need a CRM Layer</em></h1>
+    <div class="post-meta">
+      <span class="author"><span class="av"></span> By <b>Connor MacIvor</b></span>
+      <span class="dot">·</span><span>Published May 16, 2026</span><span class="dot">·</span><span class="read-time">10 min read</span>
+    </div>
+  </header>
+
+  <div class="post-hero">
+    <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
+      <rect width="800" height="360" fill="#1a1f2b"/>
+      <text x="400" y="44" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#8a857b" letter-spacing="3">TWO LAYERS · ONE STACK</text>
+
+      <g transform="translate(80,80)">
+        <rect width="280" height="100" rx="14" fill="#0f1219" stroke="#e8a838" stroke-width="2"/>
+        <text x="20" y="32" font-family="DM Sans" font-size="11" fill="#e8a838" letter-spacing="2">CUSTOMER ENGAGEMENT</text>
+        <text x="20" y="58" font-family="DM Serif Display" font-size="18" fill="#f5f1eb">HonorElevate</text>
+        <g font-family="DM Sans" font-size="10" fill="#d4cfc5">
+          <text x="20" y="80">Calls · SMS · Chat · Reviews</text>
+          <text x="20" y="94">Leads · Pipeline · Automation</text>
+        </g>
+      </g>
+
+      <g transform="translate(440,80)">
+        <rect width="280" height="100" rx="14" fill="#0f1219" stroke="#8a857b" stroke-width="2"/>
+        <text x="20" y="32" font-family="DM Sans" font-size="11" fill="#d4cfc5" letter-spacing="2">JOB MANAGEMENT</text>
+        <text x="20" y="58" font-family="DM Serif Display" font-size="18" fill="#f5f1eb">ServiceTitan / Jobber</text>
+        <g font-family="DM Sans" font-size="10" fill="#d4cfc5">
+          <text x="20" y="80">Dispatch · Tech mobile app</text>
+          <text x="20" y="94">Parts · Invoicing · Payroll</text>
+        </g>
+      </g>
+
+      <g stroke="#e8a838" stroke-width="2.5" fill="none">
+        <path d="M360,130 L440,130" marker-end="url(#arrow1)"/>
+        <path d="M440,150 L360,150" marker-end="url(#arrow2)"/>
+      </g>
+      <defs>
+        <marker id="arrow1" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 Z" fill="#e8a838"/>
+        </marker>
+        <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 Z" fill="#e8a838"/>
+        </marker>
+      </defs>
+
+      <text x="400" y="124" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#e8a838">Booked job</text>
+      <text x="400" y="166" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#e8a838">Job complete</text>
+
+      <g transform="translate(140,220)">
+        <text x="0" y="0" font-family="DM Sans" font-size="11" fill="#8a857b">› Customer's first call lands here</text>
+        <text x="0" y="20" font-family="DM Sans" font-size="11" fill="#8a857b">› AI answers, qualifies, books</text>
+        <text x="0" y="40" font-family="DM Sans" font-size="11" fill="#8a857b">› Job pushed to ServiceTitan via API</text>
+        <text x="0" y="60" font-family="DM Sans" font-size="11" fill="#8a857b">› Tech dispatched, job done</text>
+        <text x="0" y="80" font-family="DM Sans" font-size="11" fill="#8a857b">› HonorElevate fires review request</text>
+      </g>
+
+      <text x="400" y="338" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#5c5850">Each platform stays clean. Owner sees one story across both.</text>
+    </svg>
+  </div>
+
+  <div class="quick-answer">
+    <div class="label">› Quick Answer</div>
+    <p><strong>ServiceTitan, Jobber, and Housecall Pro are excellent job-management platforms. They are not CRMs.</strong> They handle dispatch, technician mobile apps, parts, invoicing, and payroll beautifully. They do NOT handle inbound calls answered by AI, missed call text back, web chat, multi-touch lead nurture, abandoned-quote follow-up, review automation, or the unified inbox for cross-channel customer conversation. That is what HonorElevate adds on top. The integration is bidirectional API: HonorElevate hands booked jobs to ServiceTitan, ServiceTitan hands job-completion events back. Both platforms stay clean. The owner sees one story across both.</p>
+  </div>
+
+  <div class="tldr">
+    <h3>TL;DR</h3>
+    <ul>
+      <li><strong>HonorElevate role:</strong> customer engagement layer. Calls, SMS, web chat, leads, pipeline, reviews, automation.</li>
+      <li><strong>ServiceTitan / Jobber / Housecall Pro role:</strong> job management. Dispatch, mobile app, parts, invoicing, payroll.</li>
+      <li><strong>The handoff:</strong> bidirectional API. Booked jobs flow to job-management. Completion events flow back.</li>
+      <li><strong>What gets cleaner:</strong> ServiceTitan stops being polluted with unbooked leads. HonorElevate stops being polluted with technician routing details.</li>
+      <li><strong>What gets unlocked:</strong> AI voice agent answering inbound calls, MCTB, automated nurture, unified customer inbox, review engine.</li>
+      <li><strong>Combined cost:</strong> ServiceTitan ($200-$400 per user per month) + HonorElevate ($497-$997 flat). Roughly $50K-$80K/year for a typical mid-volume HVAC business.</li>
+    </ul>
+  </div>
+
+  <article class="post-body">
+
+    <p>Most HVAC, plumbing, and home-services owners I talk to have already invested in ServiceTitan, Jobber, or Housecall Pro. The conversation always goes the same way: "I already have a CRM, why do I need another platform?" The honest answer is that ServiceTitan is not a CRM. None of them are. They are job-management platforms, which is a different category. This post explains the difference and the integration.</p>
+
+    <h2>The category confusion</h2>
+
+    <p>The terms "CRM" and "job management" got fused in the service-business software market because the products often overlap on a few features. The overlap creates the illusion that they are competing platforms. They are not.</p>
+
+    <h3>What a CRM does (HonorElevate, HubSpot, Salesforce, Pipedrive)</h3>
+    <ul>
+      <li>Captures inbound leads from every channel (phone, web, SMS, chat, form).</li>
+      <li>Routes the lead through a sales/qualification pipeline.</li>
+      <li>Automates follow-up across channels.</li>
+      <li>Manages the customer relationship at the engagement layer.</li>
+      <li>Reports on conversion, source, attribution, lifetime value.</li>
+    </ul>
+
+    <h3>What a job-management platform does (ServiceTitan, Jobber, Housecall Pro)</h3>
+    <ul>
+      <li>Dispatches technicians to job sites.</li>
+      <li>Routes trucks efficiently.</li>
+      <li>Provides mobile apps for techs (work orders, signatures, photos).</li>
+      <li>Manages parts inventory and ordering.</li>
+      <li>Generates invoices and processes payments.</li>
+      <li>Integrates with payroll.</li>
+      <li>Reports on technician productivity, parts margins, job profitability.</li>
+    </ul>
+
+    <p>The overlap: both can store a contact and a "job." Both can do basic SMS reminders. Both can show a calendar. Where they diverge: CRM is about getting and keeping customers. Job management is about delivering the work efficiently. Service businesses need both.</p>
+
+    <div class="callout">
+      <span class="ico">›</span>
+      <div><strong>The mental model:</strong> a service business is two businesses stacked on each other. The "front office" gets and converts customers. The "back office" delivers the work. CRM serves the front. Job management serves the back. You cannot run one without the other, but they should not be the same software.</div>
+    </div>
+
+    <h2>What ServiceTitan does NOT do well</h2>
+
+    <p>ServiceTitan is the most powerful job-management platform in HVAC. The product is excellent at what it does. But owners running ServiceTitan alone consistently report the following gaps.</p>
+
+    <h3>1. Inbound call answering</h3>
+    <p>ServiceTitan does not answer your phone. There is no AI voice agent. There is no "call ringing → AI qualifies and books" workflow. Calls hit voicemail or your receptionist, and only the calls that get answered become leads in the system. The 62% missed-call rate that bleeds revenue is invisible to ServiceTitan.</p>
+
+    <h3>2. Missed call text back</h3>
+    <p>ServiceTitan has SMS capability but no built-in missed-call auto-response. Setting up MCTB requires custom workflows or third-party plug-ins. Most owners never get around to it. The 40% recovery rate on missed calls (covered in <a href="/blog/missed-call-text-back-guide/">The Complete Guide to Missed Call Text Back</a>) goes uncaptured.</p>
+
+    <h3>3. Web chat with reply handling</h3>
+    <p>ServiceTitan does not include a web chat widget. Owners bolt on Tidio, Drift, or Intercom. The chat conversations live in those third-party tools, separate from the ServiceTitan customer record.</p>
+
+    <h3>4. Multi-channel lead nurture</h3>
+    <p>ServiceTitan's marketing features focus on review requests and basic email blasts. Cross-channel nurture sequences (SMS + email + ringless voicemail with conditional logic) require external tools.</p>
+
+    <h3>5. Abandoned-quote follow-up</h3>
+    <p>When a customer gets a quote and goes silent, ServiceTitan does not automatically follow up. The work order sits at "Estimate Sent" until someone manually reaches out. Most quotes ghost without ever being touched again.</p>
+
+    <h3>6. Unified inbox</h3>
+    <p>Customer SMS, email, web chat, and call history scatter across ServiceTitan, your phone system, the chat widget, and email. There is no one inbox where the whole customer conversation lives.</p>
+
+    <p>None of this is a criticism of ServiceTitan. It is just outside the scope of what job-management software is designed to do. You would not blame QuickBooks for not running your CRM. Same principle.</p>
+
+    <h2>How the <em>integration handoff works</em></h2>
+
+    <p>The HonorElevate-to-ServiceTitan integration is bidirectional API. Data flows in both directions in real time.</p>
+
+    <h3>From HonorElevate to ServiceTitan (lead → job)</h3>
+
+    <ol>
+      <li><strong>Inbound call lands</strong> in HonorElevate. AI voice agent picks up, qualifies, books appointment.</li>
+      <li><strong>Pipeline updates to "Booked"</strong> in HonorElevate.</li>
+      <li><strong>API push fires</strong> to ServiceTitan: customer record, job details, scheduled time, address, service type, tech assignment (if pre-determined).</li>
+      <li><strong>ServiceTitan creates the job</strong> on the dispatch board.</li>
+      <li><strong>Technician sees the job</strong> in the mobile app like any other ServiceTitan-originated dispatch.</li>
+    </ol>
+
+    <h3>From ServiceTitan to HonorElevate (job → close + review)</h3>
+
+    <ol>
+      <li><strong>Technician marks job complete</strong> in ServiceTitan mobile app.</li>
+      <li><strong>Customer signs the work order.</strong> Payment processes.</li>
+      <li><strong>API event fires back</strong> to HonorElevate: job complete, final ticket amount, parts used, tech notes.</li>
+      <li><strong>HonorElevate pipeline updates to "Closed Won."</strong> Customer's LTV updates.</li>
+      <li><strong>Review request workflow fires</strong> 30 minutes post-completion.</li>
+      <li><strong>Maintenance plan offer workflow scheduled</strong> for 14 days post-completion.</li>
+    </ol>
+
+    <h3>Bidirectional contact sync</h3>
+
+    <p>Customer record updates (phone number changes, email updates, address corrections) sync both ways. The single source of truth lives wherever the most recent edit happened. Both platforms reflect the same data.</p>
+
+    <h2>What stays in <em>each platform</em></h2>
+
+    <table>
+      <thead><tr><th>Data type</th><th>Lives in</th><th>Visible in</th></tr></thead>
+      <tbody>
+        <tr><td>Customer contact record</td><td>Both (synced)</td><td>Both</td></tr>
+        <tr><td>Inbound calls / SMS / chat history</td><td>HonorElevate</td><td>HonorElevate (linked summary visible in ServiceTitan)</td></tr>
+        <tr><td>Pipeline stage and history</td><td>HonorElevate</td><td>HonorElevate</td></tr>
+        <tr><td>Lead source attribution</td><td>HonorElevate</td><td>HonorElevate</td></tr>
+        <tr><td>Marketing automation workflows</td><td>HonorElevate</td><td>HonorElevate</td></tr>
+        <tr><td>Review requests and responses</td><td>HonorElevate</td><td>Both (summary)</td></tr>
+        <tr><td>Dispatch routing and tech assignment</td><td>ServiceTitan</td><td>ServiceTitan</td></tr>
+        <tr><td>Mobile work orders</td><td>ServiceTitan</td><td>ServiceTitan</td></tr>
+        <tr><td>Parts inventory</td><td>ServiceTitan</td><td>ServiceTitan</td></tr>
+        <tr><td>Invoicing detail</td><td>ServiceTitan</td><td>ServiceTitan</td></tr>
+        <tr><td>Payroll</td><td>ServiceTitan</td><td>ServiceTitan</td></tr>
+        <tr><td>Final ticket amount</td><td>ServiceTitan (synced summary to HonorElevate)</td><td>Both</td></tr>
+      </tbody>
+    </table>
+
+    <p>The separation keeps each platform focused on what it does best. The bidirectional sync ensures nothing is lost in translation.</p>
+
+    <h2>The Jobber integration <em>specifically</em></h2>
+
+    <p>Jobber's API is well-documented and the integration runs cleanly. Slightly different from ServiceTitan in scope (Jobber is positioned for smaller operators, ServiceTitan for mid-market and enterprise) but the integration pattern is identical: HonorElevate sends booked jobs, Jobber sends back completion events.</p>
+
+    <p>Where Jobber users see the biggest lift from HonorElevate: AI voice agent for after-hours calls (Jobber has no voice capability) and MCTB (Jobber's SMS is appointment-focused, not lead-recovery focused).</p>
+
+    <h2>The Housecall Pro integration <em>specifically</em></h2>
+
+    <p>Housecall Pro is similar to Jobber in scope, slightly more focused on smaller residential service businesses. Integration with HonorElevate runs cleanly via API. Customers on Housecall Pro typically pair it with HonorElevate to add: voice answering, after-hours coverage, lead capture from sources Housecall Pro does not handle (web chat, Facebook ads), and the review engine.</p>
+
+    <h2>What if I am not on any job-management platform yet?</h2>
+
+    <p>Common for solo operators and smaller crews. The answer: HonorElevate works fine standalone for businesses up to 3-4 techs. The pipeline, calendar, and basic dispatch features are sufficient. Once you cross 5+ techs or your job-complexity grows (parts ordering, multi-day jobs, complex routing), ServiceTitan/Jobber/Housecall Pro becomes worth the spend. HonorElevate integrates whenever you make the leap.</p>
+
+    <div class="inline-cta">
+      <h3>Want the <em>integration mapped for your stack?</em></h3>
+      <p>Free 30-minute AI audit. We review your current ServiceTitan/Jobber/Housecall Pro setup, map the data flows, and project the lift from adding the HonorElevate engagement layer.</p>
+      <a href="/#book" class="btn-gold">Book My Free AI Audit</a>
+    </div>
+
+    <h2>The combined cost math</h2>
+
+    <p>For a typical mid-volume HVAC business with 3-5 techs and one office staff:</p>
+
+    <table>
+      <thead><tr><th>Platform</th><th>Annual cost</th><th>Role</th></tr></thead>
+      <tbody>
+        <tr><td>ServiceTitan (5 users)</td><td>$15,000-$24,000</td><td>Job management</td></tr>
+        <tr><td>HonorElevate Dominate</td><td>$11,964</td><td>Customer engagement</td></tr>
+        <tr><td><strong>Combined annual stack</strong></td><td><strong>$27,000-$36,000</strong></td><td>Front office + back office</td></tr>
+      </tbody>
+    </table>
+
+    <p>For comparison, a business running ServiceTitan alone but missing the engagement layer typically loses:</p>
+
+    <ul>
+      <li>~30% of missed calls = $50,000-$100,000+ annually in unrecovered tickets</li>
+      <li>~20-30% of quotes that ghost without follow-up</li>
+      <li>~50% of potential reviews</li>
+      <li>~$3,000-$5,000/year in voicemail + chat + email tool stack that HonorElevate consolidates</li>
+    </ul>
+
+    <p>The HonorElevate layer typically pays for itself 5-10x over inside the first year for any ServiceTitan-running business.</p>
+
+    <h2>The bottom line</h2>
+
+    <p>ServiceTitan, Jobber, and Housecall Pro are exceptional at job management. They are not CRMs. Service businesses need both layers to operate at full capacity. HonorElevate sits on top of (not against) the job-management platform. Bidirectional API integration. Clean separation of concerns. The owner sees one story across both platforms.</p>
+
+    <p>Owners running ServiceTitan without an engagement layer are leaving inbound calls, MCTB recovery, review engine velocity, and abandoned-quote follow-up on the table. The platform is doing its job. The job just does not extend to the front office.</p>
+
+    <p>For the pillar context, read <a href="/blog/service-business-crm-guide/">The Complete Guide to CRM and Pipeline</a>. For the AI voice agent that sits at the top of this stack, read <a href="/blog/ai-voice-agents-guide/">The Complete Guide to AI Voice Agents</a>.</p>
+
+  </article>
+
+  <section class="faq-section">
+    <h2>FAQ <em>·</em> The Integration</h2>
+    <details open>
+      <summary>Will I have to enter customer data twice?</summary>
+      <div class="a">No. Bidirectional API sync. Edits in either platform reflect in both. New customers entered in HonorElevate (from a call, SMS, or web) automatically appear in ServiceTitan with the booking. New customers entered in ServiceTitan (rare but happens) sync back to HonorElevate.</div>
+    </details>
+    <details>
+      <summary>How long does the integration take to set up?</summary>
+      <div class="a">24-48 hours typically. We have done dozens of these. API credentials, field mapping, test job push, test completion push, go-live. Most pieces are templated from prior deploys.</div>
+    </details>
+    <details>
+      <summary>What if I want to migrate away from ServiceTitan entirely?</summary>
+      <div class="a">HonorElevate has basic job-management capabilities (scheduling, simple dispatch, work-order capture) but is not a full ServiceTitan replacement for larger operators. For 1-3 tech operations, it can serve standalone. For 5+ techs, keep your job-management platform.</div>
+    </details>
+    <details>
+      <summary>Does the integration work with Workiz, Service Fusion, or other platforms?</summary>
+      <div class="a">Yes for most major platforms via API or Zapier-mediated integration. Workiz, Service Fusion, FieldEdge, Successware, FieldPulse, Synchroteam, and a dozen others have working integrations. Custom integrations available for smaller platforms.</div>
+    </details>
+  </section>
+
+  <section class="read-next">
+    <div class="label">› Read Next</div>
+    <div class="read-next-grid">
+      <a href="/blog/service-business-crm-guide/" class="read-next-card">
+        <div class="arrow">› Series 5 · Pillar</div>
+        <h3>The Complete Guide to CRM and Pipeline for Local Service Businesses</h3>
+        <p>The operator's manual. Why generic CRMs fail, what HonorElevate replaces, integration architecture.</p>
+      </a>
+      <a href="/blog/honorelevate-pipeline-stages/" class="read-next-card">
+        <div class="arrow">› Series 5 · Spoke</div>
+        <h3>The HonorElevate Pipeline Stages Built for Service Businesses</h3>
+        <p>Every stage with triggers, SLA timers, and downstream workflows.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="author-block">
+    <div class="av"></div>
+    <div>
+      <h4>Connor MacIvor</h4>
+      <div class="title">AI Growth Architect · Santa Clarita, CA</div>
+      <p>27+ years running businesses. Self-taught programmer since 1983. Direct line: <a href="tel:661-400-1720">661-400-1720</a>. More at <a href="https://connorwithhonor.com/">connorwithhonor.com</a>.</p>
+    </div>
+  </section>
+
+  <section class="post-final-cta">
+    <h3>Front office + back office. <em>Stop running one without the other.</em></h3>
+    <p>Free 30-minute AI audit. We map your current stack, integrate cleanly, and have you running both layers in 5-7 days.</p>
+    <a href="/#book" class="btn-gold">Book Free AI Audit</a>
+    <span class="or">or call Connor: <a href="tel:661-400-1720">(661) 400-1720</a></span>
+  </section>
+
+</div>
+
+<div class="sticky-bar" id="stickyBar">
+  <p>ServiceTitan is not a CRM. Add the engagement layer.</p>
+  <a href="/#book" class="btn-gold">Book Free Audit</a>
+  <a href="tel:661-400-1720" class="btn-call">&#9742; Call Now</a>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo"><span class="face"></span> Honor<span>Elevate</span></a>
+      <p>AI business automation built by Connor MacIvor. 27+ years of business discipline powering systems that work while you sleep.</p>
+    </div>
+    <div class="footer-col"><h4>Solutions</h4><a href="/#solutions">AI Voice Agents</a><a href="/#solutions">Lead Automation</a><a href="/#solutions">CRM + Pipeline</a><a href="/#solutions">Review Engine</a></div>
+    <div class="footer-col"><h4>Resources</h4><a href="/blog/">Blog</a><a href="/#book">Free AI Audit</a><a href="tel:661-299-7299">Call Betty (Demo)</a><a href="mailto:connor@honorelevate.com">Email Connor</a></div>
+    <div class="footer-col"><h4>Ecosystem</h4><a href="https://connorwithhonor.com">Connor with Honor</a><a href="https://hireaivoice.com">HireAIVoice</a><a href="https://sellersonlyagent.com">Sellers Only Agent</a><a href="https://scv123.com">SCV123</a></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 HonorElevate. All Rights Reserved.</p>
+    <p>Coded by Connor with Honor | <a href="/">AI Growth Architect</a></p>
+    <p><a href="/terms-of-service">Terms</a> &nbsp;|&nbsp; <a href="/privacy-policy">Privacy</a></p>
+  </div>
+</footer>
+
+<script>
+const stickyBar=document.getElementById('stickyBar');
+const article=document.querySelector('.post-body');
+if (article) {const obs=new IntersectionObserver(e=>{e.forEach(entry=>entry.isIntersecting?stickyBar.classList.add('visible'):stickyBar.classList.remove('visible'))},{threshold:0.1});obs.observe(article);}
+</script>
+</body>
+</html>

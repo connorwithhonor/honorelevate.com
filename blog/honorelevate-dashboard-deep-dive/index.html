@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inside the HonorElevate Dashboard: A Full Walkthrough</title>
+<meta name="description" content="Tour of every panel in the HonorElevate dashboard. The 5-number summary, pipeline view, source attribution, tech performance, review monitoring, workflow status. Each panel explained with how to use it.">
+<meta name="keywords" content="HonorElevate dashboard tour, service business dashboard, owner dashboard walkthrough"><meta name="author" content="Connor MacIvor"><meta name="robots" content="index, follow">
+<link rel="canonical" href="https://honorelevate.com/blog/honorelevate-dashboard-deep-dive/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"><link rel="stylesheet" href="/blog/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","@id":"https://honorelevate.com/blog/honorelevate-dashboard-deep-dive/#article","headline":"Inside the HonorElevate Dashboard: A Full Walkthrough","description":"Every dashboard panel explained.","image":"https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png","datePublished":"2026-05-16","dateModified":"2026-05-16","author":{"@type":"Person","name":"Connor MacIvor","url":"https://connorwithhonor.com/","jobTitle":"AI Growth Architect"},"publisher":{"@type":"Organization","name":"HonorElevate","logo":{"@type":"ImageObject","url":"https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://honorelevate.com/blog/honorelevate-dashboard-deep-dive/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://honorelevate.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://honorelevate.com/blog/"},{"@type":"ListItem","position":3,"name":"Dashboard Deep Dive","item":"https://honorelevate.com/blog/honorelevate-dashboard-deep-dive/"}]}</script>
+</head><body>
+<nav class="site-nav"><div class="nav-inner"><a href="/" class="nav-logo"><span class="face"></span> Honor<span>Elevate</span></a><button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Menu">&#9776;</button><div class="nav-links"><a href="/#problems">The Problem</a><a href="/#solutions">What I Build</a><a href="/#proof">Proof</a><a href="/blog/" class="current">Blog</a><a href="tel:661-400-1720">&#9742; (661) 400-1720</a><a href="/#book" class="btn-gold">Free AI Audit</a></div></div></nav>
+
+<div class="container-narrow">
+<div class="breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span class="current">Dashboard Deep Dive</span></div>
+<header class="post-header"><span class="post-cluster">› Series 10 · Walkthrough</span><h1 class="post-title">Inside the HonorElevate Dashboard: <em>A Full Walkthrough</em></h1><div class="post-meta"><span class="author"><span class="av"></span> By <b>Connor MacIvor</b></span><span class="dot">·</span><span>Published May 16, 2026</span><span class="dot">·</span><span class="read-time">9 min read</span></div></header>
+
+<div class="post-hero"><svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="360" fill="#1a1f2b"/><text x="400" y="40" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#e8a838" letter-spacing="3">7 PANELS · ONE UNIFIED VIEW</text><g transform="translate(40,70)"><rect width="720" height="260" rx="14" fill="#0f1219" stroke="#e8a838" stroke-opacity=".4"/><rect x="20" y="20" width="220" height="80" rx="6" fill="rgba(232,168,56,.1)"/><text x="32" y="42" font-family="DM Sans" font-size="9" fill="#e8a838">5 NUMBERS</text><text x="32" y="76" font-family="DM Serif Display" font-size="22" fill="#e8a838">$24K / 147</text><rect x="252" y="20" width="220" height="80" rx="6" fill="rgba(232,168,56,.08)"/><text x="264" y="42" font-family="DM Sans" font-size="9" fill="#e8a838">PIPELINE</text><text x="264" y="62" font-family="DM Sans" font-size="11" fill="#d4cfc5">Qualified: 18</text><text x="264" y="76" font-family="DM Sans" font-size="11" fill="#d4cfc5">Quoted: 23</text><text x="264" y="90" font-family="DM Sans" font-size="11" fill="#d4cfc5">Booked: 38</text><rect x="484" y="20" width="216" height="80" rx="6" fill="rgba(232,168,56,.08)"/><text x="496" y="42" font-family="DM Sans" font-size="9" fill="#e8a838">SOURCE</text><text x="496" y="62" font-family="DM Sans" font-size="11" fill="#d4cfc5">Google: 48%</text><text x="496" y="76" font-family="DM Sans" font-size="11" fill="#d4cfc5">Organic: 22%</text><text x="496" y="90" font-family="DM Sans" font-size="11" fill="#d4cfc5">MCTB: 14%</text><rect x="20" y="116" width="340" height="120" rx="6" fill="rgba(232,168,56,.08)"/><text x="32" y="138" font-family="DM Sans" font-size="9" fill="#e8a838">PER-TECH</text><g stroke="#e8a838" stroke-width="2" fill="none"><polyline points="40,200 100,180 160,170 220,155 280,170 340,150"/></g><rect x="372" y="116" width="328" height="120" rx="6" fill="rgba(232,168,56,.08)"/><text x="384" y="138" font-family="DM Sans" font-size="9" fill="#e8a838">REVIEWS</text><text x="384" y="162" font-family="DM Serif Display" font-size="20" fill="#e8a838">4.8 ★</text><text x="384" y="184" font-family="DM Sans" font-size="11" fill="#d4cfc5">14 new this week</text><text x="384" y="200" font-family="DM Sans" font-size="11" fill="#d4cfc5">92% response rate</text></g></svg></div>
+
+<div class="quick-answer"><div class="label">› Quick Answer</div><p><strong>The HonorElevate dashboard has 7 main panels: 5-number summary, pipeline detail, source attribution, tech performance, review monitoring, workflow status, and customer search.</strong> Each serves a specific operational or strategic purpose. This post walks through every panel with how to use it.</p></div>
+
+<div class="tldr"><h3>TL;DR</h3><ul><li><strong>Panel 1: 5-Number Summary.</strong> Top of the page. Strategic view.</li><li><strong>Panel 2: Pipeline Detail.</strong> Every open deal by stage.</li><li><strong>Panel 3: Source Attribution.</strong> Revenue and CPBJ by channel.</li><li><strong>Panel 4: Per-Tech Performance.</strong> Bookings, revenue, satisfaction by tech.</li><li><strong>Panel 5: Review Monitoring.</strong> New reviews, average, response rate.</li><li><strong>Panel 6: Workflow Status.</strong> Active automations, success rates.</li><li><strong>Panel 7: Customer Search.</strong> Find any customer instantly.</li></ul></div>
+
+<article class="post-body">
+
+<p>The dashboard is the operational nerve center of the HonorElevate platform. This post is a panel-by-panel walkthrough.</p>
+
+<h2>Panel 1: <em>5-Number Summary</em></h2>
+
+<p>The top of every dashboard view. Same 5 numbers as the Monday brief: calls handled, pipeline value, appointments booked, closed-won revenue, reviews captured.</p>
+
+<h3>Interactivity</h3>
+<p>Click any number to drill into the underlying detail. Click "Calls handled: 147" and see every call with timestamp, source, outcome, and recording (if applicable).</p>
+
+<h2>Panel 2: <em>Pipeline Detail</em></h2>
+
+<p>Every open deal organized by stage. Drag-and-drop to update stage manually. Click any deal to open the full contact record.</p>
+
+<h3>Stuck deal flagging</h3>
+<p>Deals beyond SLA show with red indicators. Quotes 72+ hours old. Booked appointments without confirmation. Owner intervenes accordingly.</p>
+
+<h2>Panel 3: <em>Source Attribution</em></h2>
+
+<p>Revenue, booked jobs, and CPBJ by source over the last 30/90/365 days. Sortable, filterable. Discussed in detail in <a href="/blog/lead-source-attribution-service-business/">Lead Source Attribution</a>.</p>
+
+<h2>Panel 4: <em>Per-Tech Performance</em></h2>
+
+<p>Each tech's bookings, completed jobs, average ticket, customer satisfaction, drive time, and revenue contribution. Compare techs. Identify training opportunities.</p>
+
+<h3>Privacy note</h3>
+<p>Tech-level data visible to owner and dispatcher roles. Techs see their own data only. Avoids unproductive comparison among the team.</p>
+
+<h2>Panel 5: <em>Review Monitoring</em></h2>
+
+<p>New reviews this week, trailing average, response rate, sentiment trend. Click any review to draft a response (AI provides draft) and post.</p>
+
+<h2>Panel 6: <em>Workflow Status</em></h2>
+
+<p>Which workflows fired this week. Success rates (delivered, opened, responded). Errors flagged for investigation.</p>
+
+<h3>Health monitoring</h3>
+<p>If MCTB stops firing or review requests fail to send, this panel surfaces the problem before it costs revenue.</p>
+
+<h2>Panel 7: <em>Customer Search</em></h2>
+
+<p>Type any customer name, phone, address, or email. Full history surfaces in real time. Useful before phone calls (know context before dialing) and during reviews (find past customers quickly).</p>
+
+<div class="callout"><span class="ico">›</span><div><strong>The discipline:</strong> the dashboard rewards regular but light engagement. 5-10 minutes daily. Not a "spend an hour staring at metrics" tool. Glance, drill where needed, return to running the business.</div></div>
+
+<h2>Dashboard customization</h2>
+
+<p>Owners can rearrange panels, add custom widgets, or hide panels not relevant to their operation. Most owners stay with the default after onboarding because the layout is industry-tuned.</p>
+
+<h2>Mobile dashboard</h2>
+
+<p>Full dashboard available on mobile with the same panels in a stacked layout. The 5-number summary fits any screen. Drill-down works on phone. Useful for the owner who wants to glance during the workday.</p>
+
+<div class="inline-cta"><h3>Want a <em>dashboard tour for your operation?</em></h3><p>Free 30-minute AI audit. Walk through the dashboard configured for your business specifically.</p><a href="/#book" class="btn-gold">Book My Free AI Audit</a></div>
+
+<h2>The bottom line</h2>
+
+<p>7 panels covering strategic and operational needs. Owners who use the dashboard regularly make better decisions and catch problems earlier than owners who run on gut feel.</p>
+
+<p>For the pillar, read <a href="/blog/reporting-attribution-guide/">The Complete Guide to Reporting and Attribution</a>. For the brief workflow, read <a href="/blog/weekly-brief-vs-real-time-dashboard/">Weekly Brief vs Real-Time Dashboard</a>.</p>
+
+</article>
+
+<section class="faq-section"><h2>FAQ <em>·</em> The Dashboard</h2><details open><summary>Can I export dashboard data?</summary><div class="a">Yes. CSV export available for any panel. Useful for sharing with accountants or strategic advisors.</div></details><details><summary>Is there a public-facing dashboard for sharing with partners?</summary><div class="a">Yes. Configurable read-only dashboard for designated viewers (business partner, accountant, key investor).</div></details></section>
+
+<section class="read-next"><div class="label">› Read Next</div><div class="read-next-grid"><a href="/blog/reporting-attribution-guide/" class="read-next-card"><div class="arrow">› Series 10 · Pillar</div><h3>The Complete Guide to Reporting and Attribution for Service Businesses</h3><p>The operator's manual.</p></a><a href="/blog/five-numbers-service-business-dashboard/" class="read-next-card"><div class="arrow">› Series 10 · Spoke</div><h3>The Five Numbers Every Service Business Owner Should Watch</h3><p>The summary panel in detail.</p></a></div></section>
+
+<section class="author-block"><div class="av"></div><div><h4>Connor MacIvor</h4><div class="title">AI Growth Architect · Santa Clarita, CA</div><p>27+ years running businesses. Self-taught programmer since 1983. Direct line: <a href="tel:661-400-1720">661-400-1720</a>. More at <a href="https://connorwithhonor.com/">connorwithhonor.com</a>.</p></div></section>
+
+<section class="post-final-cta"><h3>7 panels. <em>One operating system.</em></h3><p>Free 30-minute AI audit. We tour the dashboard configured for your business.</p><a href="/#book" class="btn-gold">Book Free AI Audit</a><span class="or">or call Connor: <a href="tel:661-400-1720">(661) 400-1720</a></span></section>
+</div>
+
+<div class="sticky-bar" id="stickyBar"><p>7 panels. Every angle covered.</p><a href="/#book" class="btn-gold">Book Free Audit</a><a href="tel:661-400-1720" class="btn-call">&#9742; Call Now</a></div>
+<footer><div class="footer-grid"><div class="footer-brand"><a href="/" class="nav-logo"><span class="face"></span> Honor<span>Elevate</span></a><p>AI business automation built by Connor MacIvor. 27+ years of business discipline powering systems that work while you sleep.</p></div><div class="footer-col"><h4>Solutions</h4><a href="/#solutions">AI Voice Agents</a><a href="/#solutions">Lead Automation</a><a href="/#solutions">CRM + Pipeline</a><a href="/#solutions">Review Engine</a></div><div class="footer-col"><h4>Resources</h4><a href="/blog/">Blog</a><a href="/#book">Free AI Audit</a><a href="tel:661-299-7299">Call Betty (Demo)</a><a href="mailto:connor@honorelevate.com">Email Connor</a></div><div class="footer-col"><h4>Ecosystem</h4><a href="https://connorwithhonor.com">Connor with Honor</a><a href="https://hireaivoice.com">HireAIVoice</a><a href="https://sellersonlyagent.com">Sellers Only Agent</a><a href="https://scv123.com">SCV123</a></div></div><div class="footer-bottom"><p>&copy; 2026 HonorElevate. All Rights Reserved.</p><p>Coded by Connor with Honor | <a href="/">AI Growth Architect</a></p><p><a href="/terms-of-service">Terms</a> &nbsp;|&nbsp; <a href="/privacy-policy">Privacy</a></p></div></footer>
+<script>const stickyBar=document.getElementById('stickyBar');const article=document.querySelector('.post-body');if(article){const obs=new IntersectionObserver(e=>{e.forEach(entry=>entry.isIntersecting?stickyBar.classList.add('visible'):stickyBar.classList.remove('visible'))},{threshold:0.1});obs.observe(article);}</script>
+</body></html>

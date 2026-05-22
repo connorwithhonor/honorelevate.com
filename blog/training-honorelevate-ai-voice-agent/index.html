@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Training Your HonorElevate AI Voice Agent on Your Prices, Services, and Hours</title>
+<meta name="description" content="The exact training methodology behind a HonorElevate AI voice agent. How services, hours, pricing logic, service area, escalation rules, and tone of voice get encoded into the agent in 3-5 days.">
+<meta name="keywords" content="AI voice agent training, custom AI receptionist, train AI on business, voice AI knowledge base, AI agent prompt engineering, HonorElevate setup">
+<meta name="author" content="Connor MacIvor">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://honorelevate.com/blog/training-honorelevate-ai-voice-agent/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Training Your HonorElevate AI Voice Agent on Your Prices, Services, and Hours">
+<meta property="og:description" content="The exact training methodology. How services, hours, pricing, and tone get encoded into the agent in 3-5 days.">
+<meta property="og:url" content="https://honorelevate.com/blog/training-honorelevate-ai-voice-agent/">
+<meta property="og:image" content="https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png">
+<meta property="article:author" content="Connor MacIvor">
+<meta property="article:section" content="AI Voice Agents">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/styles.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","@id":"https://honorelevate.com/blog/training-honorelevate-ai-voice-agent/#article",
+"headline":"Training Your HonorElevate AI Voice Agent on Your Prices, Services, and Hours",
+"description":"The exact methodology for training an AI voice agent on your specific business in 3-5 days.",
+"image":"https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png",
+"datePublished":"2026-05-16","dateModified":"2026-05-16",
+"author":{"@type":"Person","name":"Connor MacIvor","url":"https://connorwithhonor.com/","jobTitle":"AI Growth Architect"},
+"publisher":{"@type":"Organization","name":"HonorElevate","logo":{"@type":"ImageObject","url":"https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png"}},
+"mainEntityOfPage":{"@type":"WebPage","@id":"https://honorelevate.com/blog/training-honorelevate-ai-voice-agent/"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://honorelevate.com/"},
+  {"@type":"ListItem","position":2,"name":"Blog","item":"https://honorelevate.com/blog/"},
+  {"@type":"ListItem","position":3,"name":"Training the AI","item":"https://honorelevate.com/blog/training-honorelevate-ai-voice-agent/"}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"How is an AI voice agent trained on a specific business?","acceptedAnswer":{"@type":"Answer","text":"A HonorElevate AI voice agent is trained through a structured 5-stage process: discovery (services, pricing, hours, service area), knowledge base build (qualifying questions, FAQs, edge cases), prompt and personality tuning (tone, language style), live test calls with iteration, and soft launch with monitoring. The full training takes 3-5 days."}},
+  {"@type":"Question","name":"What information do I need to provide to train the AI?","acceptedAnswer":{"@type":"Answer","text":"Your service catalog with descriptions, base pricing or pricing logic, business hours, service area boundaries, qualifying questions you ask new callers, escalation rules for emergencies, FAQ answers, and the tone of voice you want. We capture all of this in a single 60-minute discovery call plus a follow-up document."}},
+  {"@type":"Question","name":"Can I update the AI agent after it goes live?","acceptedAnswer":{"@type":"Answer","text":"Yes. The agent is updated weekly during the first month and then on demand as your business changes. Add a new service, update pricing, change hours, modify the escalation rules. Updates take 1-2 hours and roll out immediately."}}
+]}
+</script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><span class="face"></span> Honor<span>Elevate</span></a>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Menu">&#9776;</button>
+    <div class="nav-links">
+      <a href="/#problems">The Problem</a><a href="/#solutions">What I Build</a><a href="/#proof">Proof</a>
+      <a href="/blog/" class="current">Blog</a><a href="tel:661-400-1720">&#9742; (661) 400-1720</a>
+      <a href="/#book" class="btn-gold">Free AI Audit</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container-narrow">
+  <div class="breadcrumb">
+    <a href="/">Home</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span class="current">Training the AI</span>
+  </div>
+
+  <header class="post-header">
+    <span class="post-cluster">› Series 2 · The Build</span>
+    <h1 class="post-title">Training Your HonorElevate AI Agent on Your <em>Prices, Services, and Hours</em></h1>
+    <div class="post-meta">
+      <span class="author"><span class="av"></span> By <b>Connor MacIvor</b></span>
+      <span class="dot">·</span><span>Published May 16, 2026</span><span class="dot">·</span><span class="read-time">10 min read</span>
+    </div>
+  </header>
+
+  <div class="post-hero">
+    <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
+      <rect width="800" height="360" fill="#1a1f2b"/>
+      <g stroke="#e8a838" stroke-opacity=".18" stroke-width="1" fill="none">
+        <path d="M100,180 L300,80"/><path d="M100,180 L300,140"/><path d="M100,180 L300,200"/>
+        <path d="M100,180 L300,260"/><path d="M100,180 L300,320"/>
+        <path d="M300,80 L500,180"/><path d="M300,140 L500,180"/><path d="M300,200 L500,180"/>
+        <path d="M300,260 L500,180"/><path d="M300,320 L500,180"/>
+        <path d="M500,180 L700,140"/><path d="M500,180 L700,220"/>
+      </g>
+      <g fill="#e8a838">
+        <circle cx="100" cy="180" r="14"/>
+      </g>
+      <g fill="#1a1f2b" stroke="#e8a838" stroke-width="2">
+        <circle cx="300" cy="80" r="20"/><circle cx="300" cy="140" r="20"/><circle cx="300" cy="200" r="20"/>
+        <circle cx="300" cy="260" r="20"/><circle cx="300" cy="320" r="20"/>
+        <circle cx="500" cy="180" r="20"/>
+        <circle cx="700" cy="140" r="20"/><circle cx="700" cy="220" r="20"/>
+      </g>
+      <g font-family="DM Sans" font-size="11" fill="#d4cfc5">
+        <text x="328" y="85">Services</text>
+        <text x="328" y="145">Pricing</text>
+        <text x="328" y="205">Hours</text>
+        <text x="328" y="265">Area</text>
+        <text x="328" y="325">Escalation</text>
+      </g>
+      <g font-family="DM Sans" font-size="11" fill="#e8a838">
+        <text x="528" y="185">Trained Agent</text>
+      </g>
+      <g font-family="DM Sans" font-size="11" fill="#d4cfc5">
+        <text x="728" y="145">Book</text>
+        <text x="728" y="225">Escalate</text>
+      </g>
+      <text x="100" y="220" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#8a857b">YOU</text>
+      <text x="400" y="60" text-anchor="middle" font-family="DM Serif Display" font-size="20" fill="#f5f1eb">5-Stage Training Methodology</text>
+    </svg>
+  </div>
+
+  <div class="quick-answer">
+    <div class="label">› Quick Answer</div>
+    <p><strong>Training a HonorElevate AI voice agent takes 3-5 days and runs through 5 stages: discovery, knowledge base build, prompt and personality tuning, live test calls, and soft launch with monitoring.</strong> You provide your services, pricing, hours, service area, and escalation rules in a single 60-minute discovery call. I encode the rest. The output is an agent that talks like your business and books appointments by your rules, not a generic SaaS bot.</p>
+  </div>
+
+  <div class="tldr">
+    <h3>TL;DR</h3>
+    <ul>
+      <li><strong>Stage 1: Discovery (Day 1).</strong> 60-minute call. We capture services, pricing logic, hours, service area, qualifying questions, escalation rules, and tone.</li>
+      <li><strong>Stage 2: Knowledge Base Build (Day 2-3).</strong> I encode your specifics into the agent's knowledge graph and FAQ store.</li>
+      <li><strong>Stage 3: Prompt + Personality (Day 3).</strong> Voice selection, tone calibration, conversation flow design.</li>
+      <li><strong>Stage 4: Live Test Calls (Day 4).</strong> 30+ test scenarios. I call the agent. We tune.</li>
+      <li><strong>Stage 5: Soft Launch (Day 5-7).</strong> 10-25% of your calls route to the agent. We monitor. We fix. Then full cutover.</li>
+      <li><strong>Ongoing:</strong> Weekly updates for the first month. On-demand updates after that.</li>
+    </ul>
+  </div>
+
+  <article class="post-body">
+
+    <p>An untrained AI voice agent is a generic chatbot pretending to be a receptionist. A trained AI voice agent is your specific business answering its own phone. The difference is the training methodology. This is how I do it.</p>
+
+    <h2>Stage 1: <em>Discovery</em></h2>
+
+    <p>One 60-minute call. Cameras on. I take notes. You answer the following.</p>
+
+    <h3>What services do you sell?</h3>
+    <p>Full service catalog. For HVAC: service calls, diagnostic, repair, maintenance plan, system replacement, indoor air quality, ductwork. For dental: new patient exam, hygiene, restorative, cosmetic, ortho, recall. The agent needs to know what you sell and how each service is described in plain customer language. "Crown" not "indirect restoration." "AC tune-up" not "preventive maintenance protocol."</p>
+
+    <h3>What does each service cost (or what is the pricing logic)?</h3>
+    <p>Base pricing where it exists. Pricing logic where it does not. "Service call is $89, applied to repair. Diagnostic adds $0. Most repairs run $300-$800 depending on part. Full replacements quoted on-site only." That logic gets encoded so the agent can give honest expectations on the call without lying or overcommitting.</p>
+
+    <h3>What are your hours and service area?</h3>
+    <p>Office hours, dispatch hours, emergency hours. Specific zip codes you serve. Cities you do NOT serve. Buffer zones where you might serve but charge a travel fee. The agent uses this to qualify or politely decline.</p>
+
+    <h3>What questions do you ask every new caller?</h3>
+    <p>Your existing qualifying script if you have one. Or your mental checklist if you do not. "What zip code? What is the issue? Is the system blowing? How old is it?" Those become the agent's intake flow.</p>
+
+    <h3>What is an emergency?</h3>
+    <p>Define what triggers immediate escalation vs same-day vs next-day vs scheduled appointment. For HVAC: kids/elderly + no cooling in summer = emergency. For plumbing: active leak or sewage backup = emergency. The agent applies these triggers automatically. The full escalation logic gets documented in <a href="/blog/ai-voice-agent-escalation-paths/">What Happens When the AI Cannot Handle the Call</a>.</p>
+
+    <h3>What is your tone of voice?</h3>
+    <p>This is the part most setup people skip. The agent will sound like whatever you train it to sound like. Friendly but professional? Direct and efficient? Warm and slow? Honest and a little blunt? I capture the answer with sample phrases you actually use. "Thanks for calling, this is Sarah, how can I help" lands different than "Smith Heating, this is Sarah." Both work. Yours has to feel like yours.</p>
+
+    <div class="callout">
+      <span class="ico">›</span>
+      <div><strong>The discovery call is the whole game.</strong> Garbage in, garbage out. If I cannot get clear answers on services, pricing, and qualifying logic, the agent will be vague on those topics. Get me the answers. The output mirrors the input.</div>
+    </div>
+
+    <h2>Stage 2: <em>Knowledge Base Build</em></h2>
+
+    <p>Day 2 and 3. I do the work. You go run your business.</p>
+
+    <p>Everything from discovery gets encoded into three places.</p>
+
+    <ol>
+      <li><strong>The system prompt.</strong> The agent's core identity. Business name, tone, primary directive ("book the appointment, qualify the caller, escalate edge cases").</li>
+      <li><strong>The knowledge base.</strong> Structured data on services, pricing, hours, service area, FAQs, edge cases. The agent retrieves from this in real time.</li>
+      <li><strong>The conversation flow.</strong> Decision-tree logic for how the agent routes a call. Greet → identify problem type → qualify → route to booking flow or escalation flow → confirm → close.</li>
+    </ol>
+
+    <p>I also load the agent with the 20-40 most common FAQs you actually get on calls. "Do you offer financing?" "Are you licensed and insured?" "Do you do free estimates?" "Can I get a price over the phone?" "Do you work on Trane systems?" If you do not have a list, I generate one from your industry baseline and let you correct it.</p>
+
+    <h2>Stage 3: <em>Prompt and Personality Tuning</em></h2>
+
+    <p>Voice selection happens here. You pick the voice from a panel of options. Female warm. Female direct. Male professional. Male relaxed. Some clients want a specific name (Sarah, Mark, Betty, Diana). Some want their actual receptionist's voice cloned (with consent and a 5-minute recording, this is possible). Most go with a stock voice that matches their brand and let me name it.</p>
+
+    <p>Personality tuning is the texture. How much filler vs how direct. Whether the agent uses "absolutely" or "of course." Whether it says "no problem" or "you bet." Whether it pauses dramatically on bad news or drives forward. These are calibrated against the tone samples I captured in discovery.</p>
+
+    <h2>Stage 4: <em>Live Test Calls</em></h2>
+
+    <p>Day 4. The fun part.</p>
+
+    <p>I call the agent. Thirty scenarios. Some are standard ("I need an AC service appointment"). Some are tricky ("my mom is 87 and the AC is broken, she has a heart condition"). Some are designed to break it ("I want to schedule a unicorn massage for my pet llama"). Some are noise tests (background TV, kids screaming, dog barking).</p>
+
+    <p>I score each call on:</p>
+
+    <ul>
+      <li><strong>Greeting:</strong> picked up fast, sounded natural, on-brand?</li>
+      <li><strong>Empathy:</strong> acknowledged the situation before qualifying?</li>
+      <li><strong>Qualification:</strong> asked the right questions in the right order?</li>
+      <li><strong>Booking:</strong> offered a real slot, captured complete info?</li>
+      <li><strong>Confirmation:</strong> sent SMS, updated CRM, fired the right notifications?</li>
+      <li><strong>Edge cases:</strong> escalated correctly when it should have?</li>
+    </ul>
+
+    <p>Whatever fails, I fix. We re-test until 30/30 passes. Then I send you a recording link with the 10 most representative calls and you score them yourself. Anything you flag, I fix.</p>
+
+    <h2>Stage 5: <em>Soft Launch and Full Cutover</em></h2>
+
+    <p>Day 5-7.</p>
+
+    <p>Soft launch routes 10-25% of your inbound calls to the agent. The other 75-90% still hit your normal flow. I watch the first 50 live calls in detail. I look for anything I missed in test scenarios.</p>
+
+    <p>If everything looks clean, we go to full cutover on day 7. Your main number routes to the agent. The agent answers everything. Escalations route to your cell. You start sleeping through Tuesday-night calls.</p>
+
+    <div class="inline-cta">
+      <h3>Want a live agent trained on <em>your business?</em></h3>
+      <p>5-7 days from yes to live. Free 30-minute audit first to scope your services, hours, and call volume. Walk away with the build timeline whether you start or not.</p>
+      <a href="/#book" class="btn-gold">Book My Free AI Audit</a>
+    </div>
+
+    <h2>What gets <em>updated after launch</em></h2>
+
+    <p>The agent is not a one-and-done deploy. It is a living system.</p>
+
+    <p><strong>Week 1 post-launch:</strong> I review every single call. Anything weird, I fix. New edge cases get added to the knowledge base. The agent gets better daily.</p>
+
+    <p><strong>Week 2-4:</strong> Weekly review. Trends emerge (callers asking about a service we forgot to load, pricing question we did not anticipate, an FAQ we missed). All of it gets added.</p>
+
+    <p><strong>Ongoing:</strong> Monthly check-in. Update for seasonal pricing, new services, modified hours, holiday schedules. You add a Saturday hour? 30 minutes of work, deployed same day. You roll out a new $99 maintenance plan? Same.</p>
+
+    <h2>What you should <em>NOT do during training</em></h2>
+
+    <ul>
+      <li><strong>Do not try to anticipate every edge case.</strong> The 80/20 rule. Train on the 80% of calls that follow standard patterns. The other 20% escalate to you and we add them to training week 2. Trying to handle every edge case upfront slows the deploy by a month.</li>
+      <li><strong>Do not over-script the agent.</strong> Tight scripts make the AI sound robotic. Loose principles ("be warm but efficient, get to booking fast") make it sound human. Train on principles, not literal words.</li>
+      <li><strong>Do not skip the test calls.</strong> The 30-scenario test is what catches problems before customers do. Skipping it for speed is how you end up with a broken AI in production.</li>
+      <li><strong>Do not get precious about voice selection.</strong> Pick a voice in five minutes. The tone matters more than the voice. You can change the voice in week 2 if you hate it.</li>
+    </ul>
+
+    <h2>How this <em>compares to DIY voice AI</em></h2>
+
+    <p>You can buy generic AI receptionist tools from Vapi, Bland, Retell, Air, Synthflow, and a dozen others. They give you a dashboard, a few prompt fields, and a phone number. Cost runs $99-$499 per month depending on minutes.</p>
+
+    <p>The catch: you do the training. You write the system prompt. You build the knowledge base. You configure the calendar integration. You test the conversation flow. You debug when it books a customer in the wrong time zone or quotes a price that does not exist.</p>
+
+    <p>For an experienced AI builder this is fine. For a service-business owner who is also a plumber, an HVAC tech, or a dentist, you are now doing two jobs. You will either underbuild the agent (and lose customers) or spend three months learning prompt engineering when you should be running trucks.</p>
+
+    <p>HonorElevate's value proposition is operational. I do the training so you do not have to. The platform under the hood is the same enterprise infrastructure the DIY tools sit on top of. The difference is who's holding the wrench.</p>
+
+    <h2>The bottom line</h2>
+
+    <p>A trained AI voice agent sounds like your business and books appointments by your rules. An untrained AI voice agent sounds like a chatbot. The training methodology is what bridges the gap. 5 stages, 3-5 days, one operator (me) doing the work while you run your business.</p>
+
+    <p>If you want the full agent's-eye view of how a real call plays out post-training, read <a href="/blog/ai-voice-agent-7pm-emergency-call/">How a HonorElevate AI Agent Answers a 7:48 PM Emergency Call</a>. If you want to see what happens when the AI hits something it cannot handle, read <a href="/blog/ai-voice-agent-escalation-paths/">What Happens When the AI Cannot Handle the Call</a>. If you want to start, <a href="/#book">book the free audit</a>.</p>
+
+  </article>
+
+  <section class="faq-section">
+    <h2>FAQ <em>·</em> Training the AI</h2>
+    <details open>
+      <summary>How long does training the AI actually take?</summary>
+      <div class="a">3-5 days for a fully trained agent. Day 1 is discovery (one 60-minute call with you). Day 2-3 is knowledge base build (I do this, you go run your business). Day 4 is test calls. Day 5-7 is soft launch and full cutover.</div>
+    </details>
+    <details>
+      <summary>What if I don't have my services and pricing documented?</summary>
+      <div class="a">Most owners do not. We capture it in the discovery call. I ask you the questions and you answer in plain English. I turn the answers into structured training data. You do not need a 47-page operations manual to start.</div>
+    </details>
+    <details>
+      <summary>Can the AI handle multiple languages?</summary>
+      <div class="a">Yes. English and Spanish are both available out of the box. Other languages (Mandarin, Tagalog, Korean, Vietnamese) require additional voice model selection and a few extra hours of training. Common in Southern California markets.</div>
+    </details>
+    <details>
+      <summary>Can I update the AI after launch?</summary>
+      <div class="a">Yes. Updates happen weekly during month one and on demand after that. Add a service, change hours, modify pricing, update the escalation rules. Most updates roll out within 1-2 hours of request.</div>
+    </details>
+  </section>
+
+  <section class="read-next">
+    <div class="label">› Read Next</div>
+    <div class="read-next-grid">
+      <a href="/blog/ai-voice-agents-guide/" class="read-next-card">
+        <div class="arrow">› Series 2 · Pillar</div>
+        <h3>The Complete Guide to AI Voice Agents for Local Service Businesses</h3>
+        <p>The full operator's guide. What they are, how they work, what they cost.</p>
+      </a>
+      <a href="/blog/ai-voice-agent-escalation-paths/" class="read-next-card">
+        <div class="arrow">› Series 2 · Spoke</div>
+        <h3>What Happens When the AI Cannot Handle the Call</h3>
+        <p>The escalation playbook. How the handoff to a human works without losing the lead.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="author-block">
+    <div class="av"></div>
+    <div>
+      <h4>Connor MacIvor</h4>
+      <div class="title">AI Growth Architect · Santa Clarita, CA</div>
+      <p>27+ years running businesses. Self-taught programmer since 1983. Trained over 1,000 professionals in AI systems. Direct line: <a href="tel:661-400-1720">661-400-1720</a>. More at <a href="https://connorwithhonor.com/">connorwithhonor.com</a>.</p>
+    </div>
+  </section>
+
+  <section class="post-final-cta">
+    <h3>Train an AI to <em>sound like your business.</em></h3>
+    <p>Free 30-minute audit. We scope your services, hours, and edge cases. You get the build timeline and the realistic ROI for your specific volume.</p>
+    <a href="/#book" class="btn-gold">Book Free AI Audit</a>
+    <span class="or">or test a trained agent: <a href="tel:661-299-7299">(661) 299-7299</a></span>
+  </section>
+
+</div>
+
+<div class="sticky-bar" id="stickyBar">
+  <p>Generic AI loses leads. Trained AI books them.</p>
+  <a href="/#book" class="btn-gold">Book Free Audit</a>
+  <a href="tel:661-299-7299" class="btn-call">&#9742; Call Betty</a>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo"><span class="face"></span> Honor<span>Elevate</span></a>
+      <p>AI business automation built by Connor MacIvor. 27+ years of business discipline powering systems that work while you sleep.</p>
+    </div>
+    <div class="footer-col"><h4>Solutions</h4><a href="/#solutions">AI Voice Agents</a><a href="/#solutions">Lead Automation</a><a href="/#solutions">CRM + Pipeline</a><a href="/#solutions">Review Engine</a></div>
+    <div class="footer-col"><h4>Resources</h4><a href="/blog/">Blog</a><a href="/#book">Free AI Audit</a><a href="tel:661-299-7299">Call Betty (Demo)</a><a href="mailto:connor@honorelevate.com">Email Connor</a></div>
+    <div class="footer-col"><h4>Ecosystem</h4><a href="https://connorwithhonor.com">Connor with Honor</a><a href="https://hireaivoice.com">HireAIVoice</a><a href="https://sellersonlyagent.com">Sellers Only Agent</a><a href="https://scv123.com">SCV123</a></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 HonorElevate. All Rights Reserved.</p>
+    <p>Coded by Connor with Honor | <a href="/">AI Growth Architect</a></p>
+    <p><a href="/terms-of-service">Terms</a> &nbsp;|&nbsp; <a href="/privacy-policy">Privacy</a></p>
+  </div>
+</footer>
+
+<script>
+const stickyBar=document.getElementById('stickyBar');
+const article=document.querySelector('.post-body');
+if (article) {const obs=new IntersectionObserver(e=>{e.forEach(entry=>entry.isIntersecting?stickyBar.classList.add('visible'):stickyBar.classList.remove('visible'))},{threshold:0.1});obs.observe(article);}
+</script>
+</body>
+</html>

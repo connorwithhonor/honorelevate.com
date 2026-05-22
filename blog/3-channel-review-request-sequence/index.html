@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 3-Channel Review Request Sequence (SMS, Email, SMS Follow-Up)</title>
+<meta name="description" content="The exact 3-channel review request sequence used in HonorElevate. Timing, copy, conversion rates per touch, and the 1-5 routing logic that protects your public rating while resolving issues privately.">
+<meta name="keywords" content="review request sequence, 3-channel review automation, SMS email review request, review request templates, HonorElevate review engine">
+<meta name="author" content="Connor MacIvor">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://honorelevate.com/blog/3-channel-review-request-sequence/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="The 3-Channel Review Request Sequence (SMS, Email, SMS Follow-Up)">
+<meta property="og:description" content="Exact timing, exact copy, conversion rates per touch, and the routing logic that protects your rating.">
+<meta property="og:url" content="https://honorelevate.com/blog/3-channel-review-request-sequence/">
+<meta property="og:image" content="https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png">
+<meta property="article:author" content="Connor MacIvor">
+<meta property="article:section" content="Review Generation">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/styles.css">
+
+<style>
+.sms-card{background:var(--bg-card);border:1px solid var(--warm-border-strong);border-radius:14px;padding:22px 24px;margin:20px 0}
+.sms-card .sms-label{font-size:.72rem;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.sms-card .sms-bubble{background:var(--gold-soft);border-left:3px solid var(--gold);padding:14px 18px;border-radius:0 8px 8px 0;color:var(--white);font-size:1rem;line-height:1.6}
+.sms-card .sms-note{font-size:.82rem;color:var(--text-muted);margin-top:10px;font-style:italic}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","@id":"https://honorelevate.com/blog/3-channel-review-request-sequence/#article",
+"headline":"The 3-Channel Review Request Sequence (SMS, Email, SMS Follow-Up)",
+"description":"Exact timing, exact copy, conversion rates per touch, and the 1-5 routing logic.",
+"image":"https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png",
+"datePublished":"2026-05-16","dateModified":"2026-05-16",
+"author":{"@type":"Person","name":"Connor MacIvor","url":"https://connorwithhonor.com/","jobTitle":"AI Growth Architect"},
+"publisher":{"@type":"Organization","name":"HonorElevate","logo":{"@type":"ImageObject","url":"https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png"}},
+"mainEntityOfPage":{"@type":"WebPage","@id":"https://honorelevate.com/blog/3-channel-review-request-sequence/"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://honorelevate.com/"},
+  {"@type":"ListItem","position":2,"name":"Blog","item":"https://honorelevate.com/blog/"},
+  {"@type":"ListItem","position":3,"name":"3-Channel Review Sequence","item":"https://honorelevate.com/blog/3-channel-review-request-sequence/"}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"What is the optimal time to send a review request?","acceptedAnswer":{"@type":"Answer","text":"For most service businesses, 30 minutes to 2 hours after job completion. HVAC and plumbing convert best at 30-60 minutes when the customer is still experiencing the fix. Roofing and longer-project trades convert best at 4-8 hours. Dental and medical convert best end-of-day."}},
+  {"@type":"Question","name":"Why use three channels instead of one?","acceptedAnswer":{"@type":"Answer","text":"Single-touch email converts at 3-8%. The 3-channel sequence (SMS, email, SMS follow-up) converts at 28-38% composite. Different customers respond to different channels at different times. Hitting all three lets you catch the customer in whichever window works for them."}},
+  {"@type":"Question","name":"How does the 1-5 rating gate work?","acceptedAnswer":{"@type":"Answer","text":"The request lands the customer on a branded page that shows 1-5 star options. The customer taps a number. 4-5 stars routes to your Google review form. 1-3 stars routes to a private feedback form that goes directly to you. The customer is never blocked from leaving a public review if they want to."}}
+]}
+</script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><span class="face"></span> Honor<span>Elevate</span></a>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Menu">&#9776;</button>
+    <div class="nav-links">
+      <a href="/#problems">The Problem</a><a href="/#solutions">What I Build</a><a href="/#proof">Proof</a>
+      <a href="/blog/" class="current">Blog</a><a href="tel:661-400-1720">&#9742; (661) 400-1720</a>
+      <a href="/#book" class="btn-gold">Free AI Audit</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container-narrow">
+  <div class="breadcrumb">
+    <a href="/">Home</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span class="current">3-Channel Review Sequence</span>
+  </div>
+
+  <header class="post-header">
+    <span class="post-cluster">› Series 4 · The Sequence</span>
+    <h1 class="post-title">The 3-Channel Review Request Sequence <em>(SMS, Email, SMS Follow-Up)</em></h1>
+    <div class="post-meta">
+      <span class="author"><span class="av"></span> By <b>Connor MacIvor</b></span>
+      <span class="dot">·</span><span>Published May 16, 2026</span><span class="dot">·</span><span class="read-time">9 min read</span>
+    </div>
+  </header>
+
+  <div class="post-hero">
+    <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
+      <rect width="800" height="360" fill="#1a1f2b"/>
+      <text x="400" y="44" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#8a857b" letter-spacing="3">3 TOUCHES · 3 CHANNELS · 3 WINDOWS</text>
+
+      <g stroke="#e8a838" stroke-opacity=".4" stroke-width="2" fill="none" stroke-dasharray="6,4">
+        <line x1="100" y1="200" x2="700" y2="200"/>
+      </g>
+
+      <g fill="#e8a838">
+        <circle cx="180" cy="200" r="22"/>
+        <circle cx="400" cy="200" r="22"/>
+        <circle cx="620" cy="200" r="22"/>
+      </g>
+
+      <g font-family="DM Serif Display" font-size="22" font-weight="700" fill="#0f1219" text-anchor="middle">
+        <text x="180" y="208">1</text>
+        <text x="400" y="208">2</text>
+        <text x="620" y="208">3</text>
+      </g>
+
+      <g font-family="DM Sans" font-size="13" fill="#e8a838" text-anchor="middle">
+        <text x="180" y="100">SMS</text>
+        <text x="400" y="100">Email</text>
+        <text x="620" y="100">SMS</text>
+      </g>
+
+      <g font-family="DM Serif Display" font-size="32" font-weight="700" fill="#e8a838" text-anchor="middle">
+        <text x="180" y="138">+22%</text>
+        <text x="400" y="138">+10%</text>
+        <text x="620" y="138">+5%</text>
+      </g>
+
+      <g font-family="DM Sans" font-size="11" fill="#d4cfc5" text-anchor="middle">
+        <text x="180" y="162">conversion</text>
+        <text x="400" y="162">conversion</text>
+        <text x="620" y="162">conversion</text>
+      </g>
+
+      <g font-family="DM Sans" font-size="11" fill="#8a857b" text-anchor="middle">
+        <text x="180" y="262">30 min post-job</text>
+        <text x="400" y="262">4 hours</text>
+        <text x="620" y="262">48 hours</text>
+      </g>
+
+      <text x="400" y="320" text-anchor="middle" font-family="DM Serif Display" font-size="22" fill="#f5f1eb">Composite: <tspan fill="#e8a838">28-38%</tspan> of customers leave a review</text>
+    </svg>
+  </div>
+
+  <div class="quick-answer">
+    <div class="label">› Quick Answer</div>
+    <p><strong>The HonorElevate review request sequence fires three messages across three channels at three time windows: SMS at 30 minutes post-job, email at 4 hours, SMS follow-up at 48 hours.</strong> Composite conversion lands at 28-38% across industries vs 3-8% for single-touch email-only requests. The 1-5 rating gate routes happy customers to Google and unhappy ones to a private feedback channel before they post publicly.</p>
+  </div>
+
+  <div class="tldr">
+    <h3>TL;DR</h3>
+    <ul>
+      <li><strong>Touch 1: SMS at 30 minutes post-job.</strong> Highest leverage moment. +22% conversion.</li>
+      <li><strong>Touch 2: Email at 4 hours.</strong> Catches customers who missed the SMS. +10% additional.</li>
+      <li><strong>Touch 3: SMS follow-up at 48 hours.</strong> Recovers the slow-responders. +5% additional.</li>
+      <li><strong>Gate logic:</strong> 1-5 star rating step before review submission. 4-5 → Google. 1-3 → private feedback.</li>
+      <li><strong>Branded landing page:</strong> the customer lands on YOUR page, not a generic review platform.</li>
+      <li><strong>Compliance:</strong> the gate complies with Google policy because it never blocks public review submission.</li>
+    </ul>
+  </div>
+
+  <article class="post-body">
+
+    <p>Single-touch email asking for reviews is the default at most service businesses. It converts at 3-8%. The 3-channel sequence at HonorElevate converts at 28-38%. Same customer base, same satisfaction levels, dramatically different reviewing behavior. The difference is the cadence, the channels, and the routing. This is the exact sequence.</p>
+
+    <h2>Touch 1: <em>SMS at 30 minutes post-job</em></h2>
+
+    <p>The job completes. The tech finishes the work. The customer signs the work order. Payment processes. 30 minutes later, the platform fires the first SMS.</p>
+
+    <h3>The trigger</h3>
+
+    <p>The "job complete" event comes from your dispatch software (ServiceTitan, Jobber, Housecall Pro, etc.) or from a manual mark-complete action by the tech. HonorElevate listens for the trigger and starts the 30-minute countdown.</p>
+
+    <h3>The message</h3>
+
+    <div class="sms-card">
+      <div class="sms-label">› TOUCH 1 · SMS · 30 MIN POST-JOB</div>
+      <div class="sms-bubble">Hi Maria, this is Sarah at Smith Heating + Air. Quick check-in, how did Mike do with the AC repair today?</div>
+      <div class="sms-note">137 chars. Uses customer first name (verified in CRM). Names the tech (humanizes it). Asks open-ended question. Conversion: ~22%.</div>
+    </div>
+
+    <h3>Why 30 minutes works</h3>
+
+    <p>The customer is still in the house. The air is cold. The drain is working. The crown is in. The emotional peak of service satisfaction lives in this 30-minute window. Asking now feels natural. Asking next week feels random.</p>
+
+    <h3>What happens after the reply</h3>
+
+    <p>Customer reply lands in the unified inbox. The AI parses the response. If positive ("It was great, Mike was awesome"), the AI follows up: <em>"That is great to hear! If you have a quick minute, would you mind sharing that here? [link to rating landing page]"</em>. If negative ("There is still a noise"), the AI escalates to the owner immediately.</p>
+
+    <p>If no reply within 4 hours, the sequence advances to touch 2.</p>
+
+    <h2>Touch 2: <em>Email at 4 hours</em></h2>
+
+    <p>Some customers do not respond to SMS at 30 minutes for legitimate reasons. They were in the shower. The phone was in another room. They wanted to wait until the system had been running for a few hours to confirm everything was good. Touch 2 catches these.</p>
+
+    <h3>The message structure</h3>
+
+    <ul>
+      <li><strong>Subject line:</strong> "Quick question about your service today, Maria" (personalized, conversational, low friction).</li>
+      <li><strong>Pre-header:</strong> "We just wanted to make sure everything was running right."</li>
+      <li><strong>Body:</strong> Branded header, personal greeting, brief thank-you, single 1-5 rating CTA (star widget), owner's direct contact info as a "if anything is wrong, reach me here" backstop.</li>
+      <li><strong>Footer:</strong> Business compliance info (address, license number, unsubscribe link).</li>
+    </ul>
+
+    <h3>Why email at 4 hours works</h3>
+
+    <p>Different customer demographic responds to different channels. Older customers, B2B customers, and people who were busy at the SMS moment all check email later in the day. The 4-hour gap respects the customer's time without feeling pushy.</p>
+
+    <p>Email open rates run 38-48% for this kind of post-service email (vs 18-22% for general marketing email). Click-to-rate runs 12-18% of opens. Net contribution to the composite: 8-12% of total customers.</p>
+
+    <h2>Touch 3: <em>SMS follow-up at 48 hours</em></h2>
+
+    <p>The final touch. If the customer has not engaged with either Touch 1 or Touch 2 by hour 48, one last SMS goes out.</p>
+
+    <div class="sms-card">
+      <div class="sms-label">› TOUCH 3 · SMS · 48 HOURS</div>
+      <div class="sms-bubble">Hey Maria, hope the AC is still running cold. If you have 30 seconds, a review here would mean a lot: [link]. Reply STOP to end.</div>
+      <div class="sms-note">130 chars. Warm tone. Specific reference ("still running cold"). Short URL (not a tracking link). STOP keyword for compliance. Conversion: ~5% additional.</div>
+    </div>
+
+    <h3>Why 48 hours and stop at 3</h3>
+
+    <p>By 48 hours the customer has had time to actually experience the result. The AC is still working (or it is not, in which case Touch 3 surfaces a complaint before it becomes a 1-star review). The customer is in a more reflective state than 30 minutes after the service.</p>
+
+    <p>Three touches max. Four or more starts to feel like nagging. Five would trigger compliance issues with TCPA and carrier filtering. The 3-touch ceiling is the discipline that keeps the conversion rate high without turning customers off.</p>
+
+    <h2>The <em>1-5 rating gate</em></h2>
+
+    <p>Every touch links to the same branded landing page. The landing page asks one question: "How was your service experience today?" with five star icons. The customer taps a number. Then the routing happens.</p>
+
+    <h3>4-5 stars: route to Google</h3>
+
+    <p>Page advances: <em>"Awesome! Would you mind sharing that with others? It really helps us out."</em> Single CTA button: "Leave a review on Google" (or Yelp, or Facebook, depending on which platform the business wants to prioritize). The button opens the customer's Google review form for your business, prepopulated with the star rating. The customer types their review text and submits.</p>
+
+    <p>Conversion from "tap 5 stars" to "submit Google review" runs 65-75%. The customer who already mentally committed to 5 stars usually follows through.</p>
+
+    <h3>1-3 stars: route to private feedback</h3>
+
+    <p>Page advances: <em>"We are sorry to hear that. Help us make it right."</em> Text area: "What happened? Connor will personally read this and follow up with you." Single CTA button: "Send feedback to the owner."</p>
+
+    <p>The feedback goes directly to the owner via SMS and email with the full customer context. The owner has 24 hours to respond. Most issues get resolved in that window. The customer feels heard. The Google profile stays protected.</p>
+
+    <h3>The compliance line</h3>
+
+    <p>Google policy prohibits review gating that prevents unhappy customers from leaving public reviews. The 1-5 system does NOT prevent. The customer who taps 2 stars can still navigate to Google and post a 1-star review at any time. The system simply offers a private path first. Most unhappy customers prefer the private path because they want their issue fixed, not just publicly aired. The honest disclosure is also in the pillar at <a href="/blog/review-generation-guide/">The Complete Guide to Review Generation</a>.</p>
+
+    <h2>Industry-specific timing variations</h2>
+
+    <table>
+      <thead><tr><th>Industry</th><th>Touch 1</th><th>Touch 2</th><th>Touch 3</th></tr></thead>
+      <tbody>
+        <tr><td>HVAC</td><td>30 min</td><td>4 hours</td><td>48 hours</td></tr>
+        <tr><td>Plumbing</td><td>30 min</td><td>4 hours</td><td>48 hours</td></tr>
+        <tr><td>Roofing</td><td>4 hours</td><td>24 hours</td><td>5 days</td></tr>
+        <tr><td>Dental (general)</td><td>End of day</td><td>Next day</td><td>3 days</td></tr>
+        <tr><td>Dental (cosmetic / ortho)</td><td>Next day</td><td>3 days</td><td>7 days</td></tr>
+        <tr><td>Med spa / aesthetics</td><td>4 hours</td><td>Next day</td><td>3 days</td></tr>
+        <tr><td>Auto repair</td><td>1 hour</td><td>Next day</td><td>3 days</td></tr>
+        <tr><td>Real estate (closing)</td><td>1 day</td><td>3 days</td><td>7 days</td></tr>
+        <tr><td>Recurring service (cleaning, lawn, pest)</td><td>2 hours</td><td>Next day</td><td>3 days</td></tr>
+      </tbody>
+    </table>
+
+    <p>The pattern: industries where customers experience the result quickly use tight intervals (HVAC, plumbing). Industries where the result requires settling time use wider intervals (cosmetic dental, roofing). The defaults are configured during onboarding based on your industry.</p>
+
+    <div class="callout">
+      <span class="ico">›</span>
+      <div><strong>The deeper variable:</strong> the sequence is optimized for when customers can authentically evaluate the work. Asking too early gets you a thoughtless "good." Asking too late lets the emotion fade. The right window is when the customer can answer honestly.</div>
+    </div>
+
+    <h2>The conversion math per touch</h2>
+
+    <p>Typical mid-volume HVAC business, 33% composite conversion across the 3-channel sequence:</p>
+
+    <table>
+      <thead><tr><th>Touch</th><th>Customers reached</th><th>Conversions</th><th>Cumulative %</th></tr></thead>
+      <tbody>
+        <tr><td>1: SMS at 30 min</td><td>100</td><td>22</td><td>22%</td></tr>
+        <tr><td>2: Email at 4 hours</td><td>78</td><td>10</td><td>32%</td></tr>
+        <tr><td>3: SMS at 48 hours</td><td>68</td><td>3</td><td>35%</td></tr>
+      </tbody>
+    </table>
+
+    <p>Note: the second and third touches only fire to customers who did not convert from the previous step, hence the shrinking base. Total conversions: 35 reviews from 100 completed jobs.</p>
+
+    <div class="stat-box">
+      <span class="n">5x</span>
+      <span class="l">conversion lift of the 3-channel sequence vs single-touch email-only request.</span>
+    </div>
+
+    <div class="inline-cta">
+      <h3>Want the sequence <em>tuned for your industry?</em></h3>
+      <p>Free 30-minute audit. We map your job-completion workflow, set industry-specific timing, and draft the message copy for your tone and brand.</p>
+      <a href="/#book" class="btn-gold">Book My Free AI Audit</a>
+    </div>
+
+    <h2>The four mistakes <em>that destroy the sequence</em></h2>
+
+    <h3>1. Sending immediately after the tech leaves</h3>
+    <p>"The technician just left, please review us." Feels pushy. Conversion drops to 8-12%. The 30-minute window is intentional. Respect the buffer.</p>
+
+    <h3>2. Sending the same message in every touch</h3>
+    <p>Touch 1, 2, and 3 must use different language. If the customer ignored Touch 1, sending identical Touch 2 just tells them to ignore it again. Each touch should feel like a different conversation.</p>
+
+    <h3>3. Including a long-form CTA in Touch 1</h3>
+    <p>The first SMS should ask "how did it go" not "leave us a 5-star review." The first touch opens dialogue. The dialogue earns the right to ask for the review on Touch 2 or 3 (or after a positive response to Touch 1).</p>
+
+    <h3>4. Skipping the 1-5 rating gate</h3>
+    <p>Sending customers directly to Google without the rating step means unhappy customers post 1-star reviews instead of giving you a chance to resolve privately. Your overall rating drops. Your local pack ranking drops. Your conversion drops. The gate is non-negotiable.</p>
+
+    <h2>What customers <em>actually write</em></h2>
+
+    <p>The right-shaped review for local SEO mentions specific services, specific people, and specific outcomes. The HonorElevate landing page nudges this without scripting it.</p>
+
+    <p>Standard customer review without prompting:</p>
+    <blockquote>"Great service, very happy."</blockquote>
+
+    <p>Customer review after the landing page prompts ("Tell others about your experience"):</p>
+    <blockquote>"Mike from Smith Heating fixed my AC fast. The capacitor went out on a hot Tuesday and he came the next morning at 7 AM. Honest pricing, did not try to upsell anything, and the system has been running great. Highly recommend if you need HVAC repair in Saugus."</blockquote>
+
+    <p>The second review is 6x more valuable for local SEO. It mentions the service (HVAC repair), the location (Saugus), the part (capacitor), the tech name, and the experience qualities. Google parses all of this. Customers searching "HVAC repair Saugus capacitor" rank this business higher.</p>
+
+    <h2>The bottom line</h2>
+
+    <p>The 3-channel sequence is mechanical. Trigger fires when job completes. SMS at the right window. Email at the next window. SMS again at the final window. Customers go through the 1-5 gate. Happy ones land on Google. Unhappy ones land in your inbox.</p>
+
+    <p>Single-touch email at "please review us" converts at 3-8%. The 3-channel sequence converts at 28-38%. The 5x gap is one sequence and disciplined execution.</p>
+
+    <p>For the 90-day curve math, read <a href="/blog/12-to-60-reviews-90-days/">How HonorElevate Takes a Business From 12 Reviews to 60+ in 90 Days</a>. For the negative-review handling, read <a href="/blog/negative-review-routing/">Negative Review Routing</a>.</p>
+
+  </article>
+
+  <section class="faq-section">
+    <h2>FAQ <em>·</em> The Sequence</h2>
+    <details open>
+      <summary>Can I customize the sequence timing for my business?</summary>
+      <div class="a">Yes. The defaults are industry-tuned, but each touch's timing is adjustable per workflow. Some businesses prefer 1 hour for Touch 1 instead of 30 minutes. Some prefer 24 hours for Touch 2. The system is flexible.</div>
+    </details>
+    <details>
+      <summary>What if a customer responds positively to Touch 1 with an issue I need to fix?</summary>
+      <div class="a">The AI escalates to the owner immediately. The remaining touches pause until the issue is resolved. After resolution, the sequence resumes from the next appropriate touch (often Touch 3) with new context.</div>
+    </details>
+    <details>
+      <summary>What if a customer leaves a 3-star review on Google despite the routing?</summary>
+      <div class="a">It happens. Some customers want their voice heard publicly even after using the private feedback channel. The AI drafts a graceful response to the public 3-star review for owner approval. Response playbook is in <a href="/blog/responding-to-reviews-ai-template/">Responding to Reviews: The AI Reply Template That Doesn't Sound Like AI</a>.</div>
+    </details>
+    <details>
+      <summary>Can I send review requests in Spanish?</summary>
+      <div class="a">Yes. The platform supports English, Spanish, and additional languages on request. The landing page detects browser language and serves the correct version automatically.</div>
+    </details>
+  </section>
+
+  <section class="read-next">
+    <div class="label">› Read Next</div>
+    <div class="read-next-grid">
+      <a href="/blog/review-generation-guide/" class="read-next-card">
+        <div class="arrow">› Series 4 · Pillar</div>
+        <h3>The Complete Guide to Review Generation for Local Service Businesses</h3>
+        <p>The operator's manual. Why it works, how it routes, what it costs.</p>
+      </a>
+      <a href="/blog/negative-review-routing/" class="read-next-card">
+        <div class="arrow">› Series 4 · Spoke</div>
+        <h3>Negative Review Routing: Catching Unhappy Customers Before They Hit Google</h3>
+        <p>The 1-3 star private feedback playbook. How to resolve issues before they go public.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="author-block">
+    <div class="av"></div>
+    <div>
+      <h4>Connor MacIvor</h4>
+      <div class="title">AI Growth Architect · Santa Clarita, CA</div>
+      <p>27+ years running businesses. Self-taught programmer since 1983. Direct line: <a href="tel:661-400-1720">661-400-1720</a>. More at <a href="https://connorwithhonor.com/">connorwithhonor.com</a>.</p>
+    </div>
+  </section>
+
+  <section class="post-final-cta">
+    <h3>3 touches. 28-38%. <em>Mechanical.</em></h3>
+    <p>Free 30-minute audit. We tune the sequence for your industry, your customer base, and your tone. You get the deploy timeline whether you start or not.</p>
+    <a href="/#book" class="btn-gold">Book Free AI Audit</a>
+    <span class="or">or call Connor: <a href="tel:661-400-1720">(661) 400-1720</a></span>
+  </section>
+
+</div>
+
+<div class="sticky-bar" id="stickyBar">
+  <p>Single touch converts at 5%. Three-channel at 33%.</p>
+  <a href="/#book" class="btn-gold">Book Free Audit</a>
+  <a href="tel:661-400-1720" class="btn-call">&#9742; Call Now</a>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo"><span class="face"></span> Honor<span>Elevate</span></a>
+      <p>AI business automation built by Connor MacIvor. 27+ years of business discipline powering systems that work while you sleep.</p>
+    </div>
+    <div class="footer-col"><h4>Solutions</h4><a href="/#solutions">AI Voice Agents</a><a href="/#solutions">Lead Automation</a><a href="/#solutions">CRM + Pipeline</a><a href="/#solutions">Review Engine</a></div>
+    <div class="footer-col"><h4>Resources</h4><a href="/blog/">Blog</a><a href="/#book">Free AI Audit</a><a href="tel:661-299-7299">Call Betty (Demo)</a><a href="mailto:connor@honorelevate.com">Email Connor</a></div>
+    <div class="footer-col"><h4>Ecosystem</h4><a href="https://connorwithhonor.com">Connor with Honor</a><a href="https://hireaivoice.com">HireAIVoice</a><a href="https://sellersonlyagent.com">Sellers Only Agent</a><a href="https://scv123.com">SCV123</a></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 HonorElevate. All Rights Reserved.</p>
+    <p>Coded by Connor with Honor | <a href="/">AI Growth Architect</a></p>
+    <p><a href="/terms-of-service">Terms</a> &nbsp;|&nbsp; <a href="/privacy-policy">Privacy</a></p>
+  </div>
+</footer>
+
+<script>
+const stickyBar=document.getElementById('stickyBar');
+const article=document.querySelector('.post-body');
+if (article) {const obs=new IntersectionObserver(e=>{e.forEach(entry=>entry.isIntersecting?stickyBar.classList.add('visible'):stickyBar.classList.remove('visible'))},{threshold:0.1});obs.observe(article);}
+</script>
+</body>
+</html>

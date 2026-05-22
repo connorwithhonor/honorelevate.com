@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Round-Robin Tech Assignment for Multi-Tech Service Businesses</title>
+<meta name="description" content="How HonorElevate distributes appointments fairly across multi-tech teams. Pure round-robin, skill-weighted, geography-weighted, and hybrid assignment strategies. The math that keeps every tech busy without overloading anyone.">
+<meta name="keywords" content="round robin scheduling, tech assignment service business, HVAC tech rotation, multi-tech booking distribution, service business dispatch fairness">
+<meta name="author" content="Connor MacIvor"><meta name="robots" content="index, follow">
+<link rel="canonical" href="https://honorelevate.com/blog/round-robin-tech-assignment/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"><link rel="stylesheet" href="/blog/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","@id":"https://honorelevate.com/blog/round-robin-tech-assignment/#article","headline":"Round-Robin Tech Assignment for Multi-Tech Service Businesses","description":"How HonorElevate distributes appointments fairly across multi-tech teams.","image":"https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png","datePublished":"2026-05-16","dateModified":"2026-05-16","author":{"@type":"Person","name":"Connor MacIvor","url":"https://connorwithhonor.com/","jobTitle":"AI Growth Architect"},"publisher":{"@type":"Organization","name":"HonorElevate","logo":{"@type":"ImageObject","url":"https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://honorelevate.com/blog/round-robin-tech-assignment/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://honorelevate.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://honorelevate.com/blog/"},{"@type":"ListItem","position":3,"name":"Round-Robin Assignment","item":"https://honorelevate.com/blog/round-robin-tech-assignment/"}]}</script>
+</head>
+<body>
+<nav class="site-nav"><div class="nav-inner"><a href="/" class="nav-logo"><span class="face"></span> Honor<span>Elevate</span></a><button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Menu">&#9776;</button><div class="nav-links"><a href="/#problems">The Problem</a><a href="/#solutions">What I Build</a><a href="/#proof">Proof</a><a href="/blog/" class="current">Blog</a><a href="tel:661-400-1720">&#9742; (661) 400-1720</a><a href="/#book" class="btn-gold">Free AI Audit</a></div></div></nav>
+
+<div class="container-narrow">
+<div class="breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span class="current">Round-Robin Assignment</span></div>
+
+<header class="post-header">
+<span class="post-cluster">› Series 9 · Routing</span>
+<h1 class="post-title">Round-Robin Tech Assignment <em>for Multi-Tech Service Businesses</em></h1>
+<div class="post-meta"><span class="author"><span class="av"></span> By <b>Connor MacIvor</b></span><span class="dot">·</span><span>Published May 16, 2026</span><span class="dot">·</span><span class="read-time">8 min read</span></div>
+</header>
+
+<div class="post-hero">
+<svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
+<rect width="800" height="360" fill="#1a1f2b"/>
+<text x="400" y="44" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#e8a838" letter-spacing="3">FAIR DISTRIBUTION · 5 TECHS</text>
+<g transform="translate(80,90)"><circle cx="80" cy="80" r="36" fill="#1a1f2b" stroke="#e8a838" stroke-width="2"/><text x="80" y="74" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#e8a838">MIKE</text><text x="80" y="92" text-anchor="middle" font-family="DM Serif Display" font-size="18" fill="#f5f1eb">8</text></g>
+<g transform="translate(220,90)"><circle cx="80" cy="80" r="36" fill="#1a1f2b" stroke="#e8a838" stroke-width="2"/><text x="80" y="74" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#e8a838">SAM</text><text x="80" y="92" text-anchor="middle" font-family="DM Serif Display" font-size="18" fill="#f5f1eb">8</text></g>
+<g transform="translate(360,90)"><circle cx="80" cy="80" r="36" fill="#1a1f2b" stroke="#e8a838" stroke-width="2"/><text x="80" y="74" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#e8a838">JEN</text><text x="80" y="92" text-anchor="middle" font-family="DM Serif Display" font-size="18" fill="#f5f1eb">7</text></g>
+<g transform="translate(500,90)"><circle cx="80" cy="80" r="36" fill="#1a1f2b" stroke="#e8a838" stroke-width="2"/><text x="80" y="74" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#e8a838">DAVE</text><text x="80" y="92" text-anchor="middle" font-family="DM Serif Display" font-size="18" fill="#f5f1eb">8</text></g>
+<g transform="translate(640,90)"><circle cx="80" cy="80" r="36" fill="#1a1f2b" stroke="#e8a838" stroke-width="2"/><text x="80" y="74" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#e8a838">TINA</text><text x="80" y="92" text-anchor="middle" font-family="DM Serif Display" font-size="18" fill="#f5f1eb">7</text></g>
+<text x="400" y="240" text-anchor="middle" font-family="DM Serif Display" font-size="22" fill="#f5f1eb">38 weekly bookings · evenly distributed</text>
+<text x="400" y="280" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#5c5850">Pure round-robin, skill-weighted, geo-weighted, or hybrid.</text>
+</svg>
+</div>
+
+<div class="quick-answer">
+<div class="label">› Quick Answer</div>
+<p><strong>Round-robin tech assignment distributes incoming bookings fairly across a multi-tech team based on configurable rules: pure rotation, skill matching, geographic optimization, or hybrid weighting.</strong> The right strategy depends on your operation. Pure round-robin keeps everyone earning equally. Skill-weighted protects job quality. Geo-weighted cuts drive time. HonorElevate supports all four strategies plus custom rules.</p>
+</div>
+
+<div class="tldr">
+<h3>TL;DR</h3>
+<ul>
+<li><strong>Pure round-robin:</strong> tech with the least recent booking gets the next one. Maximally fair.</li>
+<li><strong>Skill-weighted:</strong> only qualified techs eligible for specialized jobs (commercial, certifications).</li>
+<li><strong>Geo-weighted:</strong> nearest tech to the customer gets priority. Cuts drive time.</li>
+<li><strong>Hybrid:</strong> combine multiple factors with configurable weights.</li>
+<li><strong>Overrides available:</strong> customer-requested techs, returning-customer-to-prior-tech rules.</li>
+<li><strong>Reporting:</strong> dashboard surfaces tech-load balance, average tickets per tech, drive time per tech.</li>
+</ul>
+</div>
+
+<article class="post-body">
+
+<p>Tech assignment is one of the most consequential operational decisions in a multi-tech service business. Distribute work poorly and you create resentment, lopsided revenue, wasted drive time, and skill mismatches. Distribute work well and the team runs smoothly, customers get the right tech for the job, and revenue is balanced across the roster.</p>
+
+<p>HonorElevate's assignment engine handles four strategies plus custom rules. This post walks through each.</p>
+
+<h2>Strategy 1: <em>Pure round-robin</em></h2>
+
+<h3>How it works</h3>
+<p>The tech with the least recent booking gets the next eligible appointment. Over time, every tech ends up with approximately the same number of bookings.</p>
+
+<h3>When this wins</h3>
+<ul>
+<li>Small team (2-5 techs)</li>
+<li>All techs have similar skills</li>
+<li>Geographic coverage overlaps</li>
+<li>Owner wants maximum fairness</li>
+</ul>
+
+<h3>When this fails</h3>
+<ul>
+<li>Specialized jobs assigned to wrong techs (commercial job to residential-only tech)</li>
+<li>Drive time gets bloated (Saugus job assigned to Stevenson Ranch tech when Saugus tech is available)</li>
+<li>Junior techs assigned to deals beyond their skill</li>
+</ul>
+
+<p>Pure round-robin is the simplest default. Most operations need at least one layer of weighting on top.</p>
+
+<h2>Strategy 2: <em>Skill-weighted</em></h2>
+
+<h3>How it works</h3>
+<p>Each tech has a skills profile (residential HVAC, commercial HVAC, refrigeration, hydronics, etc.). Each service type has required skills. Only qualified techs are eligible for assignment. Round-robin applies within the qualified set.</p>
+
+<h3>Configuration example</h3>
+<table>
+<thead><tr><th>Tech</th><th>Skills</th></tr></thead>
+<tbody>
+<tr><td>Mike</td><td>Residential HVAC, Mini-split</td></tr>
+<tr><td>Sam</td><td>Residential HVAC, Commercial HVAC, Refrigeration</td></tr>
+<tr><td>Jen</td><td>Residential HVAC, Heat pumps</td></tr>
+<tr><td>Dave</td><td>Residential HVAC, Maintenance plans</td></tr>
+<tr><td>Tina</td><td>Junior tech (service calls only)</td></tr>
+</tbody>
+</table>
+
+<p>A commercial HVAC service call only routes to Sam. A residential service call routes to any of the five with round-robin balancing. A heat pump replacement routes to Jen primarily, Sam as backup.</p>
+
+<h2>Strategy 3: <em>Geo-weighted</em></h2>
+
+<h3>How it works</h3>
+<p>Each tech has a home base or service zone. The system calculates approximate drive time from the tech's current location (or home base) to the customer's address. Bookings go to the nearest eligible tech.</p>
+
+<h3>When this wins</h3>
+<ul>
+<li>Large service area</li>
+<li>Drive time is a meaningful margin factor</li>
+<li>Techs cover sub-regions</li>
+</ul>
+
+<h3>Drive time math</h3>
+<p>Average HVAC service call: 90 minutes on-site. Average drive time per appointment: 25-40 minutes. Reducing drive time by 10 minutes per appointment across 200 monthly appointments = 33 hours of recovered tech time per month. At $80/hour billable, $2,640/month in recovered revenue.</p>
+
+<h2>Strategy 4: <em>Hybrid weighted</em></h2>
+
+<h3>How it works</h3>
+<p>Combine multiple factors with configurable weights. Example formula: 50% skill match, 30% geographic proximity, 20% round-robin fairness.</p>
+
+<h3>When this wins</h3>
+<ul>
+<li>Larger teams (8+ techs)</li>
+<li>Multiple service tiers</li>
+<li>Mixed urban/rural coverage</li>
+<li>Owner wants optimization across multiple dimensions</li>
+</ul>
+
+<p>Most established service businesses with 8+ techs end up on hybrid. Configurable weights tuned during onboarding and adjusted quarterly based on outcomes.</p>
+
+<div class="callout">
+<span class="ico">›</span>
+<div><strong>The discipline that matters:</strong> picking a strategy is less important than picking ONE strategy. Indecision creates inconsistency. Techs notice. Resentment builds. Pick the strategy that matches your operation and stick with it for at least 90 days before adjusting.</div>
+</div>
+
+<h2>Override rules</h2>
+
+<p>Sometimes the algorithm should be overridden.</p>
+
+<h3>1. Customer-requested tech</h3>
+<p>"I want Mike again because he was great." Configurable: allow customer to request specific tech in booking flow, or honor only if Mike has availability, or override always when requested.</p>
+
+<h3>2. Returning customer to prior tech</h3>
+<p>Customer Maria had Mike fix her AC in May. In October she books again. The system can be configured to default to Mike if he is available, even if round-robin would send her elsewhere.</p>
+
+<h3>3. Owner override</h3>
+<p>The owner can manually reassign any booking. Useful for relationships, complaints, or strategic placements.</p>
+
+<h3>4. Emergency escalation</h3>
+<p>True emergencies route to the nearest available tech regardless of round-robin. Speed matters more than fairness in the emergency.</p>
+
+<div class="inline-cta">
+<h3>Want the right <em>assignment strategy</em> for your operation?</h3>
+<p>Free 30-minute AI audit. We design the strategy that fits your team size, skill mix, and service area.</p>
+<a href="/#book" class="btn-gold">Book My Free AI Audit</a>
+</div>
+
+<h2>Reporting and tuning</h2>
+
+<p>The dashboard surfaces:</p>
+
+<ul>
+<li><strong>Bookings per tech</strong> over the trailing 30/90 days (load balance)</li>
+<li><strong>Revenue per tech</strong> (capability + opportunity balance)</li>
+<li><strong>Average drive time per booking</strong> (geo efficiency)</li>
+<li><strong>Customer satisfaction by tech</strong> (review averages)</li>
+<li><strong>Skill match rate</strong> (% of bookings to fully-qualified techs)</li>
+</ul>
+
+<p>Owner reviews monthly. Adjusts weights or strategy if patterns emerge (one tech consistently underloaded, drive time creeping up, complaints concentrated).</p>
+
+<h2>The bottom line</h2>
+
+<p>Round-robin is the default for small teams. Skill-weighted, geo-weighted, and hybrid layer on as the operation grows. HonorElevate supports all four with configurable rules and dashboard reporting. The discipline is picking a strategy and sticking with it.</p>
+
+<p>For the pillar, read <a href="/blog/booking-calendars-guide/">The Complete Guide to Booking and Calendars</a>. For the sync architecture, read <a href="/blog/two-way-calendar-sync/">Two-Way Calendar Sync: How Booking Stays Honest</a>.</p>
+
+</article>
+
+<section class="faq-section">
+<h2>FAQ <em>·</em> Tech Assignment</h2>
+<details open><summary>Can techs see what jobs are coming to them?</summary><div class="a">Yes. Each tech sees their own upcoming jobs in real time. The system does not show them what other techs are getting (avoids unproductive comparison).</div></details>
+<details><summary>What if a tech wants more (or fewer) jobs than they are getting?</summary><div class="a">Adjust their availability hours or skill profile. The system distributes within configured availability. Techs who want more work expand their hours. Techs who want fewer reduce their PTO/availability.</div></details>
+<details><summary>How does this work with ServiceTitan or Jobber dispatch?</summary><div class="a">HonorElevate assigns the tech and pushes the job to ServiceTitan/Jobber with the assignment. Dispatch software handles the operational execution. The assignment logic lives in HonorElevate.</div></details>
+</section>
+
+<section class="read-next">
+<div class="label">› Read Next</div>
+<div class="read-next-grid">
+<a href="/blog/booking-calendars-guide/" class="read-next-card"><div class="arrow">› Series 9 · Pillar</div><h3>The Complete Guide to Booking and Calendars for Service Businesses</h3><p>The operator's manual.</p></a>
+<a href="/blog/booking-rules-service-business/" class="read-next-card"><div class="arrow">› Series 9 · Spoke</div><h3>Booking Rules That Protect Your Calendar (Buffers, Service Areas, Tech Skills)</h3><p>The constraints layer on top of assignment.</p></a>
+</div>
+</section>
+
+<section class="author-block"><div class="av"></div><div><h4>Connor MacIvor</h4><div class="title">AI Growth Architect · Santa Clarita, CA</div><p>27+ years running businesses. Self-taught programmer since 1983. Direct line: <a href="tel:661-400-1720">661-400-1720</a>. More at <a href="https://connorwithhonor.com/">connorwithhonor.com</a>.</p></div></section>
+
+<section class="post-final-cta"><h3>Distribute fairly. <em>Earn together.</em></h3><p>Free 30-minute AI audit. We design the assignment strategy for your operation.</p><a href="/#book" class="btn-gold">Book Free AI Audit</a><span class="or">or call Connor: <a href="tel:661-400-1720">(661) 400-1720</a></span></section>
+</div>
+
+<div class="sticky-bar" id="stickyBar"><p>4 strategies. Configurable rules. Fair work.</p><a href="/#book" class="btn-gold">Book Free Audit</a><a href="tel:661-400-1720" class="btn-call">&#9742; Call Now</a></div>
+<footer><div class="footer-grid"><div class="footer-brand"><a href="/" class="nav-logo"><span class="face"></span> Honor<span>Elevate</span></a><p>AI business automation built by Connor MacIvor. 27+ years of business discipline powering systems that work while you sleep.</p></div><div class="footer-col"><h4>Solutions</h4><a href="/#solutions">AI Voice Agents</a><a href="/#solutions">Lead Automation</a><a href="/#solutions">CRM + Pipeline</a><a href="/#solutions">Review Engine</a></div><div class="footer-col"><h4>Resources</h4><a href="/blog/">Blog</a><a href="/#book">Free AI Audit</a><a href="tel:661-299-7299">Call Betty (Demo)</a><a href="mailto:connor@honorelevate.com">Email Connor</a></div><div class="footer-col"><h4>Ecosystem</h4><a href="https://connorwithhonor.com">Connor with Honor</a><a href="https://hireaivoice.com">HireAIVoice</a><a href="https://sellersonlyagent.com">Sellers Only Agent</a><a href="https://scv123.com">SCV123</a></div></div><div class="footer-bottom"><p>&copy; 2026 HonorElevate. All Rights Reserved.</p><p>Coded by Connor with Honor | <a href="/">AI Growth Architect</a></p><p><a href="/terms-of-service">Terms</a> &nbsp;|&nbsp; <a href="/privacy-policy">Privacy</a></p></div></footer>
+<script>const stickyBar=document.getElementById('stickyBar');const article=document.querySelector('.post-body');if(article){const obs=new IntersectionObserver(e=>{e.forEach(entry=>entry.isIntersecting?stickyBar.classList.add('visible'):stickyBar.classList.remove('visible'))},{threshold:0.1});obs.observe(article);}</script>
+</body>
+</html>

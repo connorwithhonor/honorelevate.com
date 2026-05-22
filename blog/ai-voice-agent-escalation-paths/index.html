@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Happens When the AI Cannot Handle the Call (Escalation Paths)</title>
+<meta name="description" content="The HonorElevate AI voice agent escalation playbook. When the agent escalates, how the handoff to a human works, what the owner sees, and how the lead is captured even when the AI hits its limit.">
+<meta name="keywords" content="AI voice agent escalation, AI receptionist handoff, AI fails call, voice AI human handoff, AI agent transfer to live person, HonorElevate escalation">
+<meta name="author" content="Connor MacIvor">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://honorelevate.com/blog/ai-voice-agent-escalation-paths/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Happens When the AI Cannot Handle the Call (Escalation Paths)">
+<meta property="og:description" content="The escalation playbook. When the agent hands off, how the lead is captured, and what the owner sees.">
+<meta property="og:url" content="https://honorelevate.com/blog/ai-voice-agent-escalation-paths/">
+<meta property="og:image" content="https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png">
+<meta property="article:author" content="Connor MacIvor">
+<meta property="article:section" content="AI Voice Agents">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/styles.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","@id":"https://honorelevate.com/blog/ai-voice-agent-escalation-paths/#article",
+"headline":"What Happens When the AI Cannot Handle the Call (Escalation Paths)",
+"description":"The HonorElevate AI voice agent escalation playbook. How the handoff to a human works and how the lead is captured.",
+"image":"https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png",
+"datePublished":"2026-05-16","dateModified":"2026-05-16",
+"author":{"@type":"Person","name":"Connor MacIvor","url":"https://connorwithhonor.com/","jobTitle":"AI Growth Architect"},
+"publisher":{"@type":"Organization","name":"HonorElevate","logo":{"@type":"ImageObject","url":"https://assets.cdn.filesafe.space/wGQNykcwXU4XZhG6toH7/media/69acafcab003fa0418240b10.png"}},
+"mainEntityOfPage":{"@type":"WebPage","@id":"https://honorelevate.com/blog/ai-voice-agent-escalation-paths/"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://honorelevate.com/"},
+  {"@type":"ListItem","position":2,"name":"Blog","item":"https://honorelevate.com/blog/"},
+  {"@type":"ListItem","position":3,"name":"AI Escalation Paths","item":"https://honorelevate.com/blog/ai-voice-agent-escalation-paths/"}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"What happens when the AI voice agent can't handle a call?","acceptedAnswer":{"@type":"Answer","text":"The agent escalates after two failed clarification attempts or when it detects an escalation trigger (asked for human, complex situation, true emergency, complaint, sensitive topic). Escalation routes to the designated owner or team member via warm transfer or structured SMS with full call context."}},
+  {"@type":"Question","name":"How does the AI know when to escalate?","acceptedAnswer":{"@type":"Answer","text":"Escalation triggers are configured during training: explicit human request, two failed clarifications, urgent emergencies, complaints or refunds, sensitive topics (death, medical, legal), service area mismatches needing owner judgment, and pricing questions beyond the configured matrix."}},
+  {"@type":"Question","name":"Can I customize the escalation rules?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every escalation rule is set during training and adjustable on demand. Want every $10K+ quote escalated? Set it. Want every complaint to your cell? Set it. Want emergencies routed to a different on-call number after 6 PM? Set it."}}
+]}
+</script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><span class="face"></span> Honor<span>Elevate</span></a>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Menu">&#9776;</button>
+    <div class="nav-links">
+      <a href="/#problems">The Problem</a><a href="/#solutions">What I Build</a><a href="/#proof">Proof</a>
+      <a href="/blog/" class="current">Blog</a><a href="tel:661-400-1720">&#9742; (661) 400-1720</a>
+      <a href="/#book" class="btn-gold">Free AI Audit</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container-narrow">
+  <div class="breadcrumb">
+    <a href="/">Home</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span class="current">AI Escalation Paths</span>
+  </div>
+
+  <header class="post-header">
+    <span class="post-cluster">› Series 2 · Failsafe</span>
+    <h1 class="post-title">What Happens When the AI <em>Cannot Handle the Call</em></h1>
+    <div class="post-meta">
+      <span class="author"><span class="av"></span> By <b>Connor MacIvor</b></span>
+      <span class="dot">·</span><span>Published May 16, 2026</span><span class="dot">·</span><span class="read-time">8 min read</span>
+    </div>
+  </header>
+
+  <div class="post-hero">
+    <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
+      <rect width="800" height="360" fill="#1a1f2b"/>
+      <circle cx="200" cy="180" r="60" fill="#1a1f2b" stroke="#e8a838" stroke-width="2"/>
+      <text x="200" y="174" text-anchor="middle" font-family="DM Serif Display" font-size="18" fill="#e8a838">AI</text>
+      <text x="200" y="196" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#8a857b">AGENT</text>
+      <g stroke="#e8a838" stroke-width="2" fill="none" stroke-dasharray="6,4">
+        <path d="M260,180 L350,100"/><path d="M260,180 L350,180"/><path d="M260,180 L350,260"/>
+      </g>
+      <g fill="#1a1f2b" stroke="#e8a838" stroke-width="1.5">
+        <rect x="350" y="80" width="180" height="40" rx="8"/>
+        <rect x="350" y="160" width="180" height="40" rx="8"/>
+        <rect x="350" y="240" width="180" height="40" rx="8"/>
+      </g>
+      <g font-family="DM Sans" font-size="12" fill="#d4cfc5" text-anchor="middle">
+        <text x="440" y="105">Warm Transfer to Owner</text>
+        <text x="440" y="185">Structured SMS to Cell</text>
+        <text x="440" y="265">After-Hours Voicemail + SMS</text>
+      </g>
+      <g stroke="#e8a838" stroke-opacity=".4" fill="none" stroke-width="1">
+        <line x1="530" y1="100" x2="660" y2="100"/><line x1="530" y1="180" x2="660" y2="180"/><line x1="530" y1="260" x2="660" y2="260"/>
+      </g>
+      <g fill="#e8a838">
+        <circle cx="680" cy="100" r="14"/><circle cx="680" cy="180" r="14"/><circle cx="680" cy="260" r="14"/>
+      </g>
+      <g font-family="DM Sans" font-size="11" fill="#0f1219" text-anchor="middle">
+        <text x="680" y="104">YOU</text><text x="680" y="184">YOU</text><text x="680" y="264">YOU</text>
+      </g>
+      <text x="400" y="40" text-anchor="middle" font-family="DM Serif Display" font-size="20" fill="#f5f1eb">Escalation Routing</text>
+      <text x="400" y="330" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#5c5850">Every path captures the lead. Nothing falls through.</text>
+    </svg>
+  </div>
+
+  <div class="quick-answer">
+    <div class="label">› Quick Answer</div>
+    <p><strong>When the HonorElevate AI voice agent cannot handle a call, it escalates through one of three paths: warm transfer to a designated human, structured SMS handoff with full call context, or after-hours voicemail capture with immediate notification.</strong> The lead is always captured. The customer is always called back. Nothing falls through the cracks. Escalation rules are configured during training and adjustable on demand.</p>
+  </div>
+
+  <div class="tldr">
+    <h3>TL;DR</h3>
+    <ul>
+      <li><strong>Trigger 1: Explicit human request.</strong> Caller says "talk to a human." Agent transfers cleanly.</li>
+      <li><strong>Trigger 2: Two failed clarifications.</strong> Agent cannot understand after two retries. Escalates.</li>
+      <li><strong>Trigger 3: Detected emergency or sensitive topic.</strong> Death, medical, legal, complaint, refund. Escalates.</li>
+      <li><strong>Trigger 4: Out-of-scope request.</strong> Service you do not offer or area you do not serve. Polite decline, optional escalation.</li>
+      <li><strong>Trigger 5: High-value quote.</strong> If quote exceeds a threshold you set, agent books the appointment but escalates the lead detail to your cell.</li>
+      <li><strong>Outcome:</strong> Always a structured handoff. Caller name, number, situation, urgency. You call back. Lead captured.</li>
+    </ul>
+  </div>
+
+  <article class="post-body">
+
+    <p>Every AI voice agent fails sometimes. The question is not whether yours will fail, the question is what happens when it does. A good system fails gracefully and captures the lead. A bad system fails silently and loses it. This is how the HonorElevate AI handles failure.</p>
+
+    <h2>The five escalation triggers</h2>
+
+    <h3>Trigger 1: Explicit human request</h3>
+    <p>The caller says "Can I talk to a person?" or "I'd rather speak to someone." The agent recognizes this on first request and offers two paths: "I can have someone call you back within a few minutes, or I can transfer you now if Connor is available. Which works better?" If the caller picks transfer and you are available, warm transfer. If you are not, structured SMS callback request.</p>
+
+    <p>This is the single most common escalation. Maybe 4-6% of calls. The agent never argues. Never tries to keep the caller. Never says "I can probably help with that." Hand it off, capture the lead, move on.</p>
+
+    <h3>Trigger 2: Two failed clarifications</h3>
+    <p>The agent asks a question. The caller responds with something the agent cannot interpret confidently. The agent asks one clarifying question. Still cannot interpret. The agent escalates: "I want to make sure I get this right for you. Let me have Connor call you back personally. What's the best number?" Captures name, number, brief description. SMS to owner.</p>
+
+    <p>This handles the long tail of weird inputs. Background noise, heavy accents, unusual requests, callers who are upset and not speaking clearly. The agent does not pretend to understand and book the wrong thing.</p>
+
+    <h3>Trigger 3: Detected emergency or sensitive topic</h3>
+    <p>Specific phrase detection plus context matching. Examples:</p>
+
+    <ul>
+      <li><strong>Active fire, gas leak, or safety threat:</strong> agent advises immediate 911 call, captures customer info, escalates immediately to owner with "CALL NOW" SMS.</li>
+      <li><strong>Death in the family:</strong> "I'm calling because my husband passed away last week and I need to cancel his service contract." Agent expresses condolences, captures the request, escalates to owner for personal callback. Does not try to upsell.</li>
+      <li><strong>Medical emergency or distress:</strong> agent confirms safety, captures need, escalates to designated emergency contact.</li>
+      <li><strong>Complaint about prior service:</strong> agent expresses sympathy, does not promise anything, escalates to owner with full transcript so the owner can address it personally.</li>
+      <li><strong>Legal threat or lawsuit mention:</strong> agent acknowledges, captures contact info, escalates with priority flag. No promises made on the call.</li>
+    </ul>
+
+    <h3>Trigger 4: Out-of-scope request</h3>
+    <p>Caller asks for something you do not do (a service, an area you do not serve, a price you do not offer). Agent politely declines with the trained response. For service-area mismatches: "Unfortunately we don't service that zip code. Would you like me to send you our recommended partner in that area?" For service mismatches: "We don't offer that specific service, but if you'd like to leave your number, Connor can check whether we can refer you to someone."</p>
+
+    <p>Optional escalation rule: if you want every out-of-scope request escalated for personal follow-up (in case you can sometimes accommodate), we flip the toggle. Otherwise polite decline and the lead does not enter the pipeline.</p>
+
+    <h3>Trigger 5: High-value or judgment-required quote</h3>
+    <p>You set a threshold during training. "Any quote over $5,000 should come to me personally." The agent books the appointment, gives a soft estimate range, and tells the caller "the technician will provide an exact quote on site." Then the agent fires you an SMS so you can call the customer personally before the appointment if you want to.</p>
+
+    <p>This protects you from the agent quoting a $4,800 system replacement to a customer who actually needs a $14,000 system. The agent never had the data to make that call. You do.</p>
+
+    <div class="callout">
+      <span class="ico">›</span>
+      <div><strong>The principle:</strong> the agent is trained to know what it does not know. The escalation triggers exist because some calls deserve a human and the agent should recognize them in the first 30 seconds, not after a 4-minute conversation that ends in confusion.</div>
+    </div>
+
+    <h2>The three escalation paths</h2>
+
+    <h3>Path 1: Warm transfer</h3>
+    <p>Agent says "Let me connect you to Connor right now." Calls your cell. If you answer, brief whisper of context ("HVAC service call, customer in Saugus, AC out, wants to talk to a human"), then connect. If you do not answer in three rings, agent returns to caller: "I couldn't reach him right now. Can I have him call you back in the next hour? What's the best number?"</p>
+
+    <p>Warm transfer works well during business hours. Less useful at 11 PM unless you genuinely want to take after-hours calls.</p>
+
+    <h3>Path 2: Structured SMS handoff</h3>
+    <p>This is the most common path. Agent finishes the call, captures all info, hangs up, then sends you an SMS like this:</p>
+
+    <blockquote>
+      ESCALATION · Mrs. Hernandez · (661) 555-0192 · Saugus 91350 · AC failure, asked for human · Booked tomorrow 7 AM, but wants to speak to you tonight · Urgency: HIGH · Transcript link attached
+      <span class="who">Auto-sent by HonorElevate AI</span>
+    </blockquote>
+
+    <p>You see the SMS, decide whether to call back tonight or in the morning, and you have all the context before you dial. The lead is already in your CRM with a "needs callback" flag.</p>
+
+    <h3>Path 3: After-hours voicemail capture</h3>
+    <p>For calls outside your defined "available for live escalation" hours, the agent does the booking or captures the request, sends a confirmation SMS to the caller, and queues the callback request for your morning brief. You wake up to a clean list of who needs you, why, and what was already handled.</p>
+
+    <p>This is the path that lets you actually sleep through Tuesday night without missing leads. The agent did the work. You read the brief at 6 AM and decide who to call first.</p>
+
+    <h2>What the caller experiences <em>during escalation</em></h2>
+
+    <p>The agent's escalation language is trained to feel like good customer service, not a system failure. Examples:</p>
+
+    <ul>
+      <li><strong>Bad:</strong> "I'm sorry, I can't help with that. Please call back during business hours."</li>
+      <li><strong>Good:</strong> "Let me make sure you get the right help on this. Connor handles these personally. I'll have him call you back within the hour. What's the best number?"</li>
+    </ul>
+
+    <p>The customer never feels like they hit a dead end. They feel like they got handed off to someone more senior who will take care of them. The leadership-tier language is part of the training (see <a href="/blog/training-honorelevate-ai-voice-agent/">Training Your HonorElevate AI Voice Agent</a>).</p>
+
+    <h2>How fast escalations <em>actually move</em></h2>
+
+    <table>
+      <thead><tr><th>Escalation type</th><th>Average time to owner notification</th><th>Average time to customer callback</th></tr></thead>
+      <tbody>
+        <tr><td>Warm transfer (live)</td><td>0 seconds (immediate)</td><td>Live on the call</td></tr>
+        <tr><td>SMS escalation (business hours)</td><td>Under 60 seconds</td><td>15-30 minutes</td></tr>
+        <tr><td>SMS escalation (after hours)</td><td>Under 60 seconds</td><td>Next business morning</td></tr>
+        <tr><td>Critical/urgent flag</td><td>Under 60 seconds with audible alert</td><td>Same hour</td></tr>
+      </tbody>
+    </table>
+
+    <div class="inline-cta">
+      <h3>Want to design <em>your specific escalation rules?</em></h3>
+      <p>Free 30-minute audit. We map your call types, your tolerance for after-hours interruption, and your high-value triggers. You stay in control of every escalation path.</p>
+      <a href="/#book" class="btn-gold">Book My Free AI Audit</a>
+    </div>
+
+    <h2>What does NOT trigger escalation <em>(by design)</em></h2>
+
+    <p>Equally important. The agent should NOT escalate for:</p>
+
+    <ul>
+      <li><strong>Standard service requests.</strong> The agent books them. That is the whole point.</li>
+      <li><strong>Routine pricing questions.</strong> Service call fee, base rates, financing terms. All in the trained knowledge base.</li>
+      <li><strong>Hours-of-operation questions.</strong> The agent answers.</li>
+      <li><strong>Repeat callers.</strong> If the caller is in the CRM, the agent recognizes them by phone number and personalizes accordingly.</li>
+      <li><strong>Reschedules or cancellations.</strong> Routine. The agent handles them.</li>
+      <li><strong>FAQ.</strong> Trained in. The agent answers.</li>
+    </ul>
+
+    <p>If the agent escalated everything, you would not have an AI. You would have an expensive answering service that constantly interrupted you. The point of the AI is to absorb 90-95% of calls so you only see the ones that genuinely need you.</p>
+
+    <h2>The escalation log: <em>what you see Monday morning</em></h2>
+
+    <p>Every escalation lives in the dashboard. Filterable by type, urgency, status (open, callback completed, lead converted), and date. The Monday morning brief surfaces:</p>
+
+    <ul>
+      <li>Total escalations last week (typically 3-12% of calls)</li>
+      <li>Escalations by category (human request, sensitive topic, high-value, etc.)</li>
+      <li>Average response time on your callbacks</li>
+      <li>Conversion rate on escalated leads</li>
+      <li>Any "agent could not understand" patterns we should add to training</li>
+    </ul>
+
+    <p>If a particular escalation pattern is recurring, we add it to training. Over the first 90 days, escalation rate typically drops from 12% to 4-6% as the agent gets sharper on your specific edge cases. The dashboard breakdown lives in <a href="/blog/honorelevate-dashboard-monday-morning/">The HonorElevate Dashboard: What an Owner Actually Sees Every Monday Morning</a>.</p>
+
+    <h2>The bottom line</h2>
+
+    <p>The escalation system is the reason the AI works in production instead of just in demos. Demos handle clean calls. Production handles the long tail. The escalation logic is what lets the AI run for 95% of calls confidently while gracefully handing off the other 5%.</p>
+
+    <p>The customer never knows they hit a limit. The lead never falls through. The owner gets the right calls at the right time and stops getting interrupted for trivia. That is the whole design.</p>
+
+    <p>For the full operator's guide, read the pillar: <a href="/blog/ai-voice-agents-guide/">The Complete Guide to AI Voice Agents for Local Service Businesses</a>. For the customer-perception side of disclosure and "did they know it was AI," read <a href="/blog/will-customers-know-talking-to-ai/">Will Customers Know They Are Talking to AI? The Honest Answer</a>.</p>
+
+  </article>
+
+  <section class="faq-section">
+    <h2>FAQ <em>·</em> AI Escalation</h2>
+    <details open>
+      <summary>How often does the AI actually need to escalate?</summary>
+      <div class="a">Typically 5-12% of calls in the first 30 days, dropping to 3-6% after the first 90 days as we add edge cases to training. The 90%+ of calls the agent handles natively is what makes the platform pay for itself.</div>
+    </details>
+    <details>
+      <summary>What if I don't want to be called for escalations?</summary>
+      <div class="a">Route escalations to a designated team member, a virtual assistant, or a callback queue you review at scheduled times. The system is configurable. You decide what hits your cell vs what sits in a queue.</div>
+    </details>
+    <details>
+      <summary>Can the AI escalate to specific people based on call type?</summary>
+      <div class="a">Yes. Sales-related escalations to one number, service issues to another, complaints to the owner. We map the routing during training and adjust on demand.</div>
+    </details>
+    <details>
+      <summary>What if a customer hangs up before the agent escalates?</summary>
+      <div class="a">The agent captures whatever it has (caller ID, partial conversation, last detected need) and fires a missed-call text-back SMS within 11 seconds: "We just dropped the call, what do you need?" Roughly 40% of hangups re-engage.</div>
+    </details>
+  </section>
+
+  <section class="read-next">
+    <div class="label">› Read Next</div>
+    <div class="read-next-grid">
+      <a href="/blog/ai-voice-agents-guide/" class="read-next-card">
+        <div class="arrow">› Series 2 · Pillar</div>
+        <h3>The Complete Guide to AI Voice Agents for Local Service Businesses</h3>
+        <p>The full operator's guide. What they are, how they work, what they cost.</p>
+      </a>
+      <a href="/blog/will-customers-know-talking-to-ai/" class="read-next-card">
+        <div class="arrow">› Series 2 · Spoke</div>
+        <h3>Will Customers Know They Are Talking to AI? The Honest Answer</h3>
+        <p>Disclosure, customer perception, and where the line should sit for your business.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="author-block">
+    <div class="av"></div>
+    <div>
+      <h4>Connor MacIvor</h4>
+      <div class="title">AI Growth Architect · Santa Clarita, CA</div>
+      <p>27+ years running businesses. Self-taught programmer since 1983. Builds HonorElevate himself. Answers his own phone at <a href="tel:661-400-1720">661-400-1720</a>. More at <a href="https://connorwithhonor.com/">connorwithhonor.com</a>.</p>
+    </div>
+  </section>
+
+  <section class="post-final-cta">
+    <h3>Failsafe is <em>part of the system.</em></h3>
+    <p>Free 30-minute audit. We design your escalation rules around YOUR business, YOUR tolerance for interruption, and YOUR high-value triggers.</p>
+    <a href="/#book" class="btn-gold">Book Free AI Audit</a>
+    <span class="or">or test escalation: <a href="tel:661-299-7299">(661) 299-7299</a> (try asking for a human)</span>
+  </section>
+
+</div>
+
+<div class="sticky-bar" id="stickyBar">
+  <p>Every call captured. Nothing falls through.</p>
+  <a href="/#book" class="btn-gold">Book Free Audit</a>
+  <a href="tel:661-299-7299" class="btn-call">&#9742; Call Betty</a>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo"><span class="face"></span> Honor<span>Elevate</span></a>
+      <p>AI business automation built by Connor MacIvor. 27+ years of business discipline powering systems that work while you sleep.</p>
+    </div>
+    <div class="footer-col"><h4>Solutions</h4><a href="/#solutions">AI Voice Agents</a><a href="/#solutions">Lead Automation</a><a href="/#solutions">CRM + Pipeline</a><a href="/#solutions">Review Engine</a></div>
+    <div class="footer-col"><h4>Resources</h4><a href="/blog/">Blog</a><a href="/#book">Free AI Audit</a><a href="tel:661-299-7299">Call Betty (Demo)</a><a href="mailto:connor@honorelevate.com">Email Connor</a></div>
+    <div class="footer-col"><h4>Ecosystem</h4><a href="https://connorwithhonor.com">Connor with Honor</a><a href="https://hireaivoice.com">HireAIVoice</a><a href="https://sellersonlyagent.com">Sellers Only Agent</a><a href="https://scv123.com">SCV123</a></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 HonorElevate. All Rights Reserved.</p>
+    <p>Coded by Connor with Honor | <a href="/">AI Growth Architect</a></p>
+    <p><a href="/terms-of-service">Terms</a> &nbsp;|&nbsp; <a href="/privacy-policy">Privacy</a></p>
+  </div>
+</footer>
+
+<script>
+const stickyBar=document.getElementById('stickyBar');
+const article=document.querySelector('.post-body');
+if (article) {const obs=new IntersectionObserver(e=>{e.forEach(entry=>entry.isIntersecting?stickyBar.classList.add('visible'):stickyBar.classList.remove('visible'))},{threshold:0.1});obs.observe(article);}
+</script>
+</body>
+</html>
