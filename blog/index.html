@@ -70,7 +70,7 @@ nav { position: sticky; top: 0; left: 0; right: 0; z-index: 100; background: rgb
 .btn-gold:hover { background: var(--gold-deep); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(232,168,56,.4); }
 .mobile-toggle { display: none; background: none; border: none; color: var(--ink); font-size: 1.5rem; cursor: pointer; }
 
-.blog-hero { padding: 72px 0 48px; background: linear-gradient(180deg,#fff 0%,var(--bg) 100%); border-bottom: 1px solid var(--line); }
+.blog-hero { padding: 72px 0 48px; background:#ffffff url('/assets/img/hero-watermark.webp') no-repeat right center; background-size: cover; border-bottom: 1px solid var(--line); }
 .blog-hero .section-tag { font-family: var(--sans); font-size: 0.78rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-text); margin-bottom: 16px; }
 .blog-hero h1 { font-family: var(--serif); font-size: clamp(2.3rem, 5vw, 3.5rem); line-height: 1.1; margin-bottom: 16px; }
 .blog-hero p { color: var(--muted); font-size: 1.12rem; max-width: 640px; line-height: 1.7; }
@@ -97,6 +97,7 @@ footer a:hover { color: var(--gold); }
   .nav-links.active { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 22px 24px; gap: 16px; border-bottom: 1px solid var(--line); box-shadow: var(--shadow); }
   .mobile-toggle { display: block; }
   .blog-grid { grid-template-columns: 1fr; }
+  .blog-hero { background: linear-gradient(180deg,#fff 0%,var(--bg) 100%); }
 }
 </style>
 </head>
