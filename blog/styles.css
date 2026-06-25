@@ -45,7 +45,7 @@ nav.site-nav{position:sticky;top:0;left:0;right:0;z-index:100;background:rgba(25
 .breadcrumb .current{color:var(--ink-2)}
 
 /* POST HEADER */
-.post-header{padding:36px 0 32px;position:relative}
+.post-header{padding:36px 0 32px;position:relative;background:url('/assets/img/hero-watermark.webp') no-repeat right center;background-size:cover}
 .post-cluster{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold-text);background:var(--gold-soft);border:1px solid #f1ddae;padding:6px 14px;border-radius:100px;margin-bottom:18px}
 .post-title{font-family:var(--serif);font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.12;color:var(--ink);margin-bottom:18px;position:relative}
 .post-title em{font-style:normal;color:var(--gold-deep)}
@@ -233,6 +233,7 @@ footer{background:var(--navy-deep);border-top:none;padding:56px 0 28px;margin-to
   .mobile-toggle{display:block}
   .footer-grid{grid-template-columns:1fr 1fr}
   body{padding-bottom:78px}
+  .post-header{background:none}
   .post-body{font-size:1rem}
   .post-body h2{font-size:1.55rem;margin-top:36px}
   .post-body h3{font-size:1.18rem}
