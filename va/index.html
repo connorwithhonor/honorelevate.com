@@ -127,6 +127,26 @@ section{padding:62px 0}
 .tier .when{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:.87rem;color:var(--muted)}
 .tier .when b{color:var(--ink)}
 
+/* MODULE CATALOG */
+.mods{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.mod{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--shadow)}
+.mod h3{font-size:1.02rem;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.mod .mh{font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:10px;display:block}
+.mod ul{list-style:none;padding:0;margin:0}
+.mod li{font-size:.86rem;padding:6px 0 6px 16px;position:relative;border-bottom:1px solid var(--line);color:var(--ink-2)}
+.mod li:last-child{border-bottom:none}
+.mod li::before{content:"";position:absolute;left:0;top:13px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.mod li b{color:var(--ink)}
+.mod li.core::before{background:var(--ok)}
+.pick{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+.pick label{display:flex;gap:10px;align-items:flex-start;background:var(--surface-2);border:1.5px solid var(--line);border-radius:9px;padding:11px 13px;cursor:pointer;font-size:.9rem;transition:.15s}
+.pick label:hover{border-color:var(--gold)}
+.pick input{accent-color:var(--gold-deep);margin-top:3px;flex:0 0 auto}
+.pick b{display:block;color:var(--ink);font-weight:700}
+.pick span.d{display:block;font-size:.8rem;color:var(--muted);margin-top:1px}
+@media(max-width:1000px){.mods{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.mods,.pick{grid-template-columns:1fr}}
+
 /* PROMISE */
 .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .pcard{border-radius:14px;padding:26px;border:1px solid var(--line);background:var(--surface)}
@@ -212,6 +232,8 @@ footer a:hover{color:var(--gold)}
       <a href="#system">The System</a>
       <a href="#followup">42 Days</a>
       <a href="#depth">How Deep</a>
+      <a href="#traffic">Traffic</a>
+      <a href="#structure">Pricing</a>
       <a href="#intake">Intake</a>
       <a href="/nda" class="btn btn-ghost" style="padding:10px 18px;font-size:.86rem">NDA</a>
     </div>
@@ -382,6 +404,223 @@ footer a:hover{color:var(--gold)}
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- MODULE CATALOG -->
+<section id="catalog">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">The full surface</span>
+      <h2>What can actually be in this</h2>
+      <p>The webinar is one component. What you are really deciding is how much of your operation runs itself. Here is everything on the table, grouped by what it does. Green dots are the spine and I would not build without them. Gold dots are yours to take or leave, and taking none of them is a legitimate answer that lowers your price.</p>
+    </div>
+
+    <div class="mods">
+
+      <div class="mod">
+        <span class="mh">Capture</span>
+        <ul>
+          <li class="core"><b>Registration funnel</b>, branded, multi-step</li>
+          <li class="core"><b>Webinar</b>, live then evergreen on demand</li>
+          <li class="core">Thank-you and replay pages</li>
+          <li>Landing page per audience or campaign</li>
+          <li><b>VA eligibility quiz</b> that pre-sorts before a human looks</li>
+          <li>Calendar booking, round-robin across officers</li>
+          <li>Website chat widget feeding the same pipeline</li>
+        </ul>
+      </div>
+
+      <div class="mod">
+        <span class="mh">Communications</span>
+        <ul>
+          <li class="core"><b>A2P 10DLC registration</b>, brand and campaign</li>
+          <li class="core"><b>Dedicated phone number</b> assigned to the system</li>
+          <li class="core">Two-way SMS, real conversations not blasts</li>
+          <li class="core">Email domain authentication, SPF, DKIM, DMARC</li>
+          <li>Additional numbers per officer or per campaign</li>
+          <li>Facebook, Instagram and Google Business messaging in one inbox</li>
+          <li>Call tracking and recording</li>
+        </ul>
+      </div>
+
+      <div class="mod">
+        <span class="mh">The AI layer</span>
+        <ul>
+          <li><b>AI voice agent</b>, answers inbound and books</li>
+          <li><b>Trained on your program</b>, your overlays, your tone</li>
+          <li>AI SMS responder inside your guardrails</li>
+          <li>After-hours and overflow coverage</li>
+          <li>Call transcription and summary onto the record</li>
+          <li>Lead scoring and intent detection</li>
+          <li>Escalation to a human the moment it should</li>
+        </ul>
+      </div>
+
+      <div class="mod">
+        <span class="mh">CRM and pipeline</span>
+        <ul>
+          <li class="core"><b>Full CRM sub-account</b>, yours, not shared</li>
+          <li class="core">Pipeline stages mapped to your loan process</li>
+          <li class="core"><b>Lead routing</b> with claim windows and escalation</li>
+          <li>Officer tasks fired by borrower behavior</li>
+          <li>Mobile app so officers work it from the truck</li>
+          <li>Document and condition request tracking</li>
+          <li>LOS handoff at the point you define</li>
+        </ul>
+      </div>
+
+      <div class="mod">
+        <span class="mh">Automation</span>
+        <ul>
+          <li class="core"><b>Speed to lead</b> inside five minutes, always</li>
+          <li class="core"><b>42-day behavioral nurture</b>, branching on behavior</li>
+          <li class="core">Attended and no-show paths that differ</li>
+          <li><b>Dormant database reactivation</b>, the IRRRL play</li>
+          <li>Loan anniversary and milestone triggers</li>
+          <li>Review request after funding, automatically</li>
+          <li>Referral partner notifications where permitted</li>
+        </ul>
+      </div>
+
+      <div class="mod">
+        <span class="mh">Compliance</span>
+        <ul>
+          <li class="core"><b>24-month ad archive</b>, Regulation N</li>
+          <li class="core"><b>TCPA consent</b> captured and stored with the record</li>
+          <li class="core">Opt-out and DNC handling that actually works</li>
+          <li class="core">Required disclosures on every asset</li>
+          <li>State disclosure variants that swap by geography</li>
+          <li>Call recording retention policy</li>
+          <li>Audit log of who changed what and when</li>
+        </ul>
+      </div>
+
+      <div class="mod">
+        <span class="mh">Reporting</span>
+        <ul>
+          <li class="core">Weekly report a human can read</li>
+          <li class="core">Attribution from ad to application</li>
+          <li><b>Cost per funded loan</b>, the only number that matters</li>
+          <li>Per-officer scorecards, speed and conversion</li>
+          <li>Funnel drop-off, where people quit and why</li>
+          <li>Live dashboard you can open any time</li>
+        </ul>
+      </div>
+
+      <div class="mod">
+        <span class="mh">Traffic and content</span>
+        <ul>
+          <li><b>Meta campaign management</b>, built for Special Ad Category</li>
+          <li><b>Organic content production</b>, scripted and scheduled</li>
+          <li>Short video from real webinar questions</li>
+          <li>Retargeting within category rules</li>
+          <li>Review generation engine</li>
+          <li>Landing pages for each traffic source</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="quote" style="margin-top:28px">
+      <b>One warning worth more than anything else on this page.</b> A2P 10DLC registration is the long pole. It is carrier approval, not something I control, and until it clears your texts silently fail to deliver while everything looks fine on your screen. I have watched it stall a live client build. So it gets filed on day one, before a single page is designed, and we plan the launch around it clearing rather than assuming it will.
+      <span class="who">Sequence this first, not last</span>
+    </div>
+  </div>
+</section>
+
+<!-- TRAFFIC -->
+<section id="traffic">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">Filling the room</span>
+      <h2>Two engines, and one rule you cannot target your way around</h2>
+      <p>A webinar with nobody in it is a rehearsal. Traffic is its own build, and on paid it runs into a wall most people do not find out about until their ads underperform and nobody can explain why.</p>
+    </div>
+
+    <div class="quote" style="margin-bottom:26px">
+      A VA loan ad is classified by Meta as <b>both housing and credit</b>. That puts it in the Special Ad Category, where you <b>cannot target by ZIP code, cannot target by age, cannot target by gender, and cannot use Lookalike Audiences at all.</b> Location is a 15-mile radius minimum. As of 2026 Meta's classifiers apply this automatically off your imagery, so a loan calculator or a for-sale sign in the creative triggers it whether you selected the category or not.
+    </div>
+
+    <div class="why-grid" style="margin-bottom:26px">
+      <div class="why-card">
+        <span class="num">01</span>
+        <h3>Paid, built for blunt reach</h3>
+        <p>No lookalikes and no age filter means the audience arrives wide. So the creative and the offer do the qualifying that targeting is not allowed to do. Ads are written to make the wrong person scroll past and the right person stop.</p>
+      </div>
+      <div class="why-card">
+        <span class="num">02</span>
+        <h3>Organic, built for proof</h3>
+        <p>Short video answering the questions veterans actually asked on the last webinar. No ad account, no category restriction, and it compounds. This is where the trust gets built that paid traffic cashes in.</p>
+      </div>
+      <div class="why-card">
+        <span class="num">03</span>
+        <h3>Your own list, the cheapest lane</h3>
+        <p>Custom audiences built from your own borrower list are still permitted inside a single business portfolio. That is the IRRRL play and it is the least expensive pipeline in this entire deal.</p>
+      </div>
+    </div>
+
+    <div class="quote" style="font-size:1.06rem">
+      Here is why the restriction works in your favor. <b>When targeting cannot qualify people, the offer has to.</b> A session that says "VA loan, and here is what you are leaving on the table" self-selects veterans harder than any targeting parameter would have. Wide reach plus a sharp offer plus organic proof beats precise targeting nobody is allowed to use anymore.
+    </div>
+  </div>
+</section>
+
+<!-- STRUCTURE -->
+<section class="alt" id="structure">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">How this gets billed</span>
+      <h2>Four lines, and every party gets their own</h2>
+      <p>Exact numbers go in your proposal once I see your intake answers. The structure, though, is not negotiable, and the reason is worth two minutes of your time.</p>
+    </div>
+
+    <div class="tiers" style="grid-template-columns:repeat(4,1fr);gap:16px">
+      <div class="tier"><div class="lvl">Line One</div><h3>Build</h3><p class="for" style="border:none;padding:0;margin:0">One time. Priced by which depth tier you pick. Domain routing, carrier registration, funnel, pipeline, automation, compliance audit.</p></div>
+      <div class="tier"><div class="lvl">Line Two</div><h3>License</h3><p class="for" style="border:none;padding:0;margin:0">Monthly, per sub-account. Runs the CRM, the two-way texting, the follow-up engine, the archive and the reporting.</p></div>
+      <div class="tier"><div class="lvl">Line Three</div><h3>Ad management</h3><p class="for" style="border:none;padding:0;margin:0">Monthly, flat, invoiced to whoever owns that ad spend. Flat rather than a cut of budget, on purpose. More on that below.</p></div>
+      <div class="tier"><div class="lvl">Line Four</div><h3>Content</h3><p class="for" style="border:none;padding:0;margin:0">Monthly, per brand. The organic engine. Scripted, produced and scheduled against the questions your audience actually asks.</p></div>
+    </div>
+
+    <div class="quote" style="margin-top:28px">
+      <b>Now the part that matters more than the price.</b> You mentioned a real estate agent working alongside you. If that agent and your lending arm share one marketing system, one audience, or one invoice, you have built the exact arrangement RESPA Section 8 exists to scrutinize, and the CFPB has issued consent orders against <b>both</b> the mortgage company and the real estate company in these cases. Separately, Meta has prohibited shared customer-list audiences across different business portfolios for housing and credit ads since March 2025, so it is against platform policy before it is ever a legal question.
+      <span class="who">Two different authorities, same answer</span>
+    </div>
+
+    <div class="pgrid" style="margin-top:22px">
+      <div class="pcard yes">
+        <h4>How I structure it</h4>
+        <ul>
+          <li>Separate sub-account per party</li>
+          <li>Separate ad account and separate audiences</li>
+          <li>Separate invoice to each party</li>
+          <li>Flat fees that map to work actually performed</li>
+          <li>Each party pays only for what was done for them</li>
+        </ul>
+      </div>
+      <div class="pcard yes" style="border-top-color:var(--navy)">
+        <h4 style="color:var(--navy)">Who owns the leads</h4>
+        <ul>
+          <li><b>Leads belong to whoever paid for the campaign that produced them.</b> Always.</li>
+          <li>They land in that party's sub-account and nowhere else</li>
+          <li>No lead crosses from the lender's spend to the agent, or the reverse</li>
+          <li>That is not just a business rule. A lead routed from one settlement service provider to another is a referral, and referrals are what Section 8 is about</li>
+          <li>If both parties want leads, both parties fund their own campaigns</li>
+        </ul>
+      </div>
+      <div class="pcard no">
+        <h4>What I will not do</h4>
+        <ul>
+          <li>One shared account across lender and agent</li>
+          <li>Route leads paid for by one party to the other</li>
+          <li>One bill split by handshake</li>
+          <li>A fee that moves with referral volume</li>
+          <li>Any arrangement where one party subsidizes the other's marketing</li>
+          <li>Shared customer lists across business portfolios</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:18px;font-size:.92rem;color:var(--muted);max-width:74ch">Flat pricing is deliberate. A fee that scales with your ad budget is harder to defend as fair market value than a fee that maps to the work performed. This is structuring, not legal advice, and each party should have its own counsel review the arrangement before it starts.</p>
   </div>
 </section>
 
@@ -584,9 +823,89 @@ footer a:hover{color:var(--gold)}
           </div>
         </div>
 
+        <!-- SCOPE -->
+        <div class="fgroup">
+          <div class="gh"><span class="gnum">06</span><h3>What you actually want built</h3></div>
+          <p class="gsub">Tick everything you want priced. Ticking nothing extra is a real answer and it makes this cheaper. I would rather build six things that run than sixteen that sit idle.</p>
+
+          <div class="q">
+            <label class="ask">The spine. Priced in by default, untick anything you do not want.</label>
+            <p class="why"><b>Why:</b> these are the pieces that make the rest work. Removing one usually breaks something downstream, and I will tell you which if you untick it.</p>
+            <div class="pick">
+              <label><input type="checkbox" name="Scope core" value="Registration funnel + webinar" checked><span><b>Funnel and webinar</b><span class="d">Registration, replay, evergreen</span></span></label>
+              <label><input type="checkbox" name="Scope core" value="CRM sub-account + pipeline" checked><span><b>CRM and pipeline</b><span class="d">Your own sub-account</span></span></label>
+              <label><input type="checkbox" name="Scope core" value="A2P registration + SMS + number" checked><span><b>A2P, number, two-way SMS</b><span class="d">Long pole, files day one</span></span></label>
+              <label><input type="checkbox" name="Scope core" value="Speed to lead + routing" checked><span><b>Speed to lead and routing</b><span class="d">Five minutes, claim windows</span></span></label>
+              <label><input type="checkbox" name="Scope core" value="42-day nurture" checked><span><b>42-day nurture</b><span class="d">Branches on behavior</span></span></label>
+              <label><input type="checkbox" name="Scope core" value="Compliance archive + consent" checked><span><b>Compliance layer</b><span class="d">Reg N archive, TCPA consent</span></span></label>
+            </div>
+          </div>
+
+          <div class="q">
+            <label class="ask">The add-ons. Tick what you want quoted.</label>
+            <p class="why"><b>Why:</b> this is where the price moves the most, and where the leverage is. The AI voice agent and the dormant database reactivation are the two that most often pay for the entire build on their own.</p>
+            <div class="pick">
+              <label><input type="checkbox" name="Scope addons" value="AI voice agent"><span><b>AI voice agent</b><span class="d">Answers and books, 24/7, trained on your program</span></span></label>
+              <label><input type="checkbox" name="Scope addons" value="AI SMS responder"><span><b>AI SMS responder</b><span class="d">Inside your guardrails</span></span></label>
+              <label><input type="checkbox" name="Scope addons" value="Dormant database reactivation (IRRRL)"><span><b>Database reactivation</b><span class="d">The IRRRL play</span></span></label>
+              <label><input type="checkbox" name="Scope addons" value="VA eligibility quiz"><span><b>VA eligibility quiz</b><span class="d">Pre-sorts before a human looks</span></span></label>
+              <label><input type="checkbox" name="Scope addons" value="Meta campaign management"><span><b>Meta ad management</b><span class="d">Built for Special Ad Category</span></span></label>
+              <label><input type="checkbox" name="Scope addons" value="Organic content production"><span><b>Organic content</b><span class="d">Scripted, produced, scheduled</span></span></label>
+              <label><input type="checkbox" name="Scope addons" value="Per-officer scorecards"><span><b>Officer scorecards</b><span class="d">Speed and conversion by person</span></span></label>
+              <label><input type="checkbox" name="Scope addons" value="Multi-state disclosure variants"><span><b>Multi-state disclosures</b><span class="d">Swap by geography</span></span></label>
+              <label><input type="checkbox" name="Scope addons" value="Call recording + transcription"><span><b>Recording and transcription</b><span class="d">Summary onto the record</span></span></label>
+              <label><input type="checkbox" name="Scope addons" value="Review generation engine"><span><b>Review engine</b><span class="d">Fires after funding</span></span></label>
+              <label><input type="checkbox" name="Scope addons" value="Live dashboard"><span><b>Live dashboard</b><span class="d">Open it any time</span></span></label>
+              <label><input type="checkbox" name="Scope addons" value="LOS handoff integration"><span><b>LOS handoff</b><span class="d">At the point you define</span></span></label>
+            </div>
+          </div>
+
+          <div class="q">
+            <label class="ask" for="s3">Anything you want that is not on this list?</label>
+            <p class="why"><b>Why:</b> the list is what I have built before. It is not the limit of what can be built, and the thing you are about to describe is usually the thing you actually care about.</p>
+            <textarea id="s3" name="Scope custom requests" placeholder="Describe it plainly, I will tell you whether it is realistic"></textarea>
+          </div>
+        </div>
+
+        <!-- AGENT SIDE -->
+        <div class="fgroup">
+          <div class="gh"><span class="gnum">07</span><h3>The agent side</h3></div>
+          <p class="gsub">If a real estate agent is going to have their own sub-account alongside yours, their build is a separate engagement with its own invoice. These questions size it, and they also decide how far apart the two systems have to sit.</p>
+
+          <div class="q">
+            <label class="ask" for="a1">Who is the agent, what brokerage, and what is their relationship to your lending arm today?</label>
+            <p class="why"><b>Why:</b> brokerage matters because their broker has advertising rules and a compliance officer of their own, and I have to build inside both sets. "Relationship today" tells me whether I am documenting something that already exists or structuring something new, which are very different starting points.</p>
+            <textarea id="a1" name="A1 Agent identity and relationship" placeholder="Name, brokerage, and how you work together now"></textarea>
+          </div>
+
+          <div class="q">
+            <label class="ask" for="a2">Who is expected to pay for the agent's side, and has anyone proposed splitting a cost between the two of you?</label>
+            <p class="why"><b>Why:</b> this is the whole ballgame. If the lender pays for marketing that benefits the agent, or the reverse, that is a thing of value moving between settlement service providers. It is fixable with separate invoices at fair market value, and it is a serious problem if it is informal. I would rather set it up right than unwind it.</p>
+            <textarea id="a2" name="A2 Who pays for the agent side" placeholder="Who pays for what, and any split anyone has already discussed"></textarea>
+          </div>
+
+          <div class="q">
+            <label class="ask" for="a3">Does the agent want to be on the webinar, or run their own separate one?</label>
+            <p class="why"><b>Why:</b> a joint webinar where both parties genuinely present and each pays their own fair share of the production is a different animal from one party's ad being hosted inside the other's funnel. The first is defensible. The second is the one that draws letters.</p>
+            <textarea id="a3" name="A3 Agent webinar participation" placeholder="Joint session, separate session, or not on it at all"></textarea>
+          </div>
+
+          <div class="q">
+            <label class="ask" for="a4">What does the agent already have running? Social channels, listing volume, database size, existing content.</label>
+            <p class="why"><b>Why:</b> sizes their content package. An agent posting daily with a live database is a different build from one starting cold. It also tells me whether their organic can carry traffic on its own or needs paid support from day one.</p>
+            <textarea id="a4" name="A4 Agent existing assets" placeholder="Channels, followers, listings per year, database size, what they post now"></textarea>
+          </div>
+
+          <div class="q">
+            <label class="ask" for="a5">Will the agent commit to being on camera, and how often?</label>
+            <p class="why"><b>Why:</b> the organic engine runs on their face and their voice. There is no version of this where I produce content for an agent who will not shoot. If the answer is no, their side should be paid-only and priced accordingly, and I will say so rather than sell a content package that never gets fed.</p>
+            <textarea id="a5" name="A5 Agent on-camera commitment" placeholder="Yes and how often, or no"></textarea>
+          </div>
+        </div>
+
         <!-- MONEY -->
         <div class="fgroup">
-          <div class="gh"><span class="gnum">06</span><h3>The baseline</h3></div>
+          <div class="gh"><span class="gnum">08</span><h3>The baseline</h3></div>
           <p class="gsub">So we can both tell later whether this worked, using a number we agreed on before it started.</p>
 
           <div class="q">
@@ -703,12 +1022,19 @@ footer a:hover{color:var(--gold)}
       out.push("== " + (h ? h.textContent.toUpperCase() : "") + " ==");
       g.querySelectorAll('.q').forEach(function(q){
         var lbl = q.querySelector('.ask');
-        var field = q.querySelector('input[type=text],input[type=email],textarea');
         var val = "";
-        if(field){ val = field.value.trim(); }
-        else {
-          var checked = q.querySelector('input[type=radio]:checked');
-          val = checked ? checked.value : "";
+        var boxes = q.querySelectorAll('input[type=checkbox]');
+        if(boxes.length){
+          var picked = [];
+          boxes.forEach(function(b){ if(b.checked) picked.push(b.value); });
+          val = picked.length ? picked.join("; ") : "[none selected]";
+        } else {
+          var field = q.querySelector('input[type=text],input[type=email],textarea');
+          if(field){ val = field.value.trim(); }
+          else {
+            var checked = q.querySelector('input[type=radio]:checked');
+            val = checked ? checked.value : "";
+          }
         }
         out.push((lbl ? lbl.textContent.trim() : "") + "\n  > " + (val || "[no answer]"), "");
       });
