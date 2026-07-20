@@ -428,9 +428,7 @@ footer a:hover{color:var(--gold)}
     </div>
 
     <div class="form-wrap">
-      <form name="va-intake" method="POST" data-netlify="true" netlify-honeypot="company-website" id="intakeForm">
-        <input type="hidden" name="form-name" value="va-intake">
-        <p style="display:none"><label>Leave blank: <input name="company-website"></label></p>
+      <form id="intakeForm" onsubmit="return false">
 
         <!-- WHO -->
         <div class="fgroup">
@@ -611,16 +609,21 @@ footer a:hover{color:var(--gold)}
         </div>
 
         <div class="form-actions">
-          <button type="submit" class="btn btn-gold">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
-            Send it to Connor
+          <button type="button" class="btn btn-gold" id="downloadBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+            Download my answers
           </button>
           <button type="button" class="btn btn-navy" id="copyBtn">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            Copy answers
+            Copy to clipboard
           </button>
           <button type="button" class="btn btn-ghost" onclick="window.print()">Print or save as PDF</button>
         </div>
+        <p style="margin-top:16px;font-size:.92rem;color:var(--muted)">
+          Nothing on this page is transmitted anywhere when you type it. Your answers stay in your browser until you download, copy, or print them. Send the file back to
+          <a href="mailto:connormacivor@gmail.com?subject=VA%20Loan%20System%20Intake" style="color:var(--gold-text);font-weight:700">connormacivor@gmail.com</a>
+          or text it to <a href="tel:661-400-1720" style="color:var(--gold-text);font-weight:700">(661) 400-1720</a>.
+        </p>
         <div class="toast" id="toast"></div>
         <div id="copyFallback" style="display:none;margin-top:14px">
           <label class="ask" style="font-size:.9rem">Answers, ready to copy</label>
@@ -691,8 +694,8 @@ footer a:hover{color:var(--gold)}
   });
   renderStage(0); renderTl(0);
 
-  // Copy answers as plain text, so Connor keeps them even if the form is never submitted
-  document.getElementById('copyBtn').addEventListener('click', function(){
+  // Build the plain-text summary of every answer on the page.
+  function buildSummary(){
     var out = ["VA LOAN ACQUISITION SYSTEM - INTAKE", "Captured: " + new Date().toLocaleString(), ""];
     var groups = document.querySelectorAll('.fgroup');
     groups.forEach(function(g){
@@ -710,9 +713,27 @@ footer a:hover{color:var(--gold)}
         out.push((lbl ? lbl.textContent.trim() : "") + "\n  > " + (val || "[no answer]"), "");
       });
     });
-    var text = out.join("\n");
-    var toast = document.getElementById('toast');
-    function done(msg){ toast.textContent = msg; toast.classList.add('show'); setTimeout(function(){toast.classList.remove('show')}, 4000); }
+    return out.join("\n");
+  }
+
+  var toast = document.getElementById('toast');
+  function done(msg){ toast.textContent = msg; toast.classList.add('show'); setTimeout(function(){toast.classList.remove('show')}, 4000); }
+
+  // Download as a .txt file. No backend, nothing to break, works offline.
+  document.getElementById('downloadBtn').addEventListener('click', function(){
+    var text = buildSummary();
+    var stamp = new Date().toISOString().slice(0,10);
+    var blob = new Blob([text], {type:'text/plain;charset=utf-8'});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url; a.download = 'VA-Intake-' + stamp + '.txt';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+    done("Downloaded. Email or text that file back to Connor.");
+  });
+
+  document.getElementById('copyBtn').addEventListener('click', function(){
+    var text = buildSummary();
     // Fallback: if the clipboard API is blocked, put the text on screen, selected,
     // so it is never lost mid-call. One Cmd+C away.
     function manual(){
