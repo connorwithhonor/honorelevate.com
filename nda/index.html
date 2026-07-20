@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mutual NDA | HonorElevate</title>
+<meta name="description" content="Download the mutual non-disclosure agreement before we talk. Protects both sides equally. Standard and regulated-industry versions.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="/favicon-shield.svg" type="image/svg+xml">
+<link rel="canonical" href="https://honorelevate.com/nda">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f8fb;--surface:#ffffff;--surface-2:#f1f5f9;
+  --ink:#0f172a;--ink-2:#334155;--muted:#64748b;--line:#e2e8f0;--line-2:#cbd5e1;
+  --navy:#1e3a8a;--navy-deep:#162d6b;
+  --gold:#e8a838;--gold-deep:#b9831f;--gold-text:#946712;--gold-soft:#fdf6e7;
+  --ok:#0f766e;
+  --serif:'Calistoga',Georgia,serif;--sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --shadow:0 1px 2px rgba(15,23,42,.04),0 8px 24px rgba(15,23,42,.06);
+  --shadow-lg:0 12px 40px rgba(15,23,42,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink-2);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:1140px;margin:0 auto;padding:0 24px}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--ink);line-height:1.15;font-weight:400}
+a{color:inherit}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--sans);font-weight:700;font-size:.95rem;padding:13px 24px;border-radius:11px;text-decoration:none;transition:.18s;border:0;cursor:pointer}
+.btn-gold{background:var(--gold);color:#2a1d00;box-shadow:0 6px 18px rgba(232,168,56,.32)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(232,168,56,.42)}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line-2)}
+.btn-ghost:hover{border-color:var(--gold-deep);color:var(--gold-text)}
+.btn svg{width:17px;height:17px;flex:0 0 auto}
+
+/* TOPBAR + NAV (matches site) */
+.topbar{background:var(--navy-deep);color:#c7d2e8;font-size:.8rem;padding:8px 0}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.topbar a{color:#fff;text-decoration:none;font-weight:600}
+.topbar .loc{display:inline-flex;align-items:center;gap:6px}
+.topbar svg{width:14px;height:14px}
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1140px;margin:0 auto;padding:13px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+.nav-logo img{width:34px;height:34px}
+.nav-logo .txt{font-family:var(--serif);font-size:1.32rem;color:var(--ink)}
+.nav-logo .txt span{color:var(--gold-deep)}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{color:var(--ink-2);text-decoration:none;font-size:.92rem;font-weight:600;transition:color .2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-links .btn{padding:11px 22px;font-size:.9rem}
+
+/* HERO */
+.hero{background:#fff;border-bottom:1px solid var(--line);padding:64px 0 56px}
+.hero .pill{display:inline-flex;align-items:center;gap:8px;background:var(--gold-soft);border:1px solid #f1ddae;color:var(--gold-text);font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:7px 15px;border-radius:100px;margin-bottom:20px}
+.hero h1{font-size:clamp(2.1rem,4.6vw,3.15rem);margin-bottom:18px;max-width:16ch}
+.hero .lead{font-size:1.16rem;max-width:62ch;color:var(--ink-2)}
+.hero .lead strong{color:var(--ink);font-weight:700}
+
+/* SECTIONS */
+section{padding:60px 0}
+.sec-head{max-width:64ch;margin-bottom:34px}
+.sec-head h2{font-size:clamp(1.55rem,3vw,2.1rem);margin-bottom:12px}
+.sec-head p{font-size:1.04rem}
+
+/* WHY */
+.why{background:var(--bg)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.why-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px 24px;box-shadow:var(--shadow)}
+.why-card .num{font-family:var(--serif);font-size:1.5rem;color:var(--gold-deep);line-height:1;margin-bottom:12px;display:block}
+.why-card h3{font-size:1.08rem;margin-bottom:9px}
+.why-card p{font-size:.95rem;color:var(--ink-2)}
+
+/* DOCS */
+.docs{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.doc{border:1px solid var(--line);border-radius:16px;padding:0;overflow:hidden;background:var(--surface);box-shadow:var(--shadow);display:flex;flex-direction:column}
+.doc-top{padding:26px 26px 0}
+.doc .tag{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;padding:5px 11px;border-radius:6px;margin-bottom:14px}
+.doc.a .tag{background:var(--surface-2);color:var(--navy)}
+.doc.b .tag{background:var(--gold-soft);color:var(--gold-text);border:1px solid #f1ddae}
+.doc h3{font-size:1.32rem;margin-bottom:10px}
+.doc .who{font-size:.98rem;color:var(--ink-2);margin-bottom:20px}
+.doc .who b{color:var(--ink)}
+.feat{list-style:none;margin:0 0 22px;padding:0;border-top:1px solid var(--line)}
+.feat li{display:flex;gap:11px;align-items:flex-start;font-size:.93rem;padding:11px 0;border-bottom:1px solid var(--line);color:var(--ink-2)}
+.feat svg{width:17px;height:17px;flex:0 0 auto;margin-top:3px;color:var(--ok)}
+.feat b{color:var(--ink);font-weight:700}
+.doc-actions{margin-top:auto;padding:0 26px 26px;display:flex;gap:11px;flex-wrap:wrap}
+.doc-actions .btn{flex:1 1 auto}
+
+/* SIGNING */
+.signing{background:var(--bg)}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:22px;position:relative;box-shadow:var(--shadow)}
+.step::before{counter-increment:s;content:counter(s);position:absolute;top:-13px;left:22px;width:28px;height:28px;border-radius:50%;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;font-family:var(--sans)}
+.step h4{font-size:1rem;margin:8px 0 7px}
+.step p{font-size:.9rem;color:var(--muted)}
+
+/* NOTE */
+.legal{background:#fff;border-top:1px solid var(--line)}
+.legal-box{background:var(--surface-2);border:1px solid var(--line);border-left:4px solid var(--gold-deep);border-radius:11px;padding:24px 26px;max-width:78ch}
+.legal-box h3{font-size:1.08rem;margin-bottom:10px}
+.legal-box p{font-size:.94rem;color:var(--ink-2);margin-bottom:11px}
+.legal-box p:last-child{margin-bottom:0}
+
+/* CTA */
+.cta{background:var(--navy-deep);color:#dbe4f4;text-align:center}
+.cta h2{color:#fff;font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:14px}
+.cta p{max-width:56ch;margin:0 auto 26px;font-size:1.03rem}
+
+/* FOOTER */
+footer{background:var(--ink);color:#94a3b8;padding:44px 0 26px;font-size:.9rem}
+.footer-bottom{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:20px;border-top:1px solid #1e293b;margin-top:20px}
+footer a{color:#cbd5e1;text-decoration:none}
+footer a:hover{color:var(--gold)}
+.footer-brand .nav-logo .txt{color:#fff}
+.footer-brand .nav-logo .txt span{color:var(--gold)}
+.footer-brand p{margin-top:12px;max-width:46ch}
+
+@media(max-width:900px){
+  .why-grid,.doc-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .topbar .container{justify-content:center;text-align:center}
+}
+@media(max-width:560px){
+  .steps{grid-template-columns:1fr}
+  section{padding:44px 0}
+  .doc-actions{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP STRIP -->
+<div class="topbar">
+  <div class="container">
+    <span class="loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg> Serving Santa Clarita Valley and beyond</span>
+    <span>Built and run by Connor MacIvor &nbsp;&middot;&nbsp; <a href="tel:661-400-1720">(661) 400-1720</a></span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/favicon-shield.svg" alt="HonorElevate shield"><span class="txt">Honor<span>Elevate</span></span></a>
+    <div class="nav-links">
+      <a href="/#solutions">What I Build</a>
+      <a href="/#ways">Ways to Work</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#book" class="btn btn-gold">Free AI Audit</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <span class="pill">Mutual Non-Disclosure</span>
+    <h1>Before we get into it, let's both be covered.</h1>
+    <p class="lead">When we sit down, you are going to tell me things about your business you would not put in an email. Your real numbers, where your process leaks, what you have tried that did not work. And I am going to show you <strong>how</strong> I build, not just what I build. Neither one of us should have to talk around anything. <strong>So we sign first, and it runs both directions.</strong></p>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="container">
+    <div class="sec-head">
+      <h2>What this actually does</h2>
+      <p>Plain English, no lawyer voice. Three things, and they apply to me exactly as much as they apply to you.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="num">01</span>
+        <h3>Your business stays yours</h3>
+        <p>Whatever you tell me about your pipeline, your margins, your customers, or your plans does not leave the room. It does not go to another client, another partner, or another venture. Not in a case study, not as an example on a call.</p>
+      </div>
+      <div class="why-card">
+        <span class="num">02</span>
+        <h3>My build stays mine</h3>
+        <p>To show you whether this fits, I have to open the hood. The automations, the prompts, the architecture, the sequence. That know-how is worth something because it is not public. You agree not to hand it to someone else to rebuild.</p>
+      </div>
+      <div class="why-card">
+        <span class="num">03</span>
+        <h3>Nobody is committed to anything</h3>
+        <p>This is a confidentiality agreement and nothing else. It does not hire me, it does not obligate you, and it does not create any referral or fee arrangement. If we work together, that gets its own separate written agreement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTS -->
+<section class="docs" id="download">
+  <div class="container">
+    <div class="sec-head">
+      <h2>Pick the one that fits you</h2>
+      <p>Two versions. Same protection in both directions either way. The difference is whether your industry has a compliance team that needs specific language on the page. Both are blank templates, so fill in your name and company when you sign.</p>
+    </div>
+
+    <div class="doc-grid">
+
+      <!-- STANDARD -->
+      <div class="doc a">
+        <div class="doc-top">
+          <span class="tag">Standard</span>
+          <h3>Mutual NDA</h3>
+          <p class="who">For <b>most businesses.</b> Contractors, home services, medical and dental practices, agencies, e-commerce, professional services. If you are not in a licensed financial or real estate role, this is your document.</p>
+          <ul class="feat">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Covers <b>both sides equally.</b> Same obligations on me as on you.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Protects your <b>customer data</b> specifically. I never market to it, sell it, or reuse it.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Two-year term, three-year confidentiality tail.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>California law, Los Angeles County venue.</span></li>
+          </ul>
+        </div>
+        <div class="doc-actions">
+          <a class="btn btn-gold" href="/nda/HonorElevate-Mutual-NDA-Standard.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+            Download PDF
+          </a>
+          <a class="btn btn-ghost" href="/nda/HonorElevate-Mutual-NDA-Standard.pdf" target="_blank" rel="noopener">Read it first</a>
+        </div>
+      </div>
+
+      <!-- REGULATED -->
+      <div class="doc b">
+        <div class="doc-top">
+          <span class="tag">Regulated Industry</span>
+          <h3>Mutual NDA</h3>
+          <p class="who">For <b>lenders, mortgage originators, title, escrow, and real estate brokerages.</b> Everything in the standard version, plus the compliance language your legal team is going to look for before they let you sign.</p>
+          <ul class="feat">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Everything in the standard version, word for word.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Explicit <b>RESPA, TILA, fair lending and fair housing</b> carve-out.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>States in writing that it creates <b>no referral arrangement</b>, no marketing services agreement, and no exchange of anything of value.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Nothing in it requires either of us to act against a licensing obligation or an employer's policy.</span></li>
+          </ul>
+        </div>
+        <div class="doc-actions">
+          <a class="btn btn-gold" href="/nda/HonorElevate-Mutual-NDA-Regulated.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+            Download PDF
+          </a>
+          <a class="btn btn-ghost" href="/nda/HonorElevate-Mutual-NDA-Regulated.pdf" target="_blank" rel="noopener">Read it first</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SIGNING -->
+<section class="signing">
+  <div class="container">
+    <div class="sec-head">
+      <h2>How to sign it</h2>
+      <p>Takes about two minutes. Use whatever signing tool you already have. If you do not have one, print it and sign it, a photo of the signed page is fine.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h4>Download</h4><p>Grab the version that fits your business. It is a standard PDF.</p></div>
+      <div class="step"><h4>Upload</h4><p>Drop it into DocuSign, Dropbox Sign, Adobe, or whatever your team uses.</p></div>
+      <div class="step"><h4>Fill and sign</h4><p>Date at the top, your name and company in the blank, signature at the bottom.</p></div>
+      <div class="step"><h4>Send it back</h4><p>Email the signed copy over. I countersign and send you the fully executed version.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL -->
+<section class="legal">
+  <div class="container">
+    <div class="legal-box">
+      <h3>Read this part too</h3>
+      <p>These are working templates. They were not drafted by an attorney and they have not been reviewed by counsel. I use them because a plain, mutual, readable agreement beats no agreement, not because they are bulletproof.</p>
+      <p>If your business has counsel, run it past them before you sign. If they want changes, send them over. I would rather sign your redline than have you sign something you have not had looked at. And if you are in a licensed role, regulated or otherwise, your own compliance obligations always come first.</p>
+      <p>Nothing on this page is legal advice.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>Signed? Let's get into the actual problem.</h2>
+    <p>Bring your real numbers. Where leads come in, where they die, and what it is costing you. That is the whole conversation.</p>
+    <a href="/#book" class="btn btn-gold">Book the free audit</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo"><img src="/favicon-shield.svg" alt="HonorElevate shield"><span class="txt">Honor<span>Elevate</span></span></a>
+      <p>AI business automation built by Connor MacIvor. Business discipline since 1998 powering systems that work while you sleep.</p>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 HonorElevate. All Rights Reserved.</p>
+      <p>Coded by Connor with Honor</p>
+      <p><a href="/terms-of-service">Terms</a> &nbsp;|&nbsp; <a href="/privacy-policy">Privacy</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
