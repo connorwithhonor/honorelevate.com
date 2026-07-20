@@ -5,6 +5,12 @@
 [build]
   publish = "."
 
+# Serverless functions. Added 2026-07-20 for /va-intake, which POSTs the
+# pre-meeting answers into the HonorElevate sub-account. Secrets live in
+# Netlify env vars (HE_PIT, HE_LOCATION_ID), never in the repo.
+[functions]
+  directory = "netlify/functions"
+
 # Disable HTML post-processing so we never inject favicon/meta tags multiple times
 # (Previous manual-deploy sessions injected duplicate favicon blocks; auto-deploy from
 # git should never modify the source HTML at build time.)
@@ -22,5 +28,13 @@
 
 [[redirects]]
   from = "/README*"
+  to = "/404.html"
+  status = 404
+
+# Function source lives inside the publish dir (publish = "."), so it would
+# otherwise be readable as a static file. No secrets in it, but don't serve it.
+# Does not affect the runtime path, which is /.netlify/functions/*.
+[[redirects]]
+  from = "/netlify/*"
   to = "/404.html"
   status = 404
