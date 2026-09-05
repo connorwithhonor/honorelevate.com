@@ -40,6 +40,14 @@
   status = 404
   force = true
 
+# Build tooling lives inside the publish dir (publish = "."), so it would
+# otherwise be served as static files. No secrets in it, but don't serve it.
+[[redirects]]
+  from = "/tools/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
 # Blog duplicate cleanup (2026-09-05). Three posts existed BOTH as /blog/slug.html
 # and /blog/slug/index.html with byte-identical content, so each ranked against
 # itself. The .html twins were deleted; these 301s preserve any equity those URLs
