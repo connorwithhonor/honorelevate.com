@@ -39,3 +39,25 @@
   to = "/404.html"
   status = 404
   force = true
+
+# Blog duplicate cleanup (2026-09-05). Three posts existed BOTH as /blog/slug.html
+# and /blog/slug/index.html with byte-identical content, so each ranked against
+# itself. The .html twins were deleted; these 301s preserve any equity those URLs
+# earned and point at the directory form, which is what the canonical now declares.
+[[redirects]]
+  from = "/blog/ai-home-service-companies.html"
+  to = "/blog/ai-home-service-companies/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/ai-voice-agents-replacing-hold-music.html"
+  to = "/blog/ai-voice-agents-replacing-hold-music/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/real-cost-of-missed-calls.html"
+  to = "/blog/real-cost-of-missed-calls/"
+  status = 301
+  force = true
