@@ -1,5 +1,17 @@
 # honorelevate.com - Netlify build config
-# Source of truth: this repo. Deploys triggered on push to main.
+# Source of truth: this repo.
+#
+# HOW THIS SITE ACTUALLY DEPLOYS (corrected 2026-09-05): NOT on push to main.
+# This Netlify site has NO git integration -- `build_settings` is empty and
+# `deploy_hook` is null on site 5da3f1cf-bc55-44bd-b804-fa25ffbf9aac, and the
+# published deploy reports `deploy_source: "cli"`. A push to GitHub updates the
+# repo and changes nothing on the live site. This comment previously claimed
+# push-to-deploy, which cost a session real time chasing a deploy that was
+# never going to fire.
+#
+# To ship:  git push origin main   (record of truth)
+#           npx netlify-cli deploy --prod --dir=. --site=5da3f1cf-bc55-44bd-b804-fa25ffbf9aac
+# Then verify against the live URL. Never assume the push shipped it.
 # Snapshot-API uploads are deprecated — see SITE-REGISTRY.txt + connor-own-sites-git-canonical.md
 
 [build]
