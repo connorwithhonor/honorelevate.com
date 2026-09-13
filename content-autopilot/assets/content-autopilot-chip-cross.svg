@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Content Autopilot microchip and Jerusalem cross</title>
+  <desc id="desc">A navy microchip with orange circuit pins and a white Jerusalem cross.</desc>
+  <g fill="none" stroke="#E96B3A" stroke-linecap="round" stroke-width="16">
+    <path d="M112 48v48M184 48v48M256 48v48M328 48v48M400 48v48"/>
+    <path d="M112 416v48M184 416v48M256 416v48M328 416v48M400 416v48"/>
+    <path d="M48 112h48M48 184h48M48 256h48M48 328h48M48 400h48"/>
+    <path d="M416 112h48M416 184h48M416 256h48M416 328h48M416 400h48"/>
+  </g>
+  <rect x="76" y="76" width="360" height="360" rx="76" fill="#142D4F" stroke="#E96B3A" stroke-width="12"/>
+  <path d="M126 164h42l24 24M386 164h-42l-24 24M126 348h42l24-24M386 348h-42l-24-24" fill="none" stroke="#3D6FA4" stroke-linecap="round" stroke-width="10"/>
+  <circle cx="126" cy="164" r="8" fill="#E96B3A"/>
+  <circle cx="386" cy="164" r="8" fill="#E96B3A"/>
+  <circle cx="126" cy="348" r="8" fill="#E96B3A"/>
+  <circle cx="386" cy="348" r="8" fill="#E96B3A"/>
+  <path d="M230 142h52v88h88v52h-88v88h-52v-88h-88v-52h88z" fill="#FFFFFF"/>
+  <g fill="#E96B3A">
+    <path d="M174 154h20v20h20v20h-20v20h-20v-20h-20v-20h20z"/>
+    <path d="M318 154h20v20h20v20h-20v20h-20v-20h-20v-20h20z"/>
+    <path d="M174 298h20v20h20v20h-20v20h-20v-20h-20v-20h20z"/>
+    <path d="M318 298h20v20h20v20h-20v20h-20v-20h-20v-20h20z"/>
+  </g>
+</svg>
