@@ -13,6 +13,15 @@ HonorElevate is a fully white-labeled instance of the GoHighLevel (GHL) platform
 - Pre-built vertical templates: HVAC, plumbing, electricians, dental, moving, roofing, med spa, auto repair, real estate
 - Direct support from Connor (no offshore call center, no first-line ticket queue)
 
+## Content Autopilot
+
+[Content Autopilot](https://honorelevate.com/content-autopilot/) is HonorElevate's governed social content and follow-up offer for real estate agents and local businesses. It connects weekly topic direction, platform-ready content, scheduled publishing, keyword response paths, CRM capture, alerts, nurture, and performance review. The system begins approval-first, keeps sensitive claims and qualified conversations with a person, and does not guarantee reach, leads, or sales.
+
+- **Content Starter:** $97 per month for guided content direction, templates, scheduling workflow, and Quick Start training
+- **Lead Engine:** $297 per month for managed publishing connected to one keyword response campaign, CRM capture, alerts, nurture, and analytics review
+- **Authority Engine:** $597 per month for a higher managed cadence, long-form repurposing, thumbnails, media variants, and deeper performance review
+- **Founding activation:** starts at $497, with final scope, platform requirements, and usage-based communication costs confirmed before purchase
+
 ## Who HonorElevate is for
 
 - Local small business owners (HVAC, plumbing, electrical, dental, etc.) who want enterprise marketing capability without enterprise pricing
@@ -157,17 +166,17 @@ Every published article on this site, 91 in total, newest first. Generated from 
 - [What Is HonorElevate? Complete Guide to the AI Business Operating System](https://honorelevate.com/blog/what-is-honorelevate/) (The HonorElevate Platform · 2026-05-15)
 - [How AI Voice Agents Are Replacing Hold Music for Santa Clarita Businesses](https://honorelevate.com/blog/ai-voice-agents-replacing-hold-music/) (Insights · 2026-04-06)
 - [The Real Cost of Missed Calls: Why Your Business Needs 24/7 AI](https://honorelevate.com/blog/real-cost-of-missed-calls/) (Insights · 2026-04-05)
-- [AI Marketing Automation vs. Hiring a Marketing Team: What Small Businesses Need to Know](https://honorelevate.com/blog/ai-automation-vs-hiring-marketing-team) (2026-04-04)
-- [How Santa Clarita Restaurants Are Using AI to Fill Empty Tables](https://honorelevate.com/blog/ai-restaurants-filling-empty-tables) (2026-04-03)
-- [Reputation Management in the AI Era: How Local Businesses Can Dominate Google Reviews](https://honorelevate.com/blog/reputation-management-ai-era) (2026-04-02)
-- [The Small Business Owner's Guide to AI CRM: Stop Losing Leads](https://honorelevate.com/blog/small-business-ai-crm-guide) (2026-04-01)
-- [Why Your Website's Contact Form Is Killing Your Business (And What to Replace It With)](https://honorelevate.com/blog/contact-form-killing-your-business) (2026-03-31)
+- [AI Marketing Automation vs. Hiring a Marketing Team: What Small Businesses Need to Know](https://honorelevate.com/blog/ai-automation-vs-hiring-marketing-team) (Comparison · 2026-04-04)
+- [How Santa Clarita Restaurants Are Using AI to Fill Empty Tables](https://honorelevate.com/blog/ai-restaurants-filling-empty-tables) (Industry Applications · 2026-04-03)
+- [Reputation Management in the AI Era: How Local Businesses Can Dominate Google Reviews](https://honorelevate.com/blog/reputation-management-ai-era) (Review Generation · 2026-04-02)
+- [The Small Business Owner's Guide to AI CRM: Stop Losing Leads](https://honorelevate.com/blog/small-business-ai-crm-guide) (CRM & Pipeline · 2026-04-01)
+- [Why Your Website's Contact Form Is Killing Your Business (And What to Replace It With)](https://honorelevate.com/blog/contact-form-killing-your-business) (AI Web Chat · 2026-03-31)
 - [AI for Home Service Companies: How Plumbers, Electricians, and Contractors Are Winning with Automation](https://honorelevate.com/blog/ai-home-service-companies/) (Insights · 2026-03-30)
-- [How AI Chatbots and Voice Agents Work Together to Close More Deals](https://honorelevate.com/blog/ai-chatbots-voice-agents-closing-deals) (2026-03-29)
-- [The Santa Clarita Business Owner's AI Readiness Checklist for 2026](https://honorelevate.com/blog/santa-clarita-ai-readiness-checklist-2026) (2026-03-28)
+- [How AI Chatbots and Voice Agents Work Together to Close More Deals](https://honorelevate.com/blog/ai-chatbots-voice-agents-closing-deals) (AI Voice Agents · 2026-03-29)
+- [The Santa Clarita Business Owner's AI Readiness Checklist for 2026](https://honorelevate.com/blog/santa-clarita-ai-readiness-checklist-2026) (Insights · 2026-03-28)
 
 <!-- END GENERATED ARTICLE INDEX -->
 
 ## Last updated
 
-2026-09-05
+2026-09-13

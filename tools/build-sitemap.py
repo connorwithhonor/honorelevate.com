@@ -31,6 +31,7 @@ BASE = "https://honorelevate.com"
 # Top-level pages, in the order they should appear. (path, priority, changefreq)
 STATIC_PAGES = [
     ("/", "1.0", "weekly"),
+    ("/content-autopilot/", "0.9", "weekly"),
     ("/blog/", "0.9", "daily"),
     ("/privacy-policy", "0.3", "yearly"),
     ("/terms-of-service", "0.3", "yearly"),

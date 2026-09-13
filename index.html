@@ -123,6 +123,16 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-
 .card p{font-size:.93rem;color:var(--muted);line-height:1.6}
 .card .tag{display:inline-block;margin-top:14px;background:#fdeef0;color:#b4313f;font-size:.78rem;font-weight:700;padding:5px 12px;border-radius:6px}
 
+/* CONTENT AUTOPILOT FEATURE */
+.cap-feature{padding:0 0 88px}
+.cap-panel{position:relative;overflow:hidden;display:grid;grid-template-columns:1.35fr auto;gap:36px;align-items:center;background:linear-gradient(135deg,var(--navy-deep),var(--navy));border-radius:20px;padding:44px 48px;box-shadow:var(--shadow-lg)}
+.cap-panel:after{content:"";position:absolute;right:-90px;top:-120px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(214,174,92,.24),transparent 68%);pointer-events:none}
+.cap-copy{position:relative;z-index:1}
+.cap-copy .eyebrow{color:var(--gold);margin-bottom:12px}
+.cap-copy h2{color:#fff;font-size:clamp(1.55rem,3vw,2.25rem);line-height:1.15;margin-bottom:12px}
+.cap-copy p:last-child{color:#c4d2ee;font-size:1rem;max-width:720px}
+.cap-panel .btn{position:relative;z-index:1;white-space:nowrap}
+
 /* PROBLEM tint */
 .tint{background:var(--surface-2)}
 
@@ -237,6 +247,7 @@ footer{background:#0c1426;color:#9fb0cf;padding:56px 0 26px}
 /* RESPONSIVE */
 @media(max-width:940px){
   .hero-grid,.demo-grid,.auth-grid{grid-template-columns:1fr;gap:40px}
+  .cap-panel{grid-template-columns:1fr}
   .grid-3,.steps{grid-template-columns:1fr 1fr}
   .tiers{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
@@ -252,6 +263,8 @@ footer{background:#0c1426;color:#9fb0cf;padding:56px 0 26px}
   .footer-grid{grid-template-columns:1fr}
   body{padding-bottom:74px}
   .hero{background:linear-gradient(180deg,#fff 0%,var(--bg) 100%)}
+  .cap-feature{padding:0 0 62px}
+  .cap-panel{padding:32px 24px;border-radius:14px}
 }
 </style>
 </head>
@@ -376,6 +389,20 @@ footer{background:#0c1426;color:#9fb0cf;padding:56px 0 26px}
       <div class="card reveal rd4"><div class="ic ic-navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 2 3 6.5 7 .6-5.3 4.6 1.6 6.8L12 17l-6.2 3.5 1.6-6.8L2 9.1l7-.6L12 2Z"/></svg></div><h3>Review Generation Engine</h3><p>Invite customers to leave a review without filtering by sentiment. Give the same review opportunity to satisfied and dissatisfied customers, alongside a way to contact your team.</p></div>
       <div class="card reveal rd5"><div class="ic ic-navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10Z"/></svg></div><h3>AI Website Chat</h3><p>Help visitors with approved answers, intake questions, and booking options. Make the AI role clear and offer a path to your team when it cannot help.</p></div>
       <div class="card reveal rd6"><div class="ic ic-navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg></div><h3>Landing Pages and Funnels</h3><p>Build pages around a clear audience and next action. Connect the agreed forms and events, then use actual inquiry and booking results to guide improvements.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT AUTOPILOT -->
+<section class="cap-feature" aria-labelledby="content-autopilot-title">
+  <div class="container">
+    <div class="cap-panel reveal">
+      <div class="cap-copy">
+        <p class="eyebrow">New founding offer</p>
+        <h2 id="content-autopilot-title">Never rebuild your social calendar from scratch.</h2>
+        <p>Content Autopilot plans, adapts, schedules, and measures social content, then connects approved responses to HonorElevate follow-up. Plans start at $97 monthly.</p>
+      </div>
+      <a class="btn btn-gold" href="/content-autopilot/">Explore Content Autopilot</a>
     </div>
   </div>
 </section>
@@ -530,7 +557,7 @@ footer{background:#0c1426;color:#9fb0cf;padding:56px 0 26px}
         <a href="/" class="nav-logo"><img src="/favicon-shield.svg" alt="HonorElevate shield"><span class="txt">Honor<span>Elevate</span></span></a>
         <p>AI business automation with Connor MacIvor. Start with HireAIVoice, then connect the next workflow through HonorElevate.</p>
       </div>
-      <div class="footer-col"><h4>Solutions</h4><a href="#solutions">AI Voice Agents</a><a href="#solutions">Lead Automation</a><a href="#solutions">CRM and Pipeline</a><a href="#solutions">Review Engine</a></div>
+      <div class="footer-col"><h4>Solutions</h4><a href="/content-autopilot/">Content Autopilot</a><a href="#solutions">AI Voice Agents</a><a href="#solutions">Lead Automation</a><a href="#solutions">CRM and Pipeline</a><a href="#solutions">Review Engine</a></div>
       <div class="footer-col"><h4>Resources</h4><a href="/blog/">Blog</a><a href="tel:661-219-7299">Call the AI voice demo</a><a href="#book">Free AI Audit</a></div>
       <div class="footer-col"><h4>Ecosystem</h4><a href="https://connorwithhonor.com">Connor with Honor</a><a href="https://hireaivoice.com">HireAIVoice</a><a href="https://sellersonlyagent.com">Seller's Only Agent&#8482;</a><a href="https://scv123.com">SCV123</a></div>
     </div>
